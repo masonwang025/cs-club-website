@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import "./variables.scss";
+@import "./breakpoints.scss";
+@import "./components/header.scss";
+@import "./components/banner.scss";
+@import "./components/sections.scss";
+@import "./components/intro-overlay.scss";
+
+body,
+html {
+  visibility: hidden;
+  user-select: none;
+  background: $white;
+  margin: 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include media("<=tablet") {
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+  @include media(">tablet") {
+    min-height: 100vh; // fallback
+    min-height: calc(var(--vh, 1vh) * 100);
+    max-height: 100vh; // fallback
+    max-height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+  }
+}
+
+.container {
+  width: 1560px;
+  min-width: 1560px;
+  margin: 0 auto;
+  height: 100%;
+  @include media("<=1560px") {
+    width: 1280px;
+    min-width: 1280px;
+  }
+  @include media("<=desktop") {
+    width: 1080px;
+    min-width: 1080px;
+  }
+  @include media("<=1080px") {
+    width: 100%;
+    min-width: 100%;
+  }
+  .row {
+    display: flex;
+    height: 100%;
+    padding: 0 32px;
+    @include media("<=phone") {
+      padding: 0 16px;
+    }
+  }
+  .v-center {
+    align-items: center;
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100%;
+  .row {
+    display: flex;
+    height: 100%;
+  }
+}
