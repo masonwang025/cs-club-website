@@ -26,11 +26,13 @@ function App() {
         amount: 0.3,
       },
     })
+      .to(".complete-overlay", 0, { height: "50%" })
       .to(".overlay-top", 1.5, {
         height: 0,
         ease: "power3.inOut",
         stagger: 0.4,
       })
+      .to(".complete-overlay", 0, { height: 0, delay: -0.8 })
       .to(".overlay-bottom", 1.5, {
         width: 0,
         ease: "power3.inOut",
@@ -43,10 +45,8 @@ function App() {
       .from(".section-image img", 2, {
         scale: 1.4,
         ease: "power3.inOut",
-        delay: -2.3,
-        stagger: {
-          amount: 0.4,
-        },
+        delay: -2.8,
+        stagger: 0.4,
       });
   });
 
