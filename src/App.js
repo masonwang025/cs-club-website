@@ -26,12 +26,12 @@ function App() {
         amount: 0.3,
       },
     })
-      .to(".overlay-top", 1.6, {
+      .to(".overlay-top", 1.5, {
         height: 0,
         ease: "power3.inOut",
         stagger: 0.4,
       })
-      .to(".overlay-bottom", 1.6, {
+      .to(".overlay-bottom", 1.5, {
         width: 0,
         ease: "power3.inOut",
         delay: -0.8,
@@ -40,10 +40,10 @@ function App() {
       .to(".intro-overlay", 0, {
         css: { display: "none" },
       })
-      .from(".section-image img", 1.6, {
+      .from(".section-image img", 2, {
         scale: 1.4,
         ease: "power3.inOut",
-        delay: -2,
+        delay: -2.3,
         stagger: {
           amount: 0.4,
         },

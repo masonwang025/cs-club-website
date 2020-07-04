@@ -3,20 +3,20 @@ import React from "react";
 const sections = [
   {
     id: 1,
-    subtitle: "About",
-    title: "All about SHS CS club",
-    img: "about-min",
-  },
-  {
-    id: 2,
-    subtitle: "Curriculum",
-    title: "Topics to be covered and competitions",
+    subtitle: "Dedicated to Education",
+    title: "Diverse curriculum designed for all",
     img: "curriculum-min",
   },
   {
+    id: 2,
+    subtitle: "Compete Together",
+    title: "Join competitions with your friends",
+    img: "about-min",
+  },
+  {
     id: 3,
-    subtitle: "Resources",
-    title: "Resources to help you learn",
+    subtitle: "Curated Resources",
+    title: "Courses and projects to hone your skills",
     img: "resources-min",
   },
 ];

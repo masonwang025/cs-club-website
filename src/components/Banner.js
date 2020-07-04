@@ -7,11 +7,24 @@ export default function Banner() {
       <div className="container">
         <div className="row">
           <h2>
-            <div className="line">
-              <span>An awesome slogan that</span>
+            <div className="largeScreen">
+              <div className="line">
+                <span>We explore the power of coding,</span>
+              </div>
+              <div className="line">
+                <span>one line at a time.</span>
+              </div>
             </div>
-            <div className="line">
-              <span>awes people.</span>
+            <div className="smallScreen">
+              <div className="line">
+                <span>We explore</span>
+              </div>
+              <div className="line">
+                <span>the power of coding,</span>
+              </div>
+              <div className="line">
+                <span>one line at a time.</span>
+              </div>
             </div>
           </h2>
           <div className="btn-row">

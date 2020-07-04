@@ -5,6 +5,25 @@
   .row {
     flex-direction: column;
     justify-content: center;
+
+    // three lines or two lines
+    .largeScreen {
+      @include media("<=tablet") {
+        display: none;
+      }
+      @include media(">tablet") {
+        display: block;
+      }
+    }
+    .smallScreen {
+      @include media("<=tablet") {
+        display: block;
+      }
+      @include media(">tablet") {
+        display: none;
+      }
+    }
+
     h2 {
       margin-top: 50px;
       font-size: 3rem;
@@ -13,7 +32,8 @@
       z-index: 10;
       color: $white;
       mix-blend-mode: difference;
-      @include media("<=tablet") {
+
+      @include media("<=desktop") {
         margin-top: 40px;
         font-size: 2.4rem;
         line-height: 2.8rem;
@@ -35,6 +55,9 @@
         }
         span {
           position: absolute;
+          b {
+            font-weight: 1000;
+          }
         }
       }
     }

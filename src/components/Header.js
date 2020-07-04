@@ -6,7 +6,7 @@ export default function Header() {
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
-            <a href="/">CS CLUB.</a>
+            <a href="/">SHS CS CLUB</a>
           </div>
           <div className="nav">
             <span></span>
