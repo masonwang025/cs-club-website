@@ -1,13 +1,24 @@
 import React, { useEffect } from "react";
+import { Route } from "react-router-dom";
 import gsap from "gsap";
 import "./styles/App.scss";
 import Header from "./components/Header";
-import Home from "./pages/Home";
 
 // page components
-import About from "./";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Curriculum from "./pages/Curriculum";
+import Competitions from "./pages/Competitions";
+import Resources from "./pages/Resources";
 
 // routes
+const routes = [
+  { path: "/", name: "Home", Component: Home },
+  { path: "/about", name: "About", Component: About },
+  { path: "/curriculum", name: "Curriculum", Component: Curriculum },
+  { path: "/competitions", name: "Competitions", Component: Competitions },
+  { path: "/resources", name: "Resources", Component: Resources },
+];
 
 function App() {
   useEffect(() => {
@@ -21,7 +32,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Home />
+      <div className="App">
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            <Component />
+          </Route>
+        ))}
+      </div>
     </div>
   );
 }
