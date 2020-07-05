@@ -32,10 +32,6 @@ function App() {
         ease: "power3.inOut",
         stagger: 0.4,
       })
-      .to(".header", 0.5, {
-        css: { zIndex: 15, backgroundColor: "rgba(255, 255, 255, 0.9)" },
-        delay: 0.2,
-      })
       .to(".complete-overlay", 0, { height: 0, delay: -0.8 })
       .to(".overlay-bottom", 1.5, {
         width: 0,
@@ -52,6 +48,17 @@ function App() {
         delay: -2.8,
         stagger: 0.4,
       });
+    tl.fromTo(
+      ".header",
+      {
+        css: { backgroundColor: "transparent" },
+      },
+      {
+        css: { zIndex: 100, backgroundColor: "rgba(255, 255, 255, 00.92)" },
+        delay: -1,
+        duration: 2,
+      }
+    );
   });
 
   return (

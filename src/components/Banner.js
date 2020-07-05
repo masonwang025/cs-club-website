@@ -22,6 +22,7 @@ export default function Banner() {
               <div className="line">
                 <span>the power of coding,</span>
               </div>
+
               <div className="line">
                 <span>one line at a time.</span>
               </div>

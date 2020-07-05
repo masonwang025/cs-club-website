@@ -8,18 +8,18 @@
 
     // three lines or two lines
     .largeScreen {
-      @include media("<=tablet") {
+      @include media("<=600px") {
         display: none;
       }
-      @include media(">tablet") {
+      @include media(">600px") {
         display: block;
       }
     }
     .smallScreen {
-      @include media("<=tablet") {
+      @include media("<=600px") {
         display: block;
       }
-      @include media(">tablet") {
+      @include media(">600px") {
         display: none;
       }
     }
@@ -34,9 +34,14 @@
       mix-blend-mode: difference;
 
       @include media("<=desktop") {
-        margin-top: 40px;
+        margin-top: 50px;
+        margin-bottom: 10px;
         font-size: 2.4rem;
         line-height: 2.8rem;
+      }
+      @include media("<=tablet") {
+        font-size: 2rem;
+        line-height: 2.2rem;
       }
       @include media("<=phone") {
         margin-top: 25px;
