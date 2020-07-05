@@ -14,9 +14,18 @@
       position: relative;
       background: $black;
       cursor: pointer;
+      @include media(">tablet") {
+        overflow: hidden;
+      }
       &:hover {
         .section-image {
-          opacity: 0.25;
+          opacity: 0.55;
+          @include media(">tablet") {
+            -webkit-transform: scale(1.05) 5;
+            -moz-transform: scale(1.055);
+            -o-transform: scale(1.055);
+            transform: scale(1.055);
+          }
         }
       }
 
