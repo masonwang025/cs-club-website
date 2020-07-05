@@ -17,10 +17,13 @@ export default function Banner() {
             </div>
             <div className="smallScreen">
               <div className="line">
-                <span>We explore the power of</span>
+                <span>We explore</span>
               </div>
               <div className="line">
-                <span>coding, one line at a time.</span>
+                <span>the power of coding,</span>
+              </div>
+              <div className="line">
+                <span>one line at a time.</span>
               </div>
 
               <div className="line">
