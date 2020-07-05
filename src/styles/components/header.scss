@@ -4,9 +4,13 @@
   height: 90px;
   z-index: 1;
   background: transparent;
-  @include media("<=phone") {
-    height: 80px;
+  @include media("<=desktop") {
+    height: 72px;
   }
+  @include media("<=phone") {
+    height: 70px;
+  }
+
   .logo {
     a {
       font-size: 1.2rem;

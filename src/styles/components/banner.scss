@@ -1,29 +1,15 @@
 .main {
   height: 50vh; // fallback
   height: calc(var(--vh, 1vh) * 50);
+  // landscape mobile
+  @media screen and (min-width: 400px) and (max-width: 960px) and (max-height: 480px) and (orientation: landscape) {
+    height: 100vh; // fallback
+    height: calc(var(--vh, 1vh) * 100);
+  }
   background-color: $white;
   .row {
     flex-direction: column;
     justify-content: center;
-
-    // three lines or two lines
-    .largeScreen {
-      @include media("<=600px") {
-        display: none;
-      }
-      @include media(">600px") {
-        display: block;
-      }
-    }
-    .smallScreen {
-      @include media("<=600px") {
-        display: block;
-      }
-      @include media(">600px") {
-        display: none;
-      }
-    }
-
     h2 {
       margin-top: 50px;
       font-size: 3rem;
@@ -66,6 +52,31 @@
         }
       }
     }
+    // three lines or two lines
+    .largeScreen {
+      display: none;
+      @include media(">650px") {
+        display: block;
+        font-size: 2.4rem;
+      }
+    }
+    .smallScreen {
+      display: none;
+      @include media("<=650px", ">400px") {
+        display: block;
+        font-size: 1.8rem;
+      }
+      @include media("<=650px", ">500px") {
+        display: block;
+        font-size: 2.2rem;
+      }
+    }
+    .xsScreen {
+      display: none;
+      @include media("<=400px") {
+        display: block;
+      }
+    }
   }
   .btn-row {
     width: 256px;
@@ -79,10 +90,7 @@
       align-items: center;
       font-weight: 600;
       @include media("<=tablet") {
-        font-size: 1.3rem;
-      }
-      @include media("<=phone") {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
       }
       svg {
         margin-left: 16px;

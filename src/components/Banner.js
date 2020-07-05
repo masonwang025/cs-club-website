@@ -22,15 +22,22 @@ export default function Banner() {
               <div className="line">
                 <span>coding, one line at a time.</span>
               </div>
-
+            </div>
+            <div className="xsScreen">
               <div className="line">
-                <span></span>
+                <span>We explore</span>
+              </div>
+              <div className="line">
+                <span>the power of coding,</span>
+              </div>
+              <div className="line">
+                <span> one line at a time.</span>
               </div>
             </div>
           </h2>
           <div className="btn-row">
             <a href="/">
-              More about us <RightArrow />
+              About us <RightArrow />
             </a>
           </div>
         </div>
