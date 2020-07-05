@@ -9,7 +9,7 @@ export default function Banner() {
           <h2>
             <div className="largeScreen">
               <div className="line">
-                <span>We explore the power of coding,</span>
+                <span>We reveal the power of coding,</span>
               </div>
               <div className="line">
                 <span>one line at a time.</span>
@@ -17,7 +17,7 @@ export default function Banner() {
             </div>
             <div className="smallScreen">
               <div className="line">
-                <span>We explore the power of</span>
+                <span>We reveal the power of</span>
               </div>
               <div className="line">
                 <span>coding, one line at a time.</span>
@@ -25,7 +25,7 @@ export default function Banner() {
             </div>
             <div className="xsScreen">
               <div className="line">
-                <span>We explore</span>
+                <span>We reveal</span>
               </div>
               <div className="line">
                 <span>the power of coding,</span>

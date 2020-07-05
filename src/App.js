@@ -68,7 +68,7 @@ function App() {
           }
         );
     } else {
-      tl.from(".line span", 1.5, {
+      tl.from(".line span", 1.2, {
         opacity: 0,
         delay: 0.5,
         y: 100,
