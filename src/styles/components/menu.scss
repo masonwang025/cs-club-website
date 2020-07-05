@@ -1,0 +1,76 @@
+.menu {
+  display: none;
+  z-index: 250;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  .menu-secondary-background-color {
+    background-color: $theme;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 249;
+  }
+  .menu-layer {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    background-color: $black;
+    .wrapper {
+      position: relative;
+      .menu-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        @include media("<=tablet") {
+          text-align: center;
+        }
+        nav {
+          display: block;
+          ul {
+            padding: 0;
+            margin: 0;
+            li {
+              list-style: none;
+              font-size: 6rem;
+              font-weight: 700;
+              cursor: pointer;
+              height: 135px;
+              overflow: hidden;
+              position: relative;
+              width: 700px;
+              a {
+                position: absolute;
+                color: $white;
+                text-decoration: none;
+                &:hover {
+                  color: $theme;
+                }
+              }
+            }
+          }
+        }
+        .info {
+          color: $white;
+          width: 300px h3 {
+            font-size: 1.2rem;
+            margin: 8px auto;
+          }
+          p {
+            margin: 0 auto;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}

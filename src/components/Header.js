@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Menu from "./Menu";
 
 export default function Header() {
   return (
@@ -6,12 +8,13 @@ export default function Header() {
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
-            <a href="/">SHS CS CLUB</a>
+            <Link to="/">SHS CS CLUB</Link>
           </div>
-          <div className="nav">
+          <button className="nav">
             <span></span>
             <span></span>
-          </div>
+          </button>
+          <Menu />
         </div>
       </div>
     </div>
