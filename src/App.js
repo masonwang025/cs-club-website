@@ -16,9 +16,9 @@ function App() {
 
     // timeline
     const tl = gsap.timeline();
-    tl.from(".line span", 1.8, {
+    tl.from(".line span", 1.5, {
       opacity: 0,
-      delay: 1,
+      delay: 0.5,
       y: 100,
       ease: "power4.out",
       skewY: 8,
@@ -31,6 +31,10 @@ function App() {
         height: 0,
         ease: "power3.inOut",
         stagger: 0.4,
+      })
+      .to(".header", 0.5, {
+        css: { zIndex: 15, backgroundColor: "rgba(255, 255, 255, 0.9)" },
+        delay: 0.2,
       })
       .to(".complete-overlay", 0, { height: 0, delay: -0.8 })
       .to(".overlay-bottom", 1.5, {
