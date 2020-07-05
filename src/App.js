@@ -30,21 +30,21 @@ function App() {
         ease: "power4.out",
         skewY: 8,
         stagger: {
-          amount: 0.3,
+          amount: 0.32,
         },
       })
         .to(".complete-overlay", 0, { height: "50%" })
         .to(".overlay-top", 1.5, {
           height: 0,
           ease: "power3.inOut",
-          stagger: 0.4,
+          stagger: 0.32,
         })
         .to(".complete-overlay", 0, { height: 0, delay: -0.8 })
         .to(".overlay-bottom", 1.5, {
           width: 0,
           ease: "power3.inOut",
           delay: -0.8,
-          stagger: 0.4,
+          stagger: 0.32,
         })
         .to(".intro-overlay", 0, {
           css: { display: "none" },
@@ -53,7 +53,7 @@ function App() {
           scale: 1.4,
           ease: "power3.inOut",
           delay: -2.8,
-          stagger: 0.4,
+          stagger: 0.32,
         })
         .fromTo(
           ".header",
