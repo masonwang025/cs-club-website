@@ -1,14 +1,14 @@
 .header {
   position: fixed;
   width: 100%;
-  height: 90px;
+  height: 80px;
   z-index: 1;
   background: transparent;
   @include media("<=desktop") {
-    height: 72px;
+    height: 70px;
   }
   @include media("<=phone") {
-    height: 70px;
+    height: 65px;
   }
 
   .logo {
