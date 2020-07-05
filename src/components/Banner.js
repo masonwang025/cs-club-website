@@ -17,14 +17,14 @@ export default function Banner() {
             </div>
             <div className="smallScreen">
               <div className="line">
-                <span>We explore</span>
+                <span>We explore the power of</span>
               </div>
               <div className="line">
-                <span>the power of coding,</span>
+                <span>coding, one line at a time.</span>
               </div>
 
               <div className="line">
-                <span>one line at a time.</span>
+                <span></span>
               </div>
             </div>
           </h2>
