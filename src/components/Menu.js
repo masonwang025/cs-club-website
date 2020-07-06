@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
 import { Link } from "react-router-dom";
+import { menuClose, menuOpen } from "../animations/animations";
 
 export default function Menu({ state }) {
   let menu = useRef(null);
@@ -14,98 +14,20 @@ export default function Menu({ state }) {
   useEffect(() => {
     if (state.clicked === false) {
       // close
-      gsap.to([revealMenu, revealMenuSecondaryBg], {
-        duration: 0.9,
-        height: 0,
-        ease: "power3.inOut",
-        stagger: {
-          amount: 0.07,
-        },
-      });
-      gsap.to(menu, 1, {
-        css: {
-          display: "none",
-        },
-      });
-
-      // navbar colors
-      gsap.to(".header .logo a", 0.5, {
-        css: {
-          color: "black",
-        },
-        delay: 0.5,
-      });
-      gsap.to(".header .nav span", 0.5, {
-        css: {
-          backgroundColor: "black",
-        },
-        delay: 0.5,
-      });
+      menuClose(menu, revealMenu, revealMenuSecondaryBg);
     } else if (state.clicked === true) {
       // open
-      gsap.to(menu, 1, {
-        css: {
-          display: "block",
-        },
-      });
-      gsap.to([revealMenu, revealMenuSecondaryBg], {
-        duration: 0,
-        height: "100%",
-        opacity: 1,
-      });
-      gsap.from([revealMenuSecondaryBg, revealMenu], {
-        duration: 0.9,
-        height: 0,
-        transformOrigin: "right top",
-        skewY: 2.5,
-        ease: "power3.inOut",
-        stagger: {
-          amount: 0.07,
-        },
-      });
-      fadeInUp([".menu .info h3", ".menu .info p"]);
-      staggerText(line1, line2, line3, line4);
-      // navbar colors
-      gsap.to(".header .logo a", 0.5, {
-        css: {
-          color: "white",
-        },
-        delay: 0.5,
-      });
-      gsap.to(".header .nav span", 0.5, {
-        css: {
-          backgroundColor: "white",
-        },
-        delay: 0.5,
-      });
+      menuOpen(
+        menu,
+        revealMenu,
+        revealMenuSecondaryBg,
+        line1,
+        line2,
+        line3,
+        line4
+      );
     }
   }, [state]);
-
-  const fadeInUp = (node) => {
-    gsap.from(node, {
-      y: 60,
-      duration: 1,
-      delay: 0.2,
-      opacity: 0,
-      ease: "power3.inOut",
-      stagger: {
-        amount: 0.02,
-      },
-    });
-  };
-
-  const staggerText = (node1, node2, node3, node4) => {
-    console.log("staggers");
-    gsap.from([node1, node2, node3, node4], {
-      duration: 0.4,
-      delay: 0.2,
-      opacity: 0,
-      ease: "power3.inOut",
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  };
 
   return (
     <div ref={(el) => (menu = el)} className="menu">

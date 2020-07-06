@@ -1,20 +1,10 @@
 import React, { useEffect, useState } from "react";
-import gsap from "gsap";
 
 import Banner from "../components/Banner";
 import Sections from "../components/Sections";
 import IntroOverlay from "../components/IntroOverlay";
 
-import { homeAnimate, homeAnimateLandscape } from "../animations/animations";
-
-const homeAnimation = (completeAnimation, landscape) => {
-  if (!landscape) {
-    homeAnimate(completeAnimation);
-  } else {
-    // mobile landscape == no animations because screw landscape mobile
-    homeAnimateLandscape(completeAnimation);
-  }
-};
+import { homeAnimation } from "../animations/animations";
 
 export default function Home() {
   const [animationComplete, setAnimationComplete] = useState(false);
