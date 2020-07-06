@@ -57,12 +57,14 @@ export default function Menu({ state }) {
         duration: 0.9,
         height: 0,
         transformOrigin: "right top",
-        skewY: 4.2,
+        skewY: 2.5,
         ease: "power3.inOut",
         stagger: {
           amount: 0.07,
         },
       });
+      fadeInUp([".menu .info h3", ".menu .info p"]);
+      staggerText(line1, line2, line3, line4);
       // navbar colors
       gsap.to(".header .logo a", 0.5, {
         css: {
@@ -78,6 +80,32 @@ export default function Menu({ state }) {
       });
     }
   }, [state]);
+
+  const fadeInUp = (node) => {
+    gsap.from(node, {
+      y: 60,
+      duration: 1,
+      delay: 0.2,
+      opacity: 0,
+      ease: "power3.inOut",
+      stagger: {
+        amount: 0.02,
+      },
+    });
+  };
+
+  const staggerText = (node1, node2, node3, node4) => {
+    console.log("staggers");
+    gsap.from([node1, node2, node3, node4], {
+      duration: 0.4,
+      delay: 0.2,
+      opacity: 0,
+      ease: "power3.inOut",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+  };
 
   return (
     <div ref={(el) => (menu = el)} className="menu">

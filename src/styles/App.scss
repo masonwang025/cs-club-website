@@ -78,3 +78,13 @@ html {
     height: 100%;
   }
 }
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// temp
+.page {
+  padding-top: 90px;
+}
