@@ -35,14 +35,14 @@
         line-height: 1.8rem;
       }
       .line {
-        height: 56px;
+        height: 60px;
         position: relative;
         overflow: hidden;
         @include media("<=tablet") {
-          height: 48px;
+          height: 50px;
         }
         @include media("<=phone") {
-          height: 32px;
+          height: 36px;
         }
         span {
           position: absolute;

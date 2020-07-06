@@ -9,7 +9,7 @@ const homeAnimation = (completeAnimation, landscape) => {
   const tl = gsap.timeline(); // timeline
   if (!landscape) {
     // mobile landscape == no animations because screw landscape mobile
-    tl.from(".line span", 1.5, {
+    tl.from(".line span", 1.7, {
       opacity: 0,
       delay: 0.5,
       y: 100,
