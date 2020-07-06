@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import gsap from "gsap";
 import "./styles/App.scss";
 import Header from "./components/Header";
@@ -33,11 +33,14 @@ function App() {
     <div className="App">
       <Header />
       <div className="App">
-        {routes.map(({ path, Component }) => (
-          <Route key={path} exact path={path}>
-            <Component />
-          </Route>
-        ))}
+        <Switch>
+          {routes.map(({ path, Component }) => (
+            <Route key={path} exact path={path}>
+              <Component />
+            </Route>
+          ))}
+          <Redirect to="/" />
+        </Switch>
       </div>
     </div>
   );

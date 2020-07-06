@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { menuClose, menuOpen } from "../animations/animations";
 
 export default function Menu({ state }) {
+  let location = useLocation().pathName;
+
   let menu = useRef(null);
   let revealMenu = useRef(null);
   let revealMenuSecondaryBg = useRef(null);
@@ -10,6 +12,10 @@ export default function Menu({ state }) {
   let line2 = useRef(null);
   let line3 = useRef(null);
   let line4 = useRef(null);
+
+  useEffect(() => {
+    console.log("adsfa", location);
+  });
 
   useEffect(() => {
     if (state.clicked === false) {
