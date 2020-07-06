@@ -14,7 +14,7 @@ const sections = [
     subtitle: "Compete Together",
     title: "Join competitions with your friends",
     img: "compete-min",
-    to: "/compete",
+    to: "/competitions",
   },
   {
     id: 3,
@@ -31,8 +31,12 @@ export default function Sections() {
       <div className="container-fluid">
         <div className="row">
           {sections.map((section) => (
-            <Link className="section-wrapper-link" to={section.to}>
-              <div className="section" key={section.id}>
+            <Link
+              className="section-wrapper-link"
+              to={section.to}
+              key={section.id}
+            >
+              <div className="section">
                 <div className="section-details">
                   <span>{section.subtitle}</span>
                   <h2>{section.title}</h2>

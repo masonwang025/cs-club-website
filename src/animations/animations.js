@@ -168,7 +168,6 @@ const fadeInUp = (node) => {
 };
 
 const staggerText = (node1, node2, node3, node4) => {
-  console.log("staggers");
   gsap.from([node1, node2, node3, node4], {
     duration: 0.4,
     delay: 0.2,

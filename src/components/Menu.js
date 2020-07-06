@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { menuClose, menuOpen } from "../animations/animations";
 
-export default function Menu({ state }) {
+export default function Menu({ clicked }) {
   let location = useLocation().pathName;
 
   let menu = useRef(null);
@@ -18,10 +18,10 @@ export default function Menu({ state }) {
   });
 
   useEffect(() => {
-    if (state.clicked === false) {
+    if (clicked === false) {
       // close
       menuClose(menu, revealMenu, revealMenuSecondaryBg);
-    } else if (state.clicked === true) {
+    } else if (clicked === true) {
       // open
       menuOpen(
         menu,
@@ -33,7 +33,7 @@ export default function Menu({ state }) {
         line4
       );
     }
-  }, [state]);
+  }, [clicked]);
 
   return (
     <div ref={(el) => (menu = el)} className="menu">
@@ -41,6 +41,7 @@ export default function Menu({ state }) {
         ref={(el) => (revealMenuSecondaryBg = el)}
         className="menu-secondary-bg-color"
       ></div>
+      <div id="page-transition-layer"></div>
       <div ref={(el) => (revealMenu = el)} className="menu-layer">
         <div className="container">
           <div className="wrapper row v-center">

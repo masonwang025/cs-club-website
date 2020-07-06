@@ -18,6 +18,17 @@
     z-index: -2;
     background: $theme;
   }
+  .page-transition-layer {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: $black;
+  }
   .menu-layer {
     position: relative;
     height: 100%;
@@ -26,7 +37,7 @@
     .wrapper {
       justify-content: space-between;
       position: relative;
-      @include media("<=tablet") {
+      @include media("<=1000px") {
         justify-content: center;
       }
       .menu-links {
@@ -34,24 +45,21 @@
         flex-direction: row;
         align-items: center;
         position: relative;
-        @include media("<=tablet") {
+        @include media("<=1000px") {
           text-align: center;
           flex-direction: column;
         }
         nav {
+          box-sizing: border-box;
           display: block;
-          padding-right: 20vw;
+          width: 64vw;
           @include media("<=desktop") {
-            padding-right: 12vw;
+            width: 80vw;
           }
-          @include media("<=900px") {
-            padding-right: 7vw;
-          }
-          @include media("<=tablet") {
+          @include media("<=1000px") {
             text-align: center;
             flex-direction: column;
             justify-content: center;
-            padding-right: 0;
             margin-bottom: 5vh;
           }
           ul {
@@ -61,7 +69,7 @@
               list-style: none;
               font-size: 5rem;
               font-weight: 700;
-              @include media("<=tablet") {
+              @include media("<=1000px") {
                 font-size: 4rem;
               }
               @include media("<=650px") {
@@ -82,10 +90,10 @@
               a {
                 color: $white;
                 text-decoration: none;
-                transition: 0.55s ease-in-out;
+                transition: 0.2s ease-in-out;
                 &:hover {
                   color: $theme;
-                  font-size: 1.1em;
+                  font-size: 1.05em;
                 }
               }
             }
@@ -93,12 +101,12 @@
         }
         .info {
           color: $white;
-          padding: 0 1.24em;
+          padding: 0 1.5em 0 1.25em;
           h3 {
             @include media(">desktop") {
               font-size: 2rem;
             }
-            @include media(">tablet") {
+            @include media(">1000px") {
               font-size: 1.5rem;
             }
             @include media(">phone") {
@@ -110,7 +118,7 @@
           p {
             margin: 0 auto;
             font-size: 0.9rem;
-            @include media(">tablet") {
+            @include media(">1000px") {
               font-size: 1rem;
             }
             @include media(">desktop") {

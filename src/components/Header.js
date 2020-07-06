@@ -4,10 +4,7 @@ import Menu from "./Menu";
 
 function Header({ history }) {
   // state for menu button
-  const [state, setState] = useState({
-    initial: false,
-    clicked: null,
-  });
+  const [clicked, setClicked] = useState(false);
 
   // state for disabled button
   const [disabled, setDisabled] = useState(false);
@@ -16,24 +13,9 @@ function Header({ history }) {
   useEffect(() => {
     // listen for page changes
     history.listen(() => {
-      setState({ clicked: false });
+      setClicked(false);
     });
   });
-
-  const handleMenu = () => {
-    console.log(state.clicked);
-    disableMenu();
-    if (state.initial === false) {
-      setState({
-        initial: null,
-        clicked: true,
-      });
-    } else {
-      setState({
-        clicked: !state.clicked,
-      });
-    }
-  };
 
   const disableMenu = () => {
     setDisabled(!disabled);
@@ -52,12 +34,15 @@ function Header({ history }) {
           <button
             disabled={disabled}
             className="nav"
-            onClick={() => handleMenu()}
+            onClick={() => {
+              disableMenu();
+              setClicked(!clicked);
+            }}
           >
             <span></span>
             <span></span>
           </button>
-          <Menu state={state} />
+          <Menu clicked={clicked} />
         </div>
       </div>
     </div>
