@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { Link } from "react-router-dom";
 
-export default function Menu() {
+export default function Menu({ state }) {
+  let menu = useRef(null);
+
+  useEffect(() => {
+    if (!state.clicked) {
+      // close
+      menu.style.display = "none";
+    } else if (state.clicked || state.initial === null) {
+      // open
+      menu.style.display = "block";
+    }
+  });
+
   return (
-    <div className="menu">
+    <div ref={(el) => (menu = el)} className="menu">
       <div className="menu-secondary-bg-color"></div>
       <div className="menu-layer">
         <div className="container">
@@ -12,25 +25,31 @@ export default function Menu() {
               <nav>
                 <ul>
                   <li>
-                    <Link to="/about">About</Link>
+                    <Link id="line1" to="/about">
+                      About
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/curriculum">Curriculum</Link>
+                    <Link id="line2" to="/curriculum">
+                      Curriculum
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/competitions">Competitions</Link>
+                    <Link id="line3" to="/competitions">
+                      Competitions
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/resources">Resources</Link>
+                    <Link id="line4" to="/resources">
+                      Resources
+                    </Link>
                   </li>
                 </ul>
               </nav>
               <div className="info">
-                <h3>Our Goal</h3>
+                <h3>Extra Info</h3>
                 <p>
-                  Some corny slogan about our goal in CS club and how blah blah
-                  you get the point. Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Vel, quibusdam?
+                  Possibly a slogan, a contact email, etc. Whatever we choose.
                 </p>
               </div>
             </div>

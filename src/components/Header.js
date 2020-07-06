@@ -1,8 +1,51 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { withRouter, Link } from "react-router-dom";
 import Menu from "./Menu";
 
-export default function Header() {
+function Header({ history }) {
+  // state for menu button
+  const [state, setState] = useState({
+    initial: false,
+    clicked: null,
+  });
+
+  // state for disabled button
+  const [disabled, setDisabled] = useState(false);
+
+  //use effect for page changes
+  useEffect(() => {
+    // listen for page changes
+    history.listen(() => {
+      setState({ clicked: false });
+    });
+  });
+
+  const handleMenu = () => {
+    console.log(state.clicked);
+    disableMenu();
+    if (state.initial === false) {
+      setState({
+        initial: null,
+        clicked: true,
+      });
+    } else if (state.clicked) {
+      setState({
+        clicked: !state.clicked,
+      });
+    } else if (!state.clicked) {
+      setState({
+        clicked: !state.clicked,
+      });
+    }
+  };
+
+  const disableMenu = () => {
+    setDisabled(!disabled);
+    setTimeout(() => {
+      setDisabled(false);
+    }, 1200);
+  };
+
   return (
     <div className="header">
       <div className="container">
@@ -10,13 +53,19 @@ export default function Header() {
           <div className="logo">
             <Link to="/">SHS CS CLUB</Link>
           </div>
-          <button className="nav">
+          <button
+            disabled={disabled}
+            className="nav"
+            onClick={() => handleMenu()}
+          >
             <span></span>
             <span></span>
           </button>
-          <Menu />
+          <Menu state={state} />
         </div>
       </div>
     </div>
   );
 }
+
+export default withRouter(Header);
