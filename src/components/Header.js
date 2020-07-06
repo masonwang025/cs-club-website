@@ -28,11 +28,7 @@ function Header({ history }) {
         initial: null,
         clicked: true,
       });
-    } else if (state.clicked) {
-      setState({
-        clicked: !state.clicked,
-      });
-    } else if (!state.clicked) {
+    } else {
       setState({
         clicked: !state.clicked,
       });
@@ -43,19 +39,19 @@ function Header({ history }) {
     setDisabled(!disabled);
     setTimeout(() => {
       setDisabled(false);
-    }, 1200);
+    }, 900);
   };
 
   return (
     <div className="header">
       <div className="container">
         <div className="row v-center space-between">
-          <div className={"logo " + (state.clicked && "open")}>
+          <div className="logo">
             <Link to="/">SHS CS CLUB</Link>
           </div>
           <button
             disabled={disabled}
-            className={"nav " + (state.clicked && "open")}
+            className="nav"
             onClick={() => handleMenu()}
           >
             <span></span>

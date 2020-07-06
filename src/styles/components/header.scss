@@ -2,8 +2,8 @@
   position: fixed;
   width: 100%;
   height: 80px;
-  z-index: 1;
-  background: transparent;
+  z-index: 250;
+  background: rgba(255, 255, 255, 00.92);
   @include media("<=desktop") {
     height: 70px;
   }
@@ -18,12 +18,6 @@
       color: $black;
       text-decoration: none;
       font-weight: 700;
-    }
-  }
-
-  .logo.open {
-    a {
-      color: $white;
     }
   }
 
@@ -44,12 +38,6 @@
       width: 100%;
       height: 2px;
       display: block;
-    }
-  }
-
-  .nav.open {
-    span {
-      background: $white;
     }
   }
 }

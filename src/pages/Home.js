@@ -43,8 +43,8 @@ const homeAnimation = (completeAnimation, landscape) => {
         { css: { backgroundColor: "transparent" } },
         {
           css: {
-            zIndex: 100,
             backgroundColor: "rgba(255, 255, 255, 00.92)",
+            zIndex: 250,
           },
           delay: -0.5,
           duration: 0.6,
@@ -62,8 +62,8 @@ const homeAnimation = (completeAnimation, landscape) => {
       .from(".btn-row", 0.5, { opacity: 0 })
       .to(".header", 0, {
         css: {
-          zIndex: 100,
           backgroundColor: "rgba(255, 255, 255, 00.92)",
+          zIndex: 250,
           onComplete: completeAnimation,
         },
       });

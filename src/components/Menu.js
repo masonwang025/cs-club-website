@@ -12,14 +12,72 @@ export default function Menu({ state }) {
   let line4 = useRef(null);
 
   useEffect(() => {
-    if (!state.clicked) {
+    if (state.clicked === false) {
       // close
-      menu.style.display = "none";
-    } else if (state.clicked || state.initial === null) {
+      gsap.to([revealMenu, revealMenuSecondaryBg], {
+        duration: 0.9,
+        height: 0,
+        ease: "power3.inOut",
+        stagger: {
+          amount: 0.07,
+        },
+      });
+      gsap.to(menu, 1, {
+        css: {
+          display: "none",
+        },
+      });
+
+      // navbar colors
+      gsap.to(".header .logo a", 0.5, {
+        css: {
+          color: "black",
+        },
+        delay: 0.5,
+      });
+      gsap.to(".header .nav span", 0.5, {
+        css: {
+          backgroundColor: "black",
+        },
+        delay: 0.5,
+      });
+    } else if (state.clicked === true) {
       // open
-      menu.style.display = "block";
+      gsap.to(menu, 1, {
+        css: {
+          display: "block",
+        },
+      });
+      gsap.to([revealMenu, revealMenuSecondaryBg], {
+        duration: 0,
+        height: "100%",
+        opacity: 1,
+      });
+      gsap.from([revealMenuSecondaryBg, revealMenu], {
+        duration: 0.9,
+        height: 0,
+        transformOrigin: "right top",
+        skewY: 4.2,
+        ease: "power3.inOut",
+        stagger: {
+          amount: 0.07,
+        },
+      });
+      // navbar colors
+      gsap.to(".header .logo a", 0.5, {
+        css: {
+          color: "white",
+        },
+        delay: 0.5,
+      });
+      gsap.to(".header .nav span", 0.5, {
+        css: {
+          backgroundColor: "white",
+        },
+        delay: 0.5,
+      });
     }
-  });
+  }, [state]);
 
   return (
     <div ref={(el) => (menu = el)} className="menu">
