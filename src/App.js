@@ -13,11 +13,11 @@ import Resources from "./pages/Resources";
 
 // routes
 const routes = [
-  { path: "/", name: "Home", Component: Home },
-  { path: "/about", name: "About", Component: About },
-  { path: "/curriculum", name: "Curriculum", Component: Curriculum },
-  { path: "/competitions", name: "Competitions", Component: Competitions },
-  { path: "/resources", name: "Resources", Component: Resources },
+  { path: "/", Component: Home },
+  { path: "/about", Component: About },
+  { path: "/curriculum", Component: Curriculum },
+  { path: "/competitions", Component: Competitions },
+  { path: "/resources", Component: Resources },
 ];
 
 function App() {
