@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 
 export default function Menu({ state }) {
   let menu = useRef(null);
+  let revealMenu = useRef(null);
+  let revealMenuSecondaryBg = useRef(null);
+  let line1 = useRef(null);
+  let line2 = useRef(null);
+  let line3 = useRef(null);
+  let line4 = useRef(null);
 
   useEffect(() => {
     if (!state.clicked) {
@@ -17,30 +23,33 @@ export default function Menu({ state }) {
 
   return (
     <div ref={(el) => (menu = el)} className="menu">
-      <div className="menu-secondary-bg-color"></div>
-      <div className="menu-layer">
+      <div
+        ref={(el) => (revealMenuSecondaryBg = el)}
+        className="menu-secondary-bg-color"
+      ></div>
+      <div ref={(el) => (revealMenu = el)} className="menu-layer">
         <div className="container">
           <div className="wrapper row v-center">
             <div className="menu-links">
               <nav>
                 <ul>
                   <li>
-                    <Link id="line1" to="/about">
+                    <Link ref={(el) => (line1 = el)} to="/about">
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link id="line2" to="/curriculum">
+                    <Link ref={(el) => (line2 = el)} to="/curriculum">
                       Curriculum
                     </Link>
                   </li>
                   <li>
-                    <Link id="line3" to="/competitions">
+                    <Link ref={(el) => (line3 = el)} to="/competitions">
                       Competitions
                     </Link>
                   </li>
                   <li>
-                    <Link id="line4" to="/resources">
+                    <Link ref={(el) => (line4 = el)} to="/resources">
                       Resources
                     </Link>
                   </li>

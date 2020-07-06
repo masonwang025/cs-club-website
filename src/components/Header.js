@@ -50,12 +50,12 @@ function Header({ history }) {
     <div className="header">
       <div className="container">
         <div className="row v-center space-between">
-          <div className="logo">
+          <div className={"logo " + (state.clicked && "open")}>
             <Link to="/">SHS CS CLUB</Link>
           </div>
           <button
             disabled={disabled}
-            className="nav"
+            className={"nav " + (state.clicked && "open")}
             onClick={() => handleMenu()}
           >
             <span></span>

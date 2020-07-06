@@ -8,7 +8,6 @@
   position: fixed;
   height: 100%;
   width: 100vw;
-  //   height: calc(var(--vh, 1vh) * 100);
   .menu-secondary-background-color {
     background-color: $theme;
     top: 0;
@@ -69,7 +68,7 @@
               @include media("<=650px") {
                 font-size: 3rem;
               }
-              @include media("<=phone") {
+              @include media("<=400px") {
                 font-size: 2rem;
               }
               @media screen and (min-width: 400px) and (max-width: 1000px) and (max-height: 500px) {
