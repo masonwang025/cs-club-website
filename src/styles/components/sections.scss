@@ -10,7 +10,7 @@
       flex-direction: column;
     }
     // landscape mobile
-    @media screen and (min-width: 400px) and (max-width: 960px) and (max-height: 480px) and (orientation: landscape) {
+    @media screen and (max-height: 530px) and (orientation: landscape) {
       flex-direction: column;
     }
 
@@ -46,7 +46,7 @@
           width: 100vw;
         }
         // landscape mobile
-        @media screen and (min-width: 400px) and (max-width: 960px) and (max-height: 480px) and (orientation: landscape) {
+        @media screen and (max-height: 530px) and (orientation: landscape) {
           width: 100vw;
         }
         @include media("<=phone") {

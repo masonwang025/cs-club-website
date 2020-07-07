@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import gsap from "gsap";
 import "./styles/App.scss";
@@ -21,12 +21,30 @@ const routes = [
 ];
 
 function App() {
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+
   useEffect(() => {
+    // prevent flashing
+    gsap.to("body", 0, { css: { visibility: "visible" } });
+
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-    // prevent flashing
-    gsap.to("body", 0, { css: { visibility: "visible" } });
+    const handleResize = () => {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   });
 
   return (

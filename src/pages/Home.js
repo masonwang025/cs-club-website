@@ -14,12 +14,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    homeAnimation(
-      completeAnimation,
-      window.innerWidth > 400 &&
-        window.innerWidth < 960 &&
-        window.innerHeight < 480
-    );
+    homeAnimation(completeAnimation, window.innerHeight < 540);
   }, []);
 
   return (
