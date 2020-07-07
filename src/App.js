@@ -30,7 +30,7 @@ function App() {
     // prevent flashing
     gsap.to("body", 0, { css: { visibility: "visible" } });
 
-    let vh = window.innerHeight * 0.01;
+    let vh = dimensions.height * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
     const handleResize = () => {
