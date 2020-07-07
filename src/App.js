@@ -20,6 +20,17 @@ const routes = [
   { path: "/resources", Component: Resources },
 ];
 
+function debounce(fn, ms) {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
 function App() {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
@@ -33,17 +44,16 @@ function App() {
     let vh = dimensions.height * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-    const handleResize = () => {
+    const debouncedHandleResize = debounce(function handleResize() {
       setDimensions({
         height: window.innerHeight,
         width: window.innerWidth,
       });
-    };
+    }, 690);
 
-    window.addEventListener("resize", handleResize);
-
+    window.addEventListener("resize", debouncedHandleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", debouncedHandleResize);
     };
   });
 

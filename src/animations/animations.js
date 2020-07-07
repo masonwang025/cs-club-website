@@ -75,10 +75,11 @@ function homeAnimateLandscape(completeAnimation) {
 
   gsap.fromTo(
     ".header",
-    { css: { backgroundColor: "transparent", zIndex: 1000 } },
+    { css: { backgroundColor: "transparent" } },
     {
       css: {
         backgroundColor: "rgba(255, 255, 255, 00.92)",
+        zIndex: 1000,
       },
       delay: 3.6,
       duration: 0.6,
