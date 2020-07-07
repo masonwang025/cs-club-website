@@ -109,7 +109,6 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
       display: "none",
     },
   });
-
   gsap.to(".header .logo a", 0.5, {
     css: {
       color: "black",

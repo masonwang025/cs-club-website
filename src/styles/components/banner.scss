@@ -1,5 +1,5 @@
 .main {
-  transition: 0.55s ease-in-out; // debounce resize ease
+  transition: 0.69s ease-in-out; // debounce resize ease
   height: 50vh; // fallback
   height: calc(var(--vh, 1vh) * 50);
   // landscape mobile
@@ -9,7 +9,7 @@
   }
   background-color: $white;
   .row {
-    transition: 0.55s ease-in-out; // debounce resize ease
+    transition: 0.69s ease-in-out; // debounce resize ease
     flex-direction: column;
     justify-content: center;
     h2 {
@@ -37,7 +37,7 @@
         line-height: 1.8rem;
       }
       .line {
-        transition: 0.55s ease-in-out; // debounce resize ease
+        transition: 0.69s ease-in-out; // debounce resize ease
         height: 60px;
         position: relative;
         overflow: hidden;

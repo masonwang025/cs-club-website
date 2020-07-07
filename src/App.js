@@ -45,11 +45,15 @@ function App() {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
     const debouncedHandleResize = debounce(function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-    }, 690);
+      let wBreakpoint = 500;
+      if (!(window.innerWidth < wBreakpoint && dimensions.width < wBreakpoint))
+        setTimeout(() => {
+          setDimensions({
+            height: window.innerHeight,
+            width: window.innerWidth,
+          });
+        }, 500);
+    });
 
     window.addEventListener("resize", debouncedHandleResize);
     return () => {
