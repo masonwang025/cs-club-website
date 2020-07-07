@@ -3,7 +3,7 @@
 }
 
 .sections {
-  transition: 0.69s ease-in-out; // debounce resize ease
+  transition: 0.5s ease-in-out; // debounce resize ease
   height: 50vh;
   height: calc(var(--vh, 1vh) * 50);
   .row {
@@ -16,7 +16,7 @@
     }
 
     .section {
-      transition: 0.69s ease-in-out; // debounce resize ease
+      transition: 0.5s ease-in-out; // debounce resize ease
       position: relative;
       background: $black;
       cursor: pointer;
@@ -34,7 +34,7 @@
       }
 
       .section-details {
-        transition: 0.69s ease-in-out; // debounce resize ease
+        transition: 0.5s ease-in-out; // debounce resize ease
         width: 33.333vw;
         height: 50vh; // fallback
         height: calc(var(--vh, 1vh) * 50);
@@ -56,7 +56,7 @@
           padding: 16px;
         }
         span {
-          transition: 0.69s ease-in-out; // debounce resize ease
+          transition: 0.5s ease-in-out; // debounce resize ease
           font-size: 1.6rem;
           opacity: 0.8;
           color: $white;
@@ -67,7 +67,7 @@
           }
         }
         h2 {
-          transition: 0.69s ease-in-out; // debounce resize ease
+          transition: 0.5s ease-in-out; // debounce resize ease
           font-size: 2.4rem;
           line-height: 2.9rem;
           width: 85%;
@@ -90,7 +90,7 @@
         }
       }
       .section-image {
-        transition: 0.69s ease-in-out; // debounce resize ease
+        transition: 0.5s ease-in-out; // debounce resize ease
         top: 0;
         left: 0;
         width: 100%;

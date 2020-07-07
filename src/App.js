@@ -46,7 +46,16 @@ function App() {
 
     const debouncedHandleResize = debounce(function handleResize() {
       let wBreakpoint = 500;
-      if (!(window.innerWidth < wBreakpoint && dimensions.width < wBreakpoint))
+      // tl;dr: don't resize for portrait mobile URL bar window height changes
+      // bad user experience if everything resizes as they scroll (URL bar appears/disappears while scrolling up/down)
+      // so: wBreakpoint is to signify the maxWidth of what we will consider portrait mobile device
+      // if the new width AND old width are the SAME, and they are both under wBreakpoint, don't resize
+      if (
+        !(
+          window.innerWidth === dimensions.width &&
+          dimensions.width < wBreakpoint
+        )
+      )
         setTimeout(() => {
           setDimensions({
             height: window.innerHeight,
