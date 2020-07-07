@@ -90,11 +90,15 @@
               a {
                 color: $white;
                 text-decoration: none;
-                transition: 0.2s ease-in-out;
+                transition: 0.18s ease-in-out;
                 &:hover {
                   color: $theme;
-                  font-size: 1.05em;
+                  font-size: 1.1em;
                 }
+              }
+              .active {
+                color: $theme;
+                font-size: 1.1em;
               }
             }
           }

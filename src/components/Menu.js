@@ -3,20 +3,18 @@ import { Link, useLocation } from "react-router-dom";
 import { menuClose, menuOpen } from "../animations/animations";
 
 export default function Menu({ clicked }) {
-  let location = useLocation().pathName;
+  const currentPath = useLocation().pathname;
+
+  const paths = [
+    { path: "/about", name: "About" },
+    { path: "/curriculum", name: "Curriculum" },
+    { path: "/competitions", name: "Competitions" },
+    { path: "/resources", name: "Resources" },
+  ];
 
   let menu = useRef(null);
   let revealMenu = useRef(null);
   let revealMenuSecondaryBg = useRef(null);
-  let line1 = useRef(null);
-  let line2 = useRef(null);
-  let line3 = useRef(null);
-  let line4 = useRef(null);
-
-  useEffect(() => {
-    console.log("adsfa", location);
-  });
-
   useEffect(() => {
     if (clicked === false) {
       // close
@@ -27,10 +25,10 @@ export default function Menu({ clicked }) {
         menu,
         revealMenu,
         revealMenuSecondaryBg,
-        line1,
-        line2,
-        line3,
-        line4
+        ".menu .menu-links #aboutlink",
+        ".menu .menu-links #curriculumlink",
+        ".menu .menu-links #competitionslink",
+        ".menu .menu-links #resourceslink"
       );
     }
   }, [clicked]);
@@ -48,26 +46,17 @@ export default function Menu({ clicked }) {
             <div className="menu-links">
               <nav>
                 <ul>
-                  <li>
-                    <Link ref={(el) => (line1 = el)} to="/about">
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link ref={(el) => (line2 = el)} to="/curriculum">
-                      Curriculum
-                    </Link>
-                  </li>
-                  <li>
-                    <Link ref={(el) => (line3 = el)} to="/competitions">
-                      Competitions
-                    </Link>
-                  </li>
-                  <li>
-                    <Link ref={(el) => (line4 = el)} to="/resources">
-                      Resources
-                    </Link>
-                  </li>
+                  {paths.map((path) => (
+                    <li key={path.name.toLowerCase() + "link"}>
+                      <Link
+                        to={path.path}
+                        className={currentPath === path.path ? "active" : ""}
+                        id={path.name.toLowerCase() + "link"}
+                      >
+                        {path.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </nav>
               <div className="info">

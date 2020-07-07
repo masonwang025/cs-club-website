@@ -1,5 +1,7 @@
 import gsap from "gsap";
 
+const tl = gsap.timeline();
+
 // HOME ANIMATIONS
 export function homeAnimation(completeAnimation, landscape) {
   if (!landscape) {
@@ -11,8 +13,7 @@ export function homeAnimation(completeAnimation, landscape) {
 }
 
 function homeNormalAnimate(completeAnimation) {
-  const tl = gsap.timeline();
-  tl.from(".line span", 1.7, {
+  tl.from(".line span", 1.8, {
     opacity: 0,
     delay: 0.62,
     y: 100,
@@ -40,41 +41,49 @@ function homeNormalAnimate(completeAnimation) {
       ease: "power3.inOut",
       delay: -2.8,
       stagger: 0.32,
-    })
-    .fromTo(
-      ".header",
-      { css: { backgroundColor: "transparent" } },
-      {
-        css: {
-          backgroundColor: "rgba(255, 255, 255, 00.92)",
-          zIndex: 250,
-        },
-        delay: -0.5,
-        duration: 0.6,
-        onComplete: completeAnimation,
-      }
-    );
+      onComplete: completeAnimation,
+    });
+
+  gsap.fromTo(
+    ".header",
+    { css: { backgroundColor: "transparent", zIndex: 1000 } },
+    {
+      css: {
+        backgroundColor: "rgba(255, 255, 255, 00.92)",
+      },
+      delay: 3.6,
+      duration: 0.6,
+    }
+  );
 }
 
 function homeAnimateLandscape(completeAnimation) {
-  const tl = gsap.timeline();
-  tl.from(".line span", 1.2, {
+  gsap.from(".line span", 1.5, {
     opacity: 0,
     delay: 0.5,
     y: 100,
     ease: "power4.out",
     skewY: 8,
-  })
-    .from(".btn-row", 0.5, {
-      opacity: 0,
-    })
-    .to(".header", 0, {
+    stagger: 0.05,
+  });
+  gsap.from(".btn-row", 0.6, {
+    opacity: 0,
+    delay: 1.2,
+    ease: "power3.inOut",
+    onComplete: completeAnimation,
+  });
+
+  gsap.fromTo(
+    ".header",
+    { css: { backgroundColor: "transparent", zIndex: 1000 } },
+    {
       css: {
         backgroundColor: "rgba(255, 255, 255, 00.92)",
-        zIndex: 250,
-        onComplete: completeAnimation,
       },
-    });
+      delay: 3.6,
+      duration: 0.6,
+    }
+  );
 }
 
 // MENU ANIMATIONS
@@ -86,6 +95,7 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
     stagger: {
       amount: 0.07,
     },
+    skewY: 0,
   });
   gsap.to(menu, 1, {
     css: {
@@ -93,19 +103,13 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
     },
   });
 
-  // navbar colors
   gsap.to(".header .logo a", 0.5, {
     css: {
       color: "black",
     },
     delay: 0.5,
   });
-  gsap.to(".header .nav span", 0.5, {
-    css: {
-      backgroundColor: "black",
-    },
-    delay: 0.5,
-  });
+  hideUpArrow();
 }
 
 export function menuOpen(
@@ -146,13 +150,61 @@ export function menuOpen(
     },
     delay: 0.5,
   });
-  gsap.to(".header .nav span", 0.5, {
+  showUpArrow();
+}
+
+const showUpArrow = () => {
+  gsap.to(".header .hamburger-menu span", 0.5, {
     css: {
-      backgroundColor: "white",
+      opacity: 0,
+    },
+    delay: 0.6,
+  });
+  gsap.to(".header .hamburger-menu", 0, {
+    css: {
+      display: "none",
     },
     delay: 0.5,
   });
-}
+  gsap.to(".header .hamburger-menu-close", 0, {
+    css: {
+      display: "block",
+    },
+  });
+  gsap.to(".header .hamburger-menu-close", 1, {
+    css: {
+      opacity: 1,
+    },
+    delay: 0.5,
+  });
+};
+
+const hideUpArrow = () => {
+  gsap.to(".header .hamburger-menu-close", 0.6, {
+    css: {
+      opacity: 0,
+    },
+  });
+  gsap.to(".header .hamburger-menu-close", 0, {
+    css: {
+      display: "none",
+    },
+    delay: 0.6,
+  });
+  gsap.to(".header .hamburger-menu", 0, {
+    css: {
+      display: "block",
+    },
+    delay: 0.6,
+  });
+  gsap.to(".header .hamburger-menu span", 0.5, {
+    ease: "power3.inOut",
+    css: {
+      backgroundColor: "black",
+      opacity: 1,
+    },
+  });
+};
 
 const fadeInUp = (node) => {
   gsap.from(node, {

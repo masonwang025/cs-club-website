@@ -81,7 +81,20 @@ html {
 
 a,
 button {
+  outline: none !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
+  @include media("<=tablet") {
+    cursor: default;
+  }
+  @media screen and (max-height: 530px) and (orientation: landscape) {
+    cursor: default;
+  }
 }
 
 // temp

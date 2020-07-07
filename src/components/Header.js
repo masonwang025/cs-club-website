@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
+import { ReactComponent as UpArrow } from "../assets/arrow-up.svg";
 import Menu from "./Menu";
 
 function Header({ history }) {
@@ -9,7 +10,7 @@ function Header({ history }) {
   // state for disabled button
   const [disabled, setDisabled] = useState(false);
 
-  //use effect for page changes
+  // use effect for page changes
   useEffect(() => {
     // listen for page changes
     history.listen(() => {
@@ -21,7 +22,7 @@ function Header({ history }) {
     setDisabled(!disabled);
     setTimeout(() => {
       setDisabled(false);
-    }, 900);
+    }, 1000);
   };
 
   return (
@@ -31,17 +32,29 @@ function Header({ history }) {
           <div className="logo">
             <Link to="/">SHS CS CLUB</Link>
           </div>
-          <button
-            disabled={disabled}
-            className="nav"
-            onClick={() => {
-              disableMenu();
-              setClicked(!clicked);
-            }}
-          >
-            <span></span>
-            <span></span>
-          </button>
+          <div className="nav-toggle">
+            <button
+              disabled={disabled}
+              className="hamburger-menu"
+              onClick={() => {
+                disableMenu();
+                setClicked(!clicked);
+              }}
+            >
+              <span></span>
+              <span></span>
+            </button>
+            <button
+              disabled={disabled}
+              className="hamburger-menu-close"
+              onClick={() => {
+                disableMenu();
+                setClicked(!clicked);
+              }}
+            >
+              <UpArrow />
+            </button>
+          </div>
           <Menu clicked={clicked} />
         </div>
       </div>

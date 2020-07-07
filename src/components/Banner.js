@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
 
 export default function Banner() {
@@ -36,9 +37,9 @@ export default function Banner() {
             </div>
           </h2>
           <div className="btn-row">
-            <a href="/">
+            <Link to="/about">
               About us <RightArrow />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
