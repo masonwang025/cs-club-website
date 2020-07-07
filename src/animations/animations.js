@@ -46,13 +46,24 @@ function homeNormalAnimate(completeAnimation) {
 
   gsap.fromTo(
     ".header",
-    { css: { backgroundColor: "transparent", zIndex: 1000 } },
+    { css: { zIndex: 4 } },
+    {
+      css: {
+        zIndex: 1000,
+      },
+      delay: 3,
+    }
+  );
+  gsap.fromTo(
+    ".header",
+    { css: { backgroundColor: "transparent" } },
     {
       css: {
         backgroundColor: "rgba(255, 255, 255, 00.92)",
+        zIndex: 1000,
       },
-      delay: 3.6,
       duration: 0.6,
+      delay: 4,
     }
   );
 }
@@ -73,18 +84,13 @@ function homeAnimateLandscape(completeAnimation) {
     onComplete: completeAnimation,
   });
 
-  gsap.fromTo(
-    ".header",
-    { css: { backgroundColor: "transparent" } },
-    {
-      css: {
-        backgroundColor: "rgba(255, 255, 255, 00.92)",
-        zIndex: 1000,
-      },
-      delay: 3.6,
-      duration: 0.6,
-    }
-  );
+  gsap.to(".header", {
+    css: {
+      backgroundColor: "rgba(255, 255, 255, 00.92)",
+      zIndex: 1000,
+    },
+    duration: 0.6,
+  });
 }
 
 // MENU ANIMATIONS
