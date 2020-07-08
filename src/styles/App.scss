@@ -92,7 +92,7 @@ button {
   @include media("<=tablet") {
     cursor: default;
   }
-  @media screen and (max-height: 530px) and (orientation: landscape) {
+  @media screen and (max-height: 540px) and (orientation: landscape) {
     cursor: default;
   }
 }

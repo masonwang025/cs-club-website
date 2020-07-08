@@ -3,8 +3,8 @@ import gsap from "gsap";
 const tl = gsap.timeline();
 
 // HOME ANIMATIONS
-export function homeAnimation(completeAnimation, landscape) {
-  if (!landscape) {
+export function homeAnimation(animationComplete, completeAnimation, landscape) {
+  if (!landscape && !animationComplete) {
     homeNormalAnimate(completeAnimation);
   } else {
     // mobile landscape == no animations because screw landscape mobile
@@ -69,17 +69,17 @@ function homeNormalAnimate(completeAnimation) {
 }
 
 function homeAnimateLandscape(completeAnimation) {
-  gsap.from(".line span", 1.5, {
+  gsap.from(".line span", 1.8, {
     opacity: 0,
-    delay: 0.5,
+    delay: 0.4,
     y: 100,
     ease: "power4.out",
     skewY: 8,
-    stagger: 0.05,
+    stagger: 0.07,
   });
-  gsap.from(".btn-row", 0.6, {
+  gsap.from(".btn-row", 1, {
     opacity: 0,
-    delay: 1.2,
+    delay: 1.3,
     ease: "power3.inOut",
     onComplete: completeAnimation,
   });
@@ -89,7 +89,7 @@ function homeAnimateLandscape(completeAnimation) {
       backgroundColor: "rgba(255, 255, 255, 00.92)",
       zIndex: 1000,
     },
-    duration: 0.6,
+    duration: 0,
   });
 }
 

@@ -6,15 +6,13 @@ import IntroOverlay from "../components/IntroOverlay";
 
 import { homeAnimation } from "../animations/animations";
 
-export default function Home() {
-  const [animationComplete, setAnimationComplete] = useState(false);
-
-  const completeAnimation = () => {
-    setAnimationComplete(true);
-  };
-
+export default function Home({ animationComplete, completeAnimation }) {
   useEffect(() => {
-    homeAnimation(completeAnimation, window.innerHeight < 540);
+    homeAnimation(
+      animationComplete,
+      completeAnimation,
+      window.innerHeight < 540
+    );
   }, []);
 
   return (

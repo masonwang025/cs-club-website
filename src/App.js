@@ -11,15 +11,6 @@ import Curriculum from "./pages/Curriculum";
 import Competitions from "./pages/Competitions";
 import Resources from "./pages/Resources";
 
-// routes
-const routes = [
-  { path: "/", Component: Home },
-  { path: "/about", Component: About },
-  { path: "/curriculum", Component: Curriculum },
-  { path: "/competitions", Component: Competitions },
-  { path: "/resources", Component: Resources },
-];
-
 function debounce(fn, ms) {
   let timer;
   return () => {
@@ -70,14 +61,35 @@ function App() {
     };
   });
 
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const completeAnimation = () => {
+    setAnimationComplete(true);
+  };
+
+  // routes
+  const routes = [
+    {
+      path: "/",
+      Component: Home,
+      props: {
+        animationComplete: animationComplete,
+        completeAnimation: completeAnimation,
+      },
+    },
+    { path: "/about", Component: About },
+    { path: "/curriculum", Component: Curriculum },
+    { path: "/competitions", Component: Competitions },
+    { path: "/resources", Component: Resources },
+  ];
+
   return (
     <div className="App">
       <Header />
       <div className="App">
         <Switch>
-          {routes.map(({ path, Component }) => (
+          {routes.map(({ path, Component, props }) => (
             <Route key={path} exact path={path}>
-              <Component />
+              <Component {...props} />
             </Route>
           ))}
           <Redirect to="/" />
