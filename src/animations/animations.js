@@ -71,7 +71,7 @@ function homeNormalAnimate(completeAnimation) {
 function homeAnimateLandscape(completeAnimation) {
   gsap.from(".line span", 1.8, {
     opacity: 0,
-    delay: 0.4,
+    delay: 0.5,
     y: 100,
     ease: "power4.out",
     skewY: 8,
