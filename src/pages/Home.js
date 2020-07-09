@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import Banner from "../components/Banner";
 import Sections from "../components/Sections";
@@ -13,7 +13,7 @@ export default function Home({ animationComplete, completeAnimation }) {
       completeAnimation,
       window.innerHeight < 540
     );
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
