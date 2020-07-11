@@ -108,7 +108,7 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
     css: {
       color: "black",
     },
-    delay: 0.5,
+    delay: 0.4,
   });
   hideUpArrow();
 }

@@ -21,11 +21,11 @@ function Header({ history }) {
     });
   });
 
-  const disableMenu = () => {
+  const disableMenu = (ms = 1000) => {
     setDisabled(!disabled);
     setTimeout(() => {
       setDisabled(false);
-    }, 1000);
+    }, ms);
   };
 
   return (
