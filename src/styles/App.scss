@@ -80,7 +80,8 @@ html {
 }
 
 a,
-button {
+button,
+div[role="link"] {
   outline: none !important;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -88,13 +89,16 @@ button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-tap-highlight-color: transparent;
   @include media("<=tablet") {
     cursor: default;
   }
   @media screen and (max-height: 540px) and (orientation: landscape) {
     cursor: default;
   }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 // temp

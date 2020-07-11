@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { menuClose, menuOpen } from "../animations/animations";
 
-export default function Menu({ clicked }) {
-  const currentPath = useLocation().pathname;
-
+export default function Menu({ clicked, currPath }) {
   const paths = [
     { path: "/about", name: "About" },
     { path: "/curriculum", name: "Curriculum" },
@@ -39,7 +37,8 @@ export default function Menu({ clicked }) {
         ref={(el) => (revealMenuSecondaryBg = el)}
         className="menu-secondary-bg-color"
       ></div>
-      <div id="page-transition-layer"></div>
+      {/* page transition layer for animating route changes when menu is not open */}
+      <div className="page-transition-layer"></div>
       <div ref={(el) => (revealMenu = el)} className="menu-layer">
         <div className="container">
           <div className="wrapper row v-center">
@@ -50,7 +49,7 @@ export default function Menu({ clicked }) {
                     <li key={path.name.toLowerCase() + "link"}>
                       <Link
                         to={path.path}
-                        className={currentPath === path.path ? "active" : ""}
+                        className={currPath === path.path ? "active" : ""}
                         id={path.name.toLowerCase() + "link"}
                       >
                         {path.name}

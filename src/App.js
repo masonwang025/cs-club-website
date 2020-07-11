@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import gsap from "gsap";
 import "./styles/App.scss";
 import Header from "./components/Header";
+import ScrollToTop from "./components/ScrollToTop";
 
 // page components
 import Home from "./pages/Home";
@@ -37,7 +38,7 @@ function App() {
 
     const debouncedHandleResize = debounce(function handleResize() {
       let wBreakpoint = 500;
-      // tl;dr: don't resize for portrait mobile URL bar window height changes
+      // TL;DR: don't resize for portrait mobile URL bar window height changes
       // bad user experience if everything resizes as they scroll (URL bar appears/disappears while scrolling up/down)
       // so: wBreakpoint is to signify the maxWidth of what we will consider portrait mobile device
       // if the new width AND old width are the SAME, and they are both under wBreakpoint, don't resize
@@ -61,21 +62,9 @@ function App() {
     };
   });
 
-  const [animationComplete, setAnimationComplete] = useState(false);
-  const completeAnimation = () => {
-    setAnimationComplete(true);
-  };
-
   // routes
   const routes = [
-    {
-      path: "/",
-      Component: Home,
-      props: {
-        animationComplete: animationComplete,
-        completeAnimation: completeAnimation,
-      },
-    },
+    { path: "/", Component: Home },
     { path: "/about", Component: About },
     { path: "/curriculum", Component: Curriculum },
     { path: "/competitions", Component: Competitions },
@@ -84,12 +73,13 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollToTop />
       <Header />
       <div className="App">
         <Switch>
           {routes.map(({ path, Component, props }) => (
             <Route key={path} exact path={path}>
-              <Component {...props} />
+              <Component />
             </Route>
           ))}
           <Redirect to="/" />

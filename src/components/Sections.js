@@ -5,14 +5,14 @@ const sections = [
   {
     id: 1,
     subtitle: "Dedicated to Education",
-    title: "Diverse curriculum designed for all",
+    title: "Extensive curriculum designed for all",
     img: "curriculum-min",
     to: "/curriculum",
   },
   {
     id: 2,
     subtitle: "Compete Together",
-    title: "Join competitions with your friends",
+    title: "Put your skills to the test",
     img: "compete-min",
     to: "/competitions",
   },

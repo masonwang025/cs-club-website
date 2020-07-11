@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter, useLocation } from "react-router-dom";
+import DelayLink from "react-delay-link";
 import { ReactComponent as UpArrow } from "../assets/arrow-up.svg";
 import Menu from "./Menu";
+import { logoTransition } from "../animations/pageTransitions";
 
 function Header({ history }) {
+  const currPath = useLocation().pathname;
   // state for menu button
   const [clicked, setClicked] = useState(false);
 
@@ -30,7 +33,14 @@ function Header({ history }) {
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
-            <Link to="/">SHS CS CLUB</Link>
+            <DelayLink
+              delay={clicked || currPath === "/" ? 0 : 1100}
+              to="/"
+              clickAction={!(clicked || currPath === "/") && logoTransition}
+              replace={false}
+            >
+              <span id="logoLink">SHS CS CLUB</span>
+            </DelayLink>
           </div>
           <div className="nav-toggle">
             <button
@@ -55,7 +65,7 @@ function Header({ history }) {
               <UpArrow />
             </button>
           </div>
-          <Menu clicked={clicked} />
+          <Menu clicked={clicked} currPath={currPath} />
         </div>
       </div>
     </div>

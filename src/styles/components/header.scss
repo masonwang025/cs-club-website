@@ -12,12 +12,13 @@
   }
 
   .logo {
-    a {
+    #logoLink {
       font-size: 1.2rem;
       letter-spacing: 0.4rem;
       color: $black;
       text-decoration: none;
       font-weight: 700;
+      cursor: pointer;
     }
   }
   .nav-toggle {

@@ -19,6 +19,7 @@
     background: $theme;
   }
   .page-transition-layer {
+    display: none;
     top: 0;
     left: 0;
     right: 0;
@@ -26,7 +27,6 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    z-index: -1;
     background: $black;
   }
   .menu-layer {
@@ -78,11 +78,11 @@
               @include media("<=400px") {
                 font-size: 2rem;
               }
-              @media screen and (min-width: 400px) and (max-width: 1000px) and (max-height: 500px) {
-                font-size: 2rem;
+              @media screen and (min-width: 400px) and (max-height: 500px) {
+                font-size: 3rem;
               }
-              @media screen and (max-height: 450px) and (max-width: 768px) {
-                font-size: 1.2rem;
+              @media screen and (max-height: 400px) {
+                font-size: 1.5rem;
               }
               cursor: pointer;
               overflow: hidden;

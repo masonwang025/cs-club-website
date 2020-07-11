@@ -109,7 +109,7 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
       display: "none",
     },
   });
-  gsap.to(".header .logo a", 0.5, {
+  gsap.to(".header .logo #logoLink", 0.5, {
     css: {
       color: "black",
     },
@@ -150,7 +150,7 @@ export function menuOpen(
   fadeInUp([".menu .info h3", ".menu .info p"]);
   staggerText(line1, line2, line3, line4);
   // navbar colors
-  gsap.to(".header .logo a", 0.5, {
+  gsap.to(".header .logo #logoLink", 0.5, {
     css: {
       color: "white",
     },
