@@ -34,7 +34,7 @@ function Header({ history }) {
         <div className="row v-center space-between">
           <div className="logo">
             <DelayLink
-              delay={clicked || currPath === "/" ? 0 : 1100}
+              delay={clicked || currPath === "/" ? 0 : 850}
               to="/"
               clickAction={!(clicked || currPath === "/") && logoTransition}
               replace={false}

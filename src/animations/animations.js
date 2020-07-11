@@ -44,18 +44,14 @@ function homeNormalAnimate(completeAnimation) {
       onComplete: completeAnimation,
     });
 
+  gsap.to(".header", {
+    css: {
+      zIndex: 1000,
+    },
+    delay: 3,
+  });
   gsap.fromTo(
-    ".header",
-    { css: { zIndex: 4 } },
-    {
-      css: {
-        zIndex: 1000,
-      },
-      delay: 3,
-    }
-  );
-  gsap.fromTo(
-    ".header",
+    [".header"],
     { css: { backgroundColor: "transparent" } },
     {
       css: {
@@ -87,7 +83,6 @@ function homeAnimateLandscape(completeAnimation) {
   gsap.to(".header", {
     css: {
       backgroundColor: "rgba(255, 255, 255, 00.92)",
-      zIndex: 1000,
     },
     duration: 0,
   });
@@ -186,7 +181,7 @@ const showUpArrow = () => {
 };
 
 const hideUpArrow = () => {
-  gsap.to(".header .hamburger-menu-close", 0.6, {
+  gsap.to(".header .hamburger-menu-close", 0.7, {
     css: {
       opacity: 0,
     },
@@ -195,13 +190,13 @@ const hideUpArrow = () => {
     css: {
       display: "none",
     },
-    delay: 0.6,
+    delay: 0.7,
   });
   gsap.to(".header .hamburger-menu", 0, {
     css: {
       display: "block",
     },
-    delay: 0.6,
+    delay: 0.7,
   });
   gsap.to(".header .hamburger-menu span", 0.5, {
     ease: "power3.inOut",
@@ -209,6 +204,7 @@ const hideUpArrow = () => {
       backgroundColor: "black",
       opacity: 1,
     },
+    delay: 0.52,
   });
 };
 
