@@ -11,10 +11,9 @@ export default function Home({ setNavEnabled }) {
     // navigation disabled for 2 sec
     setNavEnabled(false);
     setTimeout(() => {
-      console.log("allowed");
       setNavEnabled(true);
     }, 4200);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const [animationComplete, setAnimationComplete] = useState(false);
   const completeAnimation = () => {
