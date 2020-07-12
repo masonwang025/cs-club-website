@@ -26,19 +26,19 @@ function homeNormalAnimate(completeAnimation) {
     .to(".complete-overlay", 0, { height: "50%" })
     .to(".overlay-top", 1.5, {
       height: 0,
-      ease: "power3.inOut",
+      ease: "power2.inOut",
       stagger: 0.32,
     })
     .to(".complete-overlay", 0, { height: 0, delay: -0.8 })
     .to(".overlay-bottom", 1.5, {
       width: 0,
-      ease: "power3.inOut",
+      ease: "power2.inOut",
       delay: -0.8,
       stagger: 0.32,
     })
     .from(".section-image img", 2, {
       scale: 1.4,
-      ease: "power3.inOut",
+      ease: "power2.inOut",
       delay: -2.8,
       stagger: 0.32,
       onComplete: completeAnimation,
@@ -76,7 +76,7 @@ function homeAnimateLandscape(completeAnimation) {
   gsap.from(".btn-row", 1, {
     opacity: 0,
     delay: 1.3,
-    ease: "power3.inOut",
+    ease: "power2.inOut",
     onComplete: completeAnimation,
   });
 
@@ -93,7 +93,7 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
   gsap.to([revealMenu, revealMenuSecondaryBg], {
     duration: 0.9,
     height: 0,
-    ease: "power3.inOut",
+    ease: "power2.inOut",
     stagger: {
       amount: 0.07,
     },
@@ -104,11 +104,20 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
       display: "none",
     },
   });
-  gsap.to(".header .logo #logoLink", 0.5, {
+
+  gsap.to(".header .logo #logoLink", 1, {
     css: {
       color: "black",
+      opacity: 0,
     },
-    delay: 0.4,
+    delay: 0,
+  });
+
+  gsap.to(".header .logo #logoLink", 0.3, {
+    css: {
+      opacity: 1,
+    },
+    delay: 0.73,
   });
   hideUpArrow();
 }
@@ -137,7 +146,7 @@ export function menuOpen(
     height: 0,
     transformOrigin: "right top",
     skewY: 2.5,
-    ease: "power3.inOut",
+    ease: "power2.inOut",
     stagger: {
       amount: 0.07,
     },
@@ -199,7 +208,7 @@ const hideUpArrow = () => {
     delay: 0.7,
   });
   gsap.to(".header .hamburger-menu span", 0.5, {
-    ease: "power3.inOut",
+    ease: "power2.inOut",
     css: {
       backgroundColor: "black",
       opacity: 1,
@@ -214,7 +223,7 @@ const fadeInUp = (node) => {
     duration: 1,
     delay: 0.2,
     opacity: 0,
-    ease: "power3.inOut",
+    ease: "power2.inOut",
     stagger: {
       amount: 0.02,
     },
@@ -226,7 +235,7 @@ const staggerText = (node1, node2, node3, node4) => {
     duration: 0.4,
     delay: 0.2,
     opacity: 0,
-    ease: "power3.inOut",
+    ease: "power2.inOut",
     stagger: {
       amount: 0.3,
     },

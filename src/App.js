@@ -79,7 +79,7 @@ function App() {
         <Switch>
           {routes.map(({ path, Component, props }) => (
             <Route key={path} exact path={path}>
-              <Component />
+              <Component {...props} />
             </Route>
           ))}
           <Redirect to="/" />
