@@ -13,12 +13,18 @@ export default function Menu({ clicked, currPath }) {
   let menu = useRef(null);
   let revealMenu = useRef(null);
   let revealMenuSecondaryBg = useRef(null);
+
+  // for avoiding animation problems on initial (yes, it's hacky but idgaf)
+  let lastClickedState = useRef(false);
+
   useEffect(() => {
     if (clicked === false) {
       // close
-      menuClose(menu, revealMenu, revealMenuSecondaryBg);
+      if (lastClickedState.current === true)
+        menuClose(menu, revealMenu, revealMenuSecondaryBg);
     } else if (clicked === true) {
       // open
+      lastClickedState.current = true;
       menuOpen(
         menu,
         revealMenu,

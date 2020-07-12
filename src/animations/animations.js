@@ -104,27 +104,25 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
     },
   });
 
-  if (window.innerHeight < 540) {
-    gsap.to(".header .logo #logoLink", 1, {
-      css: {
-        color: "black",
-      },
-    });
-  } else {
-    gsap.to(".header .logo #logoLink", 1, {
-      css: {
-        color: "black",
-        opacity: 0,
-      },
-    });
+  gsap.to(".header .logo #logoLink", 1, {
+    css: {
+      color: "black",
+    },
+  });
 
-    gsap.to(".header .logo #logoLink", 0.3, {
-      css: {
-        opacity: 1,
-      },
-      delay: 0.73,
-    });
-  }
+  gsap.to(".header .logo #logoLink", 1, {
+    css: {
+      color: "black",
+      opacity: 0,
+    },
+  });
+
+  gsap.to(".header .logo #logoLink", 0.3, {
+    css: {
+      opacity: 1,
+    },
+    delay: 0.73,
+  });
   hideUpArrow();
 }
 
