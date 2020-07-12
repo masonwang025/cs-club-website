@@ -84,7 +84,6 @@ function homeAnimateLandscape(completeAnimation) {
     css: {
       backgroundColor: "rgba(255, 255, 255, 00.92)",
     },
-    duration: 0,
   });
 }
 
@@ -105,20 +104,27 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
     },
   });
 
-  gsap.to(".header .logo #logoLink", 1, {
-    css: {
-      color: "black",
-      opacity: 0,
-    },
-    delay: 0,
-  });
+  if (window.innerHeight < 540) {
+    gsap.to(".header .logo #logoLink", 1, {
+      css: {
+        color: "black",
+      },
+    });
+  } else {
+    gsap.to(".header .logo #logoLink", 1, {
+      css: {
+        color: "black",
+        opacity: 0,
+      },
+    });
 
-  gsap.to(".header .logo #logoLink", 0.3, {
-    css: {
-      opacity: 1,
-    },
-    delay: 0.73,
-  });
+    gsap.to(".header .logo #logoLink", 0.3, {
+      css: {
+        opacity: 1,
+      },
+      delay: 0.73,
+    });
+  }
   hideUpArrow();
 }
 

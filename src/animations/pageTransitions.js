@@ -1,8 +1,6 @@
 import gsap from "gsap";
 
-const tl = gsap.timeline();
-
-export function logoTransition() {
+export function logoTransition(doAlternative) {
   gsap.to(".menu", 1, {
     css: {
       display: "block",
@@ -16,18 +14,40 @@ export function logoTransition() {
     display: "block",
   });
 
-  tl.from([".menu .menu-secondary-bg-color", ".menu .page-transition-layer"], {
-    duration: 0.9,
-    height: 0,
-    transformOrigin: "right top",
-    skewY: 2.5,
-    ease: "power3.inOut",
-    stagger: {
-      amount: 0.07,
-    },
-  }).to([".menu", ".menu .page-transition-layer"], {
+  gsap.from(
+    [".menu .menu-secondary-bg-color", ".menu .page-transition-layer"],
+    {
+      duration: 0.8,
+      height: 0,
+      transformOrigin: "right top",
+      skewY: 2.5,
+      ease: "power2.inOut",
+      stagger: {
+        amount: 0.07,
+      },
+    }
+  );
+
+  if (doAlternative)
+    gsap.to(
+      [".menu .page-transition-layer", ".menu .menu-secondary-bg-color"],
+      {
+        duration: 0.8,
+        height: 0,
+        transformOrigin: "right top",
+        skewY: 0,
+        ease: "power2.inOut",
+        stagger: {
+          amount: 0.07,
+        },
+        delay: 0.9,
+      }
+    );
+
+  gsap.to([".menu", ".menu .page-transition-layer"], {
     css: {
       display: "none",
     },
+    delay: doAlternative ? 1.9 : 0.9,
   });
 }

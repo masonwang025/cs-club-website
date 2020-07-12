@@ -36,7 +36,12 @@ function Header({ history }) {
             <DelayLink
               delay={clicked || currPath === "/" ? 0 : 850}
               to="/"
-              clickAction={!(clicked || currPath === "/") && logoTransition}
+              clickAction={
+                !(clicked || currPath === "/") &&
+                (() => {
+                  logoTransition(window.innerHeight < 540);
+                })
+              }
               replace={false}
             >
               <span id="logoLink">SHS CS CLUB</span>
