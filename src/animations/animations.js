@@ -105,7 +105,7 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
     },
   });
 
-  gsap.to(".header .logo #logoLink", 0.79, {
+  gsap.to(".header .logo #logoLink", 0.8, {
     css: {
       color: "black",
       opacity: 0,
