@@ -98,19 +98,14 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
     },
     skewY: 0,
   });
+
   gsap.to(menu, 1, {
     css: {
       display: "none",
     },
   });
 
-  gsap.to(".header .logo #logoLink", 1, {
-    css: {
-      color: "black",
-    },
-  });
-
-  gsap.to(".header .logo #logoLink", 1, {
+  gsap.to(".header .logo #logoLink", 0.6, {
     css: {
       color: "black",
       opacity: 0,
@@ -121,8 +116,9 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
     css: {
       opacity: 1,
     },
-    delay: 0.73,
+    delay: 0.8,
   });
+
   hideUpArrow();
 }
 
