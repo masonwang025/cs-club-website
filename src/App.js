@@ -62,9 +62,12 @@ function App() {
     };
   });
 
+  // false if home animation is currently running, disable nav button
+  const [navEnabled, setNavEnabled] = useState(true);
+
   // routes
   const routes = [
-    { path: "/", Component: Home },
+    { path: "/", Component: Home, props: { setNavEnabled: setNavEnabled } },
     { path: "/about", Component: About },
     { path: "/curriculum", Component: Curriculum },
     { path: "/competitions", Component: Competitions },
@@ -74,7 +77,7 @@ function App() {
   return (
     <div className="App">
       <ScrollToTop />
-      <Header />
+      <Header navEnabled={navEnabled} />
       <div className="App">
         <Switch>
           {routes.map(({ path, Component, props }) => (

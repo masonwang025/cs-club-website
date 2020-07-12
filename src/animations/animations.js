@@ -105,7 +105,7 @@ export function menuClose(menu, revealMenu, revealMenuSecondaryBg) {
     },
   });
 
-  gsap.to(".header .logo #logoLink", 0.6, {
+  gsap.to(".header .logo #logoLink", 0.79, {
     css: {
       color: "black",
       opacity: 0,
@@ -164,23 +164,25 @@ export function menuOpen(
 }
 
 const showUpArrow = () => {
-  gsap.to(".header .hamburger-menu span", 0.5, {
+  gsap.to(".header .hamburger-menu span", 0.4, {
     css: {
       opacity: 0,
     },
-    delay: 0.6,
   });
   gsap.to(".header .hamburger-menu", 0, {
     css: {
       display: "none",
     },
-    delay: 0.5,
+    delay: 0.4,
   });
   gsap.to(".header .hamburger-menu-close", 0, {
     css: {
       display: "block",
+      opacity: 0,
     },
+    delay: 0.42,
   });
+
   gsap.to(".header .hamburger-menu-close", 1, {
     css: {
       opacity: 1,

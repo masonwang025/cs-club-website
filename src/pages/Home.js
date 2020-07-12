@@ -6,7 +6,16 @@ import IntroOverlay from "../components/IntroOverlay";
 
 import { homeAnimation } from "../animations/animations";
 
-export default function Home() {
+export default function Home({ setNavEnabled }) {
+  useEffect(() => {
+    // navigation disabled for 2 sec
+    setNavEnabled(false);
+    setTimeout(() => {
+      console.log("allowed");
+      setNavEnabled(true);
+    }, 4200);
+  }, []);
+
   const [animationComplete, setAnimationComplete] = useState(false);
   const completeAnimation = () => {
     setAnimationComplete(true);

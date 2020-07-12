@@ -5,7 +5,7 @@ import { ReactComponent as UpArrow } from "../assets/arrow-up.svg";
 import Menu from "./Menu";
 import { logoTransition } from "../animations/pageTransitions";
 
-function Header({ history }) {
+function Header({ navEnabled, history }) {
   const currPath = useLocation().pathname;
   // state for menu button
   const [clicked, setClicked] = useState(false);
@@ -49,7 +49,7 @@ function Header({ history }) {
           </div>
           <div className="nav-toggle">
             <button
-              disabled={disabled}
+              disabled={disabled || !navEnabled}
               className="hamburger-menu"
               onClick={() => {
                 disableMenu();
@@ -60,7 +60,7 @@ function Header({ history }) {
               <span></span>
             </button>
             <button
-              disabled={disabled}
+              disabled={disabled || !navEnabled}
               className="hamburger-menu-close"
               onClick={() => {
                 disableMenu();
