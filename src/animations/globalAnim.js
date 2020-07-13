@@ -2,7 +2,7 @@ import gsap from "gsap";
 
 // BASIC PAGE TRANSITION
 export function coverTransition(doAlternative = window.innerHeight < 540) {
-  gsap.to(".menu", 1, {
+  gsap.to(".menu", 0, {
     css: {
       display: "block",
     },
@@ -49,10 +49,13 @@ export function coverTransition(doAlternative = window.innerHeight < 540) {
       }
     );
 
-  gsap.to([".menu", ".menu .page-transition-layer"], {
-    css: {
-      display: "none",
-    },
-    delay: doAlternative ? 1.9 : 0.9,
-  });
+  gsap.to(
+    [".menu", ".menu .page-transition-layer", ".menu .menu-secondary-bg-color"],
+    {
+      css: {
+        display: "none",
+      },
+      delay: doAlternative ? 1.9 : 0.9,
+    }
+  );
 }

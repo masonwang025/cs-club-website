@@ -103,6 +103,7 @@
       font-weight: 600;
       margin-right: 5px;
       margin-bottom: 0;
+      cursor: pointer;
       transition: background 0.55s ease-in-out, color 0.55s ease-in-out,
         padding 0.25s ease-in-out;
       @include media("<=tablet") {
