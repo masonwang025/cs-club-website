@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import DelayLink from "react-delay-link";
 import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
-import { aboutTransition } from "../animations/pageTransitions";
+import { coverTransition } from "../animations/globalAnim";
 import { HeaderContext } from "../contexts/HeaderContext";
 
 export default function Banner() {
@@ -56,7 +56,7 @@ export default function Banner() {
                   setDisabled(false);
                 }, 2000);
 
-                aboutTransition();
+                coverTransition(true);
               }}
               replace={false}
               to="/about"

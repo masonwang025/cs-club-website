@@ -3,7 +3,7 @@ import { withRouter, useLocation } from "react-router-dom";
 import DelayLink from "react-delay-link";
 import { ReactComponent as UpArrow } from "../assets/arrow-up.svg";
 import Menu from "./Menu";
-import { logoTransition } from "../animations/pageTransitions";
+import { coverTransition } from "../animations/globalAnim";
 import { HeaderContext } from "../contexts/HeaderContext";
 
 function Header({ history }) {
@@ -43,7 +43,7 @@ function Header({ history }) {
                 !(clicked || currPath === "/" || disabled) &&
                 (() => {
                   disableMenu(1400);
-                  logoTransition(window.innerHeight < 540);
+                  coverTransition();
                 })
               }
               replace={false}

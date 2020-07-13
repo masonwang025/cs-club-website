@@ -5,7 +5,7 @@ import Sections from "../components/Sections";
 import IntroOverlay from "../components/IntroOverlay";
 import { HeaderContext } from "../contexts/HeaderContext";
 
-import { homeAnimation } from "../animations/animations";
+import { homeAnimation } from "../animations/homeAnim";
 
 export default function Home() {
   // disabling header

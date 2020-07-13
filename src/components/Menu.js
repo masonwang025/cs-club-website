@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { menuClose, menuOpen } from "../animations/animations";
+import { menuClose, menuOpen } from "../animations/homeAnim";
 
 export default function Menu({ clicked, currPath }) {
   const paths = [

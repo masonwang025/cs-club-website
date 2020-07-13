@@ -1,5 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import DelayLink from "react-delay-link";
+import { coverTransition } from "../animations/globalAnim";
+import { HeaderContext } from "../contexts/HeaderContext";
 
 const sections = [
   {
@@ -26,15 +28,27 @@ const sections = [
 ];
 
 export default function Sections() {
+  const { setDisabled } = useContext(HeaderContext);
   return (
     <section className="sections">
       <div className="container-fluid">
         <div className="row">
           {sections.map((section) => (
-            <Link
+            <DelayLink
               className="section-wrapper-link"
               to={section.to}
               key={section.id}
+              delay={825}
+              clickAction={() => {
+                // disable navbar
+                setDisabled(true);
+                setTimeout(() => {
+                  setDisabled(false);
+                }, 2000);
+
+                coverTransition(true);
+              }}
+              replace={false}
             >
               <div className="section">
                 <div className="section-details">
@@ -48,7 +62,7 @@ export default function Sections() {
                   />
                 </div>
               </div>
-            </Link>
+            </DelayLink>
           ))}
         </div>
         ;

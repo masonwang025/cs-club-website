@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-const tl = gsap.timeline();
+const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
 
 // HOME ANIMATIONS
 export function homeAnimation(animationComplete, completeAnimation, landscape) {
@@ -26,19 +26,16 @@ function homeNormalAnimate(completeAnimation) {
     .to(".complete-overlay", 0, { height: "50%" })
     .to(".overlay-top", 1.5, {
       height: 0,
-      ease: "power2.inOut",
       stagger: 0.32,
     })
     .to(".complete-overlay", 0, { height: 0, delay: -0.8 })
     .to(".overlay-bottom", 1.5, {
       width: 0,
-      ease: "power2.inOut",
       delay: -0.8,
       stagger: 0.32,
     })
     .from(".section-image img", 2, {
       scale: 1.4,
-      ease: "power2.inOut",
       delay: -2.8,
       stagger: 0.32,
       onComplete: completeAnimation,
