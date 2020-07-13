@@ -35,7 +35,7 @@ function Header({ history }) {
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
-            {/* if disabled, just show span, otherwise use link */}
+            {/* if disabled, no animation and to=null (throws error but rare case anyways) */}
             <DelayLink
               delay={clicked || currPath === "/" ? 0 : 850}
               to={disabled ? null : "/"}
