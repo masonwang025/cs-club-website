@@ -4,6 +4,7 @@ import gsap from "gsap";
 import "./styles/App.scss";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
+import HeaderContextProvider from "./contexts/HeaderContext";
 
 // page components
 import Home from "./pages/Home";
@@ -62,12 +63,9 @@ function App() {
     };
   });
 
-  // false if home animation is currently running, disable nav button
-  const [navEnabled, setNavEnabled] = useState(true);
-
   // routes
   const routes = [
-    { path: "/", Component: Home, props: { setNavEnabled: setNavEnabled } },
+    { path: "/", Component: Home },
     { path: "/about", Component: About },
     { path: "/curriculum", Component: Curriculum },
     { path: "/competitions", Component: Competitions },
@@ -77,17 +75,19 @@ function App() {
   return (
     <div className="App">
       <ScrollToTop />
-      <Header navEnabled={navEnabled} />
-      <div className="App">
-        <Switch>
-          {routes.map(({ path, Component, props }) => (
-            <Route key={path} exact path={path}>
-              <Component {...props} />
-            </Route>
-          ))}
-          <Redirect to="/" />
-        </Switch>
-      </div>
+      <HeaderContextProvider>
+        <Header />
+        <div className="App">
+          <Switch>
+            {routes.map(({ path, Component, props }) => (
+              <Route key={path} exact path={path}>
+                <Component {...props} />
+              </Route>
+            ))}
+            <Redirect to="/" />
+          </Switch>
+        </div>
+      </HeaderContextProvider>
     </div>
   );
 }

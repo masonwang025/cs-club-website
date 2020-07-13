@@ -77,21 +77,21 @@ export function aboutTransition() {
   const tl = gsap.timeline();
 
   tl.from([".menu .menu-secondary-bg-color", ".menu .page-transition-layer"], {
-    duration: 0.9,
+    duration: 0.8,
     width: 0,
     transformOrigin: "right",
     ease: "power2.inOut",
     stagger: {
-      amount: 0.07,
+      amount: 0.06,
     },
   })
     .to([".menu .page-transition-layer", ".menu .menu-secondary-bg-color"], {
-      duration: 0.9,
+      duration: 0.8,
       width: 0,
       transformOrigin: "right",
       ease: "power2.inOut",
       stagger: {
-        amount: 0.07,
+        amount: 0.06,
       },
     })
     .to([".menu", ".menu .page-transition-layer"], {

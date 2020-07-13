@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import DelayLink from "react-delay-link";
 import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
 import { aboutTransition } from "../animations/pageTransitions";
+import { HeaderContext } from "../contexts/HeaderContext";
 
 export default function Banner() {
+  const { setDisabled } = useContext(HeaderContext);
   return (
     <section className="main">
       <div className="container">
@@ -47,7 +49,15 @@ export default function Banner() {
             </a>
             <DelayLink
               delay={825}
-              clickAction={aboutTransition}
+              clickAction={() => {
+                // disable navbar
+                setDisabled(true);
+                setTimeout(() => {
+                  setDisabled(false);
+                }, 2000);
+
+                aboutTransition();
+              }}
               replace={false}
               to="/about"
             >

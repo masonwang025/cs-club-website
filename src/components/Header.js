@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { withRouter, useLocation } from "react-router-dom";
 import DelayLink from "react-delay-link";
 import { ReactComponent as UpArrow } from "../assets/arrow-up.svg";
 import Menu from "./Menu";
 import { logoTransition } from "../animations/pageTransitions";
+import { HeaderContext } from "../contexts/HeaderContext";
 
-function Header({ navEnabled, history }) {
+function Header({ history }) {
   const currPath = useLocation().pathname;
+
+  // header disabled
+  const { disabled, setDisabled } = useContext(HeaderContext);
+
   // state for menu button
   const [clicked, setClicked] = useState(false);
-
-  // state for disabled button
-  const [disabled, setDisabled] = useState(false);
 
   // use effect for page changes
   useEffect(() => {
@@ -49,7 +51,7 @@ function Header({ navEnabled, history }) {
           </div>
           <div className="nav-toggle">
             <button
-              disabled={disabled || !navEnabled}
+              disabled={disabled}
               className="hamburger-menu"
               onClick={() => {
                 disableMenu();
@@ -60,7 +62,7 @@ function Header({ navEnabled, history }) {
               <span></span>
             </button>
             <button
-              disabled={disabled || !navEnabled}
+              disabled={disabled}
               className="hamburger-menu-close"
               onClick={() => {
                 disableMenu();
