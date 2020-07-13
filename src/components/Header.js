@@ -42,7 +42,10 @@ function Header({ history }) {
               clickAction={
                 !(clicked || currPath === "/" || disabled) &&
                 (() => {
-                  disableMenu(1400);
+                  setDisabled(true);
+                  setTimeout(() => {
+                    setDisabled(false);
+                  }, 1400);
                   coverTransition();
                 })
               }

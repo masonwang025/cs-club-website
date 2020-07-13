@@ -54,7 +54,7 @@ export default function Banner() {
                 setDisabled(true);
                 setTimeout(() => {
                   setDisabled(false);
-                }, 2000);
+                }, 2200);
 
                 coverTransition(true);
               }}
