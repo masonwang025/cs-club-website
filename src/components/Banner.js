@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import DelayLink from "react-delay-link";
 import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
+import { aboutTransition } from "../animations/pageTransitions";
 
 export default function Banner() {
   return (
@@ -37,9 +38,21 @@ export default function Banner() {
             </div>
           </h2>
           <div className="btn-row">
-            <Link to="/about">
+            <a
+              href="https://www.facebook.com/groups/166826823766638"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join Our FB <RightArrow />
+            </a>
+            <DelayLink
+              delay={2000}
+              clickAction={aboutTransition}
+              replace={false}
+              to="/about"
+            >
               About us <RightArrow />
-            </Link>
+            </DelayLink>
           </div>
         </div>
       </div>

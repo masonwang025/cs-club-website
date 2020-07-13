@@ -12,7 +12,7 @@ export default function Home({ setNavEnabled }) {
     setNavEnabled(false);
     setTimeout(() => {
       setNavEnabled(true);
-    }, 4200);
+    }, 4300);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const [animationComplete, setAnimationComplete] = useState(false);

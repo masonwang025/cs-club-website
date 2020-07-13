@@ -1,6 +1,7 @@
 import gsap from "gsap";
 
 export function logoTransition(doAlternative) {
+  console.log("logo!!!!");
   gsap.to(".menu", 1, {
     css: {
       display: "block",
@@ -50,4 +51,8 @@ export function logoTransition(doAlternative) {
     },
     delay: doAlternative ? 1.9 : 0.9,
   });
+}
+
+export function aboutTransition() {
+  console.log("about transition");
 }

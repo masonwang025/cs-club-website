@@ -82,27 +82,38 @@
     }
   }
   .btn-row {
-    width: 256px;
     position: relative;
     z-index: 2;
-    a {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    @include media("<=tablet") {
+      flex-direction: column;
+    }
+    a,
+    div[role="link"] {
       font-size: 1.6rem;
+      border: 2px solid $black;
+      border-radius: 3px;
       color: $black;
       text-decoration: none;
+      padding: 9px 15px;
       display: flex;
       align-items: center;
       font-weight: 600;
+      margin-right: 5px;
+      margin-bottom: 0;
+      transition: 0.55s ease-in-out;
+      @include media("<=tablet") {
+        margin-right: 0;
+        margin-bottom: 3px;
+      }
       @include media("<=tablet") {
         font-size: 1.4rem;
       }
       svg {
-        margin-left: 16px;
-        border: 2px solid $black;
-        padding: 12px;
-        height: 24px;
-        width: 24px;
-        border-radius: 100%;
-        transition: 0.55s ease-in-out;
+        transition: margin 0.25s ease-in-out;
+        padding: 5px;
         @include media("<=tablet") {
           padding: 6px;
           width: 20px;
@@ -115,9 +126,11 @@
         }
       }
       &:hover {
+        background: $black;
+        color: white;
+        padding: 9px 16px;
         svg {
-          background: $black;
-          color: $white;
+          margin-left: 10px;
         }
       }
     }
