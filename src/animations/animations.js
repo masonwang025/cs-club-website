@@ -131,7 +131,7 @@ export function menuOpen(
   line3,
   line4
 ) {
-  gsap.to(menu, 1, {
+  gsap.to([menu, revealMenu, revealMenuSecondaryBg], 1, {
     css: {
       display: "block",
     },

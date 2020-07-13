@@ -87,7 +87,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    @include media("<=tablet") {
+    @include media("<=400px") {
       flex-direction: column;
     }
     a,
@@ -103,13 +103,16 @@
       font-weight: 600;
       margin-right: 5px;
       margin-bottom: 0;
-      transition: 0.55s ease-in-out;
+      transition: background 0.55s ease-in-out, color 0.55s ease-in-out,
+        padding 0.25s ease-in-out;
       @include media("<=tablet") {
-        margin-right: 0;
         margin-bottom: 3px;
+        font-size: 1.3rem;
       }
-      @include media("<=tablet") {
-        font-size: 1.4rem;
+      @include media("<=400px") {
+        font-size: 1.2rem;
+        padding: 6px 13px;
+        margin-right: 0;
       }
       svg {
         transition: margin 0.25s ease-in-out;
@@ -128,7 +131,7 @@
       &:hover {
         background: $black;
         color: white;
-        padding: 9px 16px;
+        padding: 9px 17px;
         svg {
           margin-left: 10px;
         }

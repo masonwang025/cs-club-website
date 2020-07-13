@@ -7,6 +7,10 @@ export function logoTransition(doAlternative) {
       display: "block",
     },
   });
+  gsap.to([".menu .menu-layer"], {
+    duration: 0,
+    display: "none",
+  });
 
   gsap.to([".menu .page-transition-layer", ".menu .menu-secondary-bg-color"], {
     duration: 0,
