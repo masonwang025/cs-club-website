@@ -102,9 +102,8 @@ export function aboutTransition() {
     .to([".menu .menu-secondary-bg-color", ".menu .page-transition-layer"], 0, {
       width: "100%",
     })
-    .to([".menu .menu-layer"], {
+    .to([".menu .menu-layer"], 0, {
       css: {
-        duration: 0,
         display: "none",
       },
     });

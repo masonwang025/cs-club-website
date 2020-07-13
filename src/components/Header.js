@@ -35,16 +35,19 @@ function Header({ history }) {
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
+            {/* if disabled, just show span, otherwise use link */}
             <DelayLink
               delay={clicked || currPath === "/" ? 0 : 850}
-              to="/"
+              to={disabled ? null : "/"}
               clickAction={
-                !(clicked || currPath === "/") &&
+                !(clicked || currPath === "/" || disabled) &&
                 (() => {
+                  disableMenu(1400);
                   logoTransition(window.innerHeight < 540);
                 })
               }
               replace={false}
+              className={disabled && "link-disabled"}
             >
               <span id="logoLink">SHS CS CLUB</span>
             </DelayLink>
