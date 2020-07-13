@@ -46,7 +46,7 @@ export default function Banner() {
               Join Our FB <RightArrow />
             </a>
             <DelayLink
-              delay={2000}
+              delay={825}
               clickAction={aboutTransition}
               replace={false}
               to="/about"

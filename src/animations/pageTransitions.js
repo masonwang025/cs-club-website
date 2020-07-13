@@ -1,7 +1,6 @@
 import gsap from "gsap";
 
 export function logoTransition(doAlternative) {
-  console.log("logo!!!!");
   gsap.to(".menu", 1, {
     css: {
       display: "block",
@@ -58,5 +57,49 @@ export function logoTransition(doAlternative) {
 }
 
 export function aboutTransition() {
-  console.log("about transition");
+  gsap.to(".menu", 1, {
+    css: {
+      display: "block",
+    },
+  });
+  gsap.to([".menu .menu-layer"], {
+    duration: 0,
+    display: "none",
+  });
+
+  gsap.to([".menu .page-transition-layer", ".menu .menu-secondary-bg-color"], {
+    duration: 0,
+    height: "100%",
+    opacity: 1,
+    display: "block",
+  });
+
+  const tl = gsap.timeline();
+
+  tl.from([".menu .menu-secondary-bg-color", ".menu .page-transition-layer"], {
+    duration: 0.9,
+    width: 0,
+    transformOrigin: "right",
+    ease: "power2.inOut",
+    stagger: {
+      amount: 0.07,
+    },
+  })
+    .to([".menu .page-transition-layer", ".menu .menu-secondary-bg-color"], {
+      duration: 0.9,
+      width: 0,
+      transformOrigin: "right",
+      ease: "power2.inOut",
+      stagger: {
+        amount: 0.07,
+      },
+    })
+    .to([".menu", ".menu .page-transition-layer"], {
+      css: {
+        display: "none",
+      },
+    })
+    .to([".menu .menu-secondary-bg-color", ".menu .page-transition-layer"], 0, {
+      width: "100%",
+    });
 }
