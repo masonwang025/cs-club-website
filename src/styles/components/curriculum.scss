@@ -6,6 +6,39 @@
   .info {
     text-align: center;
     padding: 0 1em;
+    .unit-link {
+      display: inline-block;
+      border: 2px black solid;
+      padding: 0.3em 1.3em 0.35em 1.3em;
+      margin: 0 0.2em 0.3em 0.2em;
+      border-radius: 1.2em;
+      text-decoration: none;
+      & > * {
+        text-decoration: none;
+        font-size: 1.1em;
+        @include media("<=phone") {
+          font-size: 0.9em;
+        }
+        color: black;
+      }
+
+      &.algorithms {
+        background-color: $algorithms-bg;
+        border-color: $algorithms-icon;
+      }
+      &.web-development {
+        background-color: $web-development-bg;
+        border-color: $web-development-icon;
+      }
+      &.systems {
+        background-color: $systems-bg;
+        border-color: $systems-icon;
+      }
+      &.cybersecurity {
+        background-color: $cybersecurity-bg;
+        border-color: $cybersecurity-icon;
+      }
+    }
   }
 
   .main-container {
@@ -84,6 +117,7 @@
         border-color: transparent white transparent transparent;
       }
     }
+
     // COLORS
     // algorithms unit color
     .algorithms {
@@ -91,7 +125,7 @@
         background-color: $algorithms-bg;
         .unit {
           &::before {
-            background-color: $algo-icon;
+            background-color: $algorithms-icon;
           }
         }
       }
@@ -112,6 +146,36 @@
       }
       &::before {
         border-color: transparent $systems-bg;
+      }
+    }
+
+    // web-development unit colors
+    .web-development {
+      .content {
+        background-color: $web-development-bg;
+        .unit {
+          &::before {
+            background-color: $web-development-icon;
+          }
+        }
+      }
+      &::before {
+        border-color: transparent $web-development-bg;
+      }
+    }
+
+    // cybersecurity unit colors
+    .cybersecurity {
+      .content {
+        background-color: $cybersecurity-bg;
+        .unit {
+          &::before {
+            background-color: $cybersecurity-icon;
+          }
+        }
+      }
+      &::before {
+        border-color: transparent $cybersecurity-bg;
       }
     }
   }
@@ -173,6 +237,67 @@
       /* Place the timelime to the left */
       &::after {
         left: 5px;
+      }
+
+      // COLORS
+      // algorithms unit color
+      .algorithms {
+        .content {
+          background-color: $algorithms-bg;
+          .unit {
+            &::before {
+              background-color: $algorithms-icon;
+            }
+          }
+        }
+        &::before {
+          border-color: transparent $algorithms-bg;
+        }
+      }
+
+      // systems unit colors
+      .systems {
+        .content {
+          background-color: $systems-bg;
+          .unit {
+            &::before {
+              background-color: $systems-icon;
+            }
+          }
+        }
+        &::before {
+          border-color: transparent $systems-bg;
+        }
+      }
+
+      // web-development unit colors
+      .web-development {
+        .content {
+          background-color: $web-development-bg;
+          .unit {
+            &::before {
+              background-color: $web-development-icon;
+            }
+          }
+        }
+        &::before {
+          border-color: transparent $web-development-bg;
+        }
+      }
+
+      // cybersecurity unit colors
+      .cybersecurity {
+        .content {
+          background-color: $cybersecurity-bg;
+          .unit {
+            &::before {
+              background-color: $cybersecurity-icon;
+            }
+          }
+        }
+        &::before {
+          border-color: transparent $cybersecurity-bg;
+        }
       }
     }
   }
