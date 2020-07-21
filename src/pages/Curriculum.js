@@ -7,7 +7,7 @@ export default function Curriculum() {
     <div className="curriculum page">
       <div className="info">
         <h1>Our Curriculum</h1>
-        <h2>A Roadmap of our meetings and topics.</h2>
+        <h2>A roadmap of our meetings and topics.</h2>
         <UnitLink name="Algorithms" />
         <UnitLink name="Web development" />
         <UnitLink name="Systems" />

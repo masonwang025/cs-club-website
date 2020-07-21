@@ -7,14 +7,7 @@ export default function TimelineItem(props) {
   return (
     <Fade duration={1550}>
       <div className={`t-container ${unit}`}>
-        <div
-          id={props.startOfUnit === true && `${unit}-start`}
-          style={{
-            visibility: "hidden",
-            marginTop: "-100px",
-            marginBottom: "100px",
-          }}
-        ></div>
+        {props.startOfUnit === true && <div id={`${unit}-start`}></div>}
         <div className="content">
           <h2>{props.title}</h2>
           {props.unit && <span className="unit">{props.unit}</span>}

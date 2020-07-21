@@ -5,7 +5,15 @@
 
   .info {
     text-align: center;
-    padding: 0 1em;
+    padding: 1em 1em 0 1em;
+    h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    h2 {
+      margin-top: 2px;
+    }
     .unit-link {
       display: inline-block;
       border: 2px black solid;
@@ -53,7 +61,7 @@
     overflow-x: hidden;
     position: relative;
     width: calc(100vw - 80px);
-    margin: 0 auto;
+    margin: 1em auto;
 
     /* The actual timeline (the vertical ruler) */
     &::after {
