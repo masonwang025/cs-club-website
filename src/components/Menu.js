@@ -65,9 +65,18 @@ export default function Menu({ clicked, currPath }) {
                 </ul>
               </nav>
               <div className="info">
-                <h3>Extra Info</h3>
+                <h3>Stay Updated</h3>
                 <p>
-                  Possibly a slogan, a contact email, etc. Whatever we choose.
+                  Don't miss out! All announcements and meeting information can
+                  be found in our{" "}
+                  <a
+                    href="https://www.facebook.com/groups/166826823766638"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Facebook group
+                  </a>
+                  .
                 </p>
               </div>
             </div>

@@ -33,7 +33,7 @@ export default function Home() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div>
+    <div style={{ overflow: "hidden" }}>
       {!animationComplete && <IntroOverlay />}
       <Banner />
       <Sections />

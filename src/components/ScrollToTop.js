@@ -7,7 +7,7 @@ function ScrollToTop({ history }) {
       window.scrollTo(0, 0);
     });
     return () => {
-      unlisten();
+      unlisten(); // no mem leak
     };
   });
 
