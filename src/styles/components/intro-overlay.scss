@@ -1,5 +1,6 @@
 // intro overlay
 .intro-overlay {
+  user-select: none;
   // landscape mobile
   @media screen and (max-height: 530px) and (orientation: landscape) {
     display: none;

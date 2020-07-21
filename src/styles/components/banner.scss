@@ -1,4 +1,5 @@
 .main {
+  user-select: none;
   transition: 0.5s ease-in-out; // debounce resize ease
   height: 50vh; // fallback
   height: calc(var(--vh, 1vh) * 50);

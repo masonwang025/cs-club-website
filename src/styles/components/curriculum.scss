@@ -84,6 +84,36 @@
         border-color: transparent white transparent transparent;
       }
     }
+    // COLORS
+    // algorithms unit color
+    .algorithms {
+      .content {
+        background-color: $algorithms-bg;
+        .unit {
+          &::before {
+            background-color: $algo-icon;
+          }
+        }
+      }
+      &::before {
+        border-color: transparent $algorithms-bg;
+      }
+    }
+
+    // systems unit colors
+    .systems {
+      .content {
+        background-color: $systems-bg;
+        .unit {
+          &::before {
+            background-color: $systems-icon;
+          }
+        }
+      }
+      &::before {
+        border-color: transparent $systems-bg;
+      }
+    }
   }
 
   /* The actual content */
@@ -95,8 +125,7 @@
     h2 {
       margin-bottom: 4px;
     }
-    span {
-      display: block;
+    .unit {
       &::before {
         content: "";
         display: inline-block;
@@ -105,7 +134,7 @@
         -moz-border-radius: 100%;
         -webkit-border-radius: 100%;
         border-radius: 100%;
-        margin-right: 4px;
+        margin-right: 5px;
         background: black;
       }
     }
