@@ -8,7 +8,6 @@ import { useEffect } from "react";
 export default function Curriculum() {
   useEffect(() => {
     let backToTop = document.querySelector(".back-to-top");
-    let general = document.getElementById("general-start");
     window.addEventListener("scroll", function () {
       if (window.scrollY > 250) {
         backToTop.classList = "back-to-top show";

@@ -7,10 +7,10 @@
 @import "./components/intro-overlay.scss";
 @import "./components/menu.scss";
 @import "./components/curriculum.scss";
-
 body,
 html {
   visibility: hidden;
+  user-select: none;
   background: $white;
   margin: 0;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -18,20 +18,19 @@ html {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @include media("<=tablet") {
-    min-width: 100vw;
-    max-width: 100vw;
-  }
+  min-width: 100vw;
+  max-width: 100vw;
   @include media(">tablet") {
     min-height: 100vh; // fallback
     min-height: calc(var(--vh, 1vh) * 100);
+    // max-height: 100vh; // fallback
+    // max-height: calc(var(--vh, 1vh) * 100);
+    overflow-x: hidden;
   }
   // landscape mobile
   @media screen and (max-height: 530px) and (orientation: landscape) {
-    min-width: 100vw;
-    max-width: 100vw;
+    overflow: scroll;
   }
-  overflow-x: hidden;
 }
 
 .container {
@@ -103,16 +102,18 @@ div[role="link"] {
 }
 
 @include media(">=tablet") {
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
+  @media screen and (min-height: 540px) {
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-  ::-webkit-scrollbar-track {
-    background-color: #ddd;
-  }
+    ::-webkit-scrollbar-track {
+      background-color: #ddd;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background: #6d6d6d;
+    ::-webkit-scrollbar-thumb {
+      background: #6d6d6d;
+    }
   }
 }
 ::selection {
@@ -120,13 +121,15 @@ div[role="link"] {
 }
 
 .home {
-  @include media(">=tablet") {
-    overflow: hidden;
+  @include media(">tablet") {
+    @media screen and (min-height: 540px) {
+      overflow: hidden;
+    }
   }
 }
 
 .back-to-top {
-  z-index: 1000;
+  z-index: 5;
   position: fixed;
   bottom: 12px;
   right: 13px;
