@@ -30,7 +30,6 @@ html {
   @media screen and (max-height: 530px) and (orientation: landscape) {
     min-width: 100vw;
     max-width: 100vw;
-    overflow: scroll;
   }
   overflow-x: hidden;
 }
@@ -103,18 +102,19 @@ div[role="link"] {
   padding-top: 60px;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
+@include media(">=tablet") {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-::-webkit-scrollbar-track {
-  background-color: #ddd;
-}
+  ::-webkit-scrollbar-track {
+    background-color: #ddd;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #6d6d6d;
+  ::-webkit-scrollbar-thumb {
+    background: #6d6d6d;
+  }
 }
-
 ::selection {
   background: #eee;
 }

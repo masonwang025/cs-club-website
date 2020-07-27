@@ -37,7 +37,7 @@ const timelineEntries = [
       <p>
         Creating websites is an <b>essential skill</b> in any discipline, making
         it possible to market ideas and spread information in an engaging,
-        accessible manner. With the help of various frameworks, you can
+        accessible manner. With the help of various frameworks, you can{" "}
         <b>make a personalized website from scratch</b> in no time.
       </p>
     ),
