@@ -14,7 +14,7 @@ const timelineEntries = [
         to secure network connections, computer science has something for you.
         <br />
         <br />
-        Activity: AI, Processing, Capture The Flag (CTF) and web dev demos
+        Activity: AI, Processing, Capture The Flag (CTF) and web dev demos.
       </p>
     ),
   },
@@ -52,10 +52,10 @@ const timelineEntries = [
     date: "9/28/20",
     content: (
       <p>
-        <b>Clever manipulations of arrays and basic data structures</b>
+        <b>Clever manipulations of arrays and basic data structures.</b>
         <br />
         <br />
-        Demo: Visualization of different sorting methods
+        Demo: Visualization of different sorting methods.
       </p>
     ),
   },
@@ -65,10 +65,12 @@ const timelineEntries = [
     date: "10/19/20",
     content: (
       <p>
-        <b>Real-world applications of graph theory and important terminology</b>
+        <b>
+          Real-world applications of graph theory and important terminology.
+        </b>
         <br />
         <br />
-        Activity: Seven bridges of Konigsburg
+        Activity: Seven bridges of Konigsburg.
       </p>
     ),
   },
@@ -80,11 +82,11 @@ const timelineEntries = [
       <p>
         <b>
           Mechanisms underlying stacks and queues and their applications in
-          graph traversals
+          graph traversals.
         </b>
         <br />
         <br />
-        Demo: Generating all permutations, Processing floodfill demo
+        Demo: Generating all permutations, Processing floodfill demo.
       </p>
     ),
   },
@@ -94,10 +96,10 @@ const timelineEntries = [
     date: "10/19/20",
     content: (
       <p>
-        <b>Examples of greedy strategies and union find</b>
+        <b>Examples of greedy strategies and union find.</b>
         <br />
         <br />
-        Demo:
+        Demo: TBD.
       </p>
     ),
   },
@@ -107,10 +109,10 @@ const timelineEntries = [
     date: "10/19/20",
     content: (
       <p>
-        <b>Mechanisms underlying stacks and queues and their applications</b>
+        <b>Mechanisms underlying stacks and queues and their applications.</b>
         <br />
         <br />
-        Activity: Generating all permutations, Processing floodfill demo
+        Activity: Generating all permutations, Processing floodfill demo.
       </p>
     ),
   },
