@@ -30,6 +30,10 @@
         }
       }
 
+      &.general {
+        background-color: $general-bg;
+        border-color: $general-icon;
+      }
       &.algorithms {
         background-color: $algorithms-bg;
         border-color: $algorithms-icon;
@@ -127,6 +131,21 @@
     }
 
     // COLORS
+    // general unit color
+    .general {
+      .content {
+        background-color: $general-bg;
+        .unit {
+          &::before {
+            background-color: $general-icon;
+          }
+        }
+      }
+      &::before {
+        border-color: transparent $general-bg;
+      }
+    }
+
     // algorithms unit color
     .algorithms {
       .content {
