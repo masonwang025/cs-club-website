@@ -124,3 +124,29 @@ div[role="link"] {
     overflow: hidden;
   }
 }
+
+.back-to-top {
+  z-index: 1000;
+  position: fixed;
+  bottom: 12px;
+  right: 13px;
+  background-color: $white;
+  border: $black 2px solid;
+  border-radius: 100%;
+  padding: 0.69em;
+  color: $black;
+  transform: rotate(-90deg);
+  transition: 0.69s ease;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  &.show {
+    pointer-events: all;
+    opacity: 1;
+    &:hover,
+    &:active {
+      color: $white;
+      background-color: $black;
+    }
+  }
+}

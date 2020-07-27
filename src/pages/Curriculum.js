@@ -1,10 +1,24 @@
 import React from "react";
 import Timeline from "../components/Timeline";
 import UnitLink from "../components/UnitLink";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
+import { useEffect } from "react";
 
 export default function Curriculum() {
+  useEffect(() => {
+    let backToTop = document.querySelector(".back-to-top");
+    let general = document.getElementById("general-start");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 250) {
+        backToTop.classList = "back-to-top show";
+      } else {
+        backToTop.classList = "back-to-top hide";
+      }
+    });
+  });
   return (
-    <div className="curriculum page">
+    <div className="curriculum page" id="top">
       <div className="info">
         <h1>Our Curriculum</h1>
         <h2>A roadmap of our meetings and topics.</h2>
@@ -18,6 +32,9 @@ export default function Curriculum() {
         <UnitLink name="Cybersecurity" />
       </div>
       <Timeline />
+      <AnchorLink href="#top">
+        <RightArrow className="back-to-top" />
+      </AnchorLink>
     </div>
   );
 }
