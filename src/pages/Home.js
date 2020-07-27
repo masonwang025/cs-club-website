@@ -33,7 +33,7 @@ export default function Home() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div>
+    <div className="home">
       {!animationComplete && <IntroOverlay />}
       <Banner />
       <Sections />

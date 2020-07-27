@@ -118,3 +118,9 @@ div[role="link"] {
 ::selection {
   background: #eee;
 }
+
+.home {
+  @include media(">=tablet") {
+    overflow: hidden;
+  }
+}
