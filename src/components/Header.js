@@ -42,7 +42,6 @@ function Header({ history }) {
               clickAction={
                 !(clicked || currPath === "/" || disabled) &&
                 (() => {
-                  console.log(disabled);
                   setDisabled(true);
                   setTimeout(() => {
                     setDisabled(false);

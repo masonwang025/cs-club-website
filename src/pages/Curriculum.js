@@ -8,6 +8,9 @@ export default function Curriculum() {
       <div className="info">
         <h1>Our Curriculum</h1>
         <h2>A roadmap of our meetings and topics.</h2>
+        <p style={{ marginBottom: "4px" }}>
+          <i>Click any unit to explore its content.</i>
+        </p>
         <UnitLink name="General" />
         <UnitLink name="Algorithms" />
         <UnitLink name="Web development" />
