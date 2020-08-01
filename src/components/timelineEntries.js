@@ -61,13 +61,13 @@ const timelineEntries = [
   {
     title: "Intro to Graph Theory",
     unit: "Algorithms",
-    date: "10/19/20",
+    date: "10/12/20",
     content: (
       <p>
         <b>Real-world applications of graph theory and important terminology</b>
         <br />
         <br />
-        Activity: Seven bridges of Konigsburg
+        Activity: Seven bridges of Konigsburg.
       </p>
     ),
   },
@@ -87,33 +87,33 @@ const timelineEntries = [
   {
     title: "Greedy Algorithms",
     unit: "Algorithms",
-    date: "10/19/20",
+    date: "10/26/20",
     content: (
       <p>
-        <b>Examples of greedy strategies and union find</b>
+        <b>Examples of greedy strategies and their application in Kruskal's MST algorithm.</b>
         <br />
         <br />
-        Demo: 
+        Demo: Kruskal's visualization.
       </p>
     ),
   },
   {
-    title: "Greedy Algorithms",
+    title: "Dynamic Programming",
     unit: "Algorithms",
-    date: "10/19/20",
+    date: "11/2/20",
     content: (
       <p>
-        <b>Mechanisms underlying stacks and queues  and their applications</b>
+        <b>Using memoization to speed up code.</b>
         <br />
         <br />
-        Activity: Generating all permutations, Processing floodfill demo
+        Activity: Revisiting knapsack.
       </p>
     ),
   },
   {
     title: "Web Development Unit Start",
     unit: "Web Development",
-    date: "m/dd/yy",
+    date: "11/9/2020",
     startOfUnit: true,
     content: (
       <p>
