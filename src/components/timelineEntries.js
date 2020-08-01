@@ -8,34 +8,22 @@ const timelineEntries = [
     startOfUnit: true,
     content: (
       <p>
-      <b>Computer science is a massive field,</b> ranging from data science and machine learning to cybersecurity.
-      Whether you're interested in making AIs to beat your favorite game or 
-      devising cryptographic schemes to secure network connections, computer science has something for you.
-      <br/>
-      <br/>
-      Activity: AI, Processing, Capture The Flag (CTF) and web dev demos
+        <b>Computer science is a massive field,</b> ranging from data science
+        and machine learning to cybersecurity. Whether you're interested in
+        making AIs to beat your favorite game or devising cryptographic schemes
+        to secure network connections, computer science has something for you.
+        <br />
+        <br />
+        Activity: AI, Processing, Capture The Flag (CTF) and web dev demos.
       </p>
     ),
   },
   {
-    title: "Algorithms Unit Start",
-    unit: "Algorithms",
-    date: "9/21/20",
-    startOfUnit: true,
-    content: (
-      <p>
-        Having <b>fast code</b> can mean the{" "}
-        <b>difference between taking several years and a few seconds</b> to find
-        the fastest route to your house on Google Maps. Algorithms such as
-        Djikstra’s shortest path algorithm and quicksort are responsible for
-        speeding up code by finding clever ways to reduce computations.
-      </p>
-    ),
-  },
   {
     title: "Intro to Algorithms",
     unit: "Algorithms",
     date: "9/21/20",
+      startOfUnit: true,
     content: (
       <p>
         <b>Motivation behind the study of algorithms and big O analysis.</b>
@@ -51,10 +39,10 @@ const timelineEntries = [
     date: "9/28/20",
     content: (
       <p>
-        <b>Clever manipulations of arrays and basic data structures</b>
+        <b>Clever manipulations of arrays and basic data structures.</b>
         <br />
         <br />
-        Demo: Visualization of different sorting methods
+        Demo: Visualization of different sorting methods.
       </p>
     ),
   },
@@ -64,7 +52,9 @@ const timelineEntries = [
     date: "10/12/20",
     content: (
       <p>
-        <b>Real-world applications of graph theory and important terminology</b>
+        <b>
+          Real-world applications of graph theory and important terminology.
+        </b>
         <br />
         <br />
         Activity: Seven bridges of Konigsburg.
@@ -77,10 +67,13 @@ const timelineEntries = [
     date: "10/19/20",
     content: (
       <p>
-        <b>Mechanisms underlying stacks and queues and their applications in graph traversals</b>
+        <b>
+          Mechanisms underlying stacks and queues and their applications in
+          graph traversals.
+        </b>
         <br />
         <br />
-        Demo: Generating all permutations, Processing floodfill demo
+        Demo: Generating all permutations, Processing floodfill demo.
       </p>
     ),
   },
@@ -111,7 +104,7 @@ const timelineEntries = [
     ),
   },
   {
-    title: "Web Development Unit Start",
+    title: "Introduction to Web Development",
     unit: "Web Development",
     date: "11/9/2020",
     startOfUnit: true,
@@ -119,8 +112,14 @@ const timelineEntries = [
       <p>
         Creating websites is an <b>essential skill</b> in any discipline, making
         it possible to market ideas and spread information in an engaging,
-        accessible manner. With the help of various frameworks, you can 
+        accessible manner. With the help of various frameworks, you can{" "}
         <b>make a personalized website from scratch</b> in no time.
+      </p>
+      <p>
+        <b>Tools and libraries needed to make stylish interactive websites.</b>
+        <br />
+        <br />
+        Activity: React.js animations.
       </p>
     ),
   },
