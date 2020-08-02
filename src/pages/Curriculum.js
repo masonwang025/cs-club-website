@@ -29,6 +29,7 @@ export default function Curriculum() {
         <UnitLink name="Web development" />
         <UnitLink name="Systems" />
         <UnitLink name="Cybersecurity" />
+        <UnitLink name="Machine learning" />
       </div>
       <Timeline />
       <AnchorLink href="#top">

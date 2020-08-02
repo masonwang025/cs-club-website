@@ -51,6 +51,10 @@
         background-color: $cybersecurity-bg;
         border-color: $cybersecurity-icon;
       }
+      &.machine-learning {
+        background-color: $machine-learning-bg;
+        border-color: $machine-learning-icon;
+      }
     }
   }
 
@@ -206,6 +210,20 @@
         border-color: transparent $cybersecurity-bg;
       }
     }
+    // cybersecurity unit colors
+    .machine-learning {
+      .content {
+        background-color: $machine-learning-bg;
+        .unit {
+          &::before {
+            background-color: $machine-learning-icon;
+          }
+        }
+      }
+      &::before {
+        border-color: transparent $machine-learning-bg;
+      }
+    }
   }
 
   /* The actual content */
@@ -325,6 +343,21 @@
         }
         &::before {
           border-color: transparent $cybersecurity-bg;
+        }
+      }
+
+      // machine learning unit colors
+      .machine-learning {
+        .content {
+          background-color: $machine-learning-bg;
+          .unit {
+            &::before {
+              background-color: $machine-learning-icon;
+            }
+          }
+        }
+        &::before {
+          border-color: transparent $machine-learning-bg;
         }
       }
     }

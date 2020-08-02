@@ -116,33 +116,218 @@ const timelineEntries = [
       </p>
     ),
   },
+    {
+        title: "Coding an Animated Todo List",
+        unit: "Web Development",
+        date: "11/16/2020",
+        startOfUnit: true,
+        content: (
+            <p>
+                <b>Putting together a website with a frontend and backend.</b>
+                <br />
+                <br />
+                Demo: Using React.js with mongoDB.
+            </p>
+        ),
+    },
   {
-    title: "Systems Unit Start",
+    title: "Introduction to Systems",
     unit: "Systems",
-    date: "m/dd/yy",
+    date: "11/30/20",
     startOfUnit: true,
     content: (
       <p>
-        <b>Your computer is powerful.</b> Of course, it can be used to play
-        video games or surf the web, but by learning about its inner workings
-        you can <b>learn how to host virtual machines and web servers</b>, share
-        files instantaneously with your friends, and create real-time
-        multiplayer games.
+          <b> The fundamentals of computers and how they work. </b>
+          <br/>
+          <br/>
+         Activity: Terminal, BASH scripting and CRONTAB.
       </p>
     ),
   },
+    {
+        title: "How Computers Run Code",
+        unit: "Systems",
+        date: "11/30/20",
+        content: (
+            <p>
+                <b>Memory, assembly, and CALL.</b>
+                <br/>
+                <br/>
+                Demo: GDB of a simple function call.
+            </p>
+        ),
+    },
+    {
+        title: "Computer Architecture",
+        unit: "Systems",
+        date: "11/30/20",
+        content: (
+            <p>
+                <b>Structure of a CPU and virtual memory.</b>
+                <br/>
+                <br/>
+                Demo: Logisim CPU.
+            </p>
+        ),
+    },
+    {
+        title: "Operating Systems",
+        unit: "Systems",
+        date: "11/30/20",
+        content: (
+            <p>
+                <b>Processes, threads, and the file system.</b>
+                <br/>
+                <br/>
+                Demo: Multiprocess speedup.
+            </p>
+        ),
+    },
+    {
+        title: "The Internet",
+        unit: "Systems",
+        date: "11/30/20",
+        content: (
+            <p>
+                <b>IP addresses, DNS, and web protocols. </b>
+                <br/>
+                <br/>
+                Demo: Traceroute, Dig, HTTP.
+            </p>
+        ),
+    },
+    {
+        title: "Distributed Systems",
+        unit: "Systems",
+        date: "11/30/20",
+        content: (
+            <p>
+                <b>Virtualization and real-time synchronization.</b>
+                <br/>
+                <br/>
+                Demo: Dockerizing a web app.
+            </p>
+        ),
+    },
   {
-    title: "Cybersecurity Unit Start",
+    title: "Introduction to Cybersecurity",
     unit: "Cybersecurity",
     date: "m/dd/yy",
     startOfUnit: true,
     content: (
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis in
-        necessitatibus nulla eius id velit dolores tempore aut recusandae esse.
-      </p>
+        <p>
+            <b>Principles of security and real-world examples.</b>
+            <br/>
+            <br/>
+            Activity: picoCTF General Skills problems.
+        </p>
     ),
   },
+    {
+        title: "Binary Exploit",
+        unit: "Cybersecurity",
+        date: "m/dd/yy",
+        content: (
+            <p>
+                <b>Buffer overflows and shellcode.</b>
+                <br/>
+                <br/>
+                Activity: picoCTF Binary Exploitation problems.
+            </p>
+        ),
+    },
+    {
+        title: "Web Exploit",
+        unit: "Cybersecurity",
+        date: "m/dd/yy",
+        content: (
+            <p>
+                <b>SQL injection, XSS, and other common exploits.</b>
+                <br/>
+                <br/>
+                Activity: picoCTF Web Exploitation problems.
+            </p>
+        ),
+    },
+    {
+        title: "Cryptography",
+        unit: "Cybersecurity",
+        date: "m/dd/yy",
+        content: (
+            <p>
+                <b>Ciphers and encryption algorithms.</b>
+                <br/>
+                <br/>
+                Activity: picoCTF Cryptography problems.
+            </p>
+        ),
+    },
+    {
+        title: "Introduction to Machine Learning",
+        unit: "Machine learning",
+        date: "m/dd/yy",
+        startOfUnit: true,
+        content: (
+            <p>
+                <b>Applications of AI/ML and important resources.</b>
+                <br/>
+                <br/>
+                Demo: CodeBullet projects.
+            </p>
+        ),
+    },
+    {
+        title: "Linear Regression and Gradient Descent",
+        unit: "Machine learning",
+        date: "m/dd/yy",
+        content: (
+            <p>
+                <b>The basic math behind machine learning algorithms.</b>
+                <br/>
+                <br/>
+                Demo: Gradient descent visualization with different hyperparameters.
+            </p>
+        ),
+    },
+    {
+        title: "Neural Networks",
+        unit: "Machine learning",
+        date: "m/dd/yy",
+        content: (
+            <p>
+                <b>Types of neural networks and how they work.</b>
+                <br/>
+                <br/>
+                Demo: Convolutional neural network for classifying dogs and cats.
+            </p>
+        ),
+    },
+    {
+        title: "Reinforcement Learning",
+        unit: "Machine learning",
+        date: "m/dd/yy",
+        content: (
+            <p>
+                <b>Concepts behind AI.</b>
+                <br/>
+                <br/>
+                Demo: CS188 Pacman example.
+            </p>
+        ),
+    },
+    {
+        title: "What's Next?",
+        unit: "General",
+        date: "m/dd/yy",
+        content: (
+            <p>
+                <b>Member suggested meetings and extra coverage.</b>
+                <br/>
+                <br/>
+                Feel free to let us know if you have any meeting ideas at <a href="mailto:clubshscs@gmail.com">clubshscs@gmail.com</a>!
+            </p>
+        ),
+    },
 ];
 
 export default timelineEntries;
