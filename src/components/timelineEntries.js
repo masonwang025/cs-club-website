@@ -19,7 +19,6 @@ const timelineEntries = [
     ),
   },
   {
-  {
     title: "Intro to Algorithms",
     unit: "Algorithms",
     date: "9/21/20",
@@ -109,12 +108,6 @@ const timelineEntries = [
     date: "11/9/2020",
     startOfUnit: true,
     content: (
-      <p>
-        Creating websites is an <b>essential skill</b> in any discipline, making
-        it possible to market ideas and spread information in an engaging,
-        accessible manner. With the help of various frameworks, you can{" "}
-        <b>make a personalized website from scratch</b> in no time.
-      </p>
       <p>
         <b>Tools and libraries needed to make stylish interactive websites.</b>
         <br />
