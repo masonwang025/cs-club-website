@@ -147,7 +147,7 @@ const timelineEntries = [
     {
         title: "How Computers Run Code",
         unit: "Systems",
-        date: "11/30/20",
+        date: "12/7/20",
         content: (
             <p>
                 <b>Memory, assembly, and CALL.</b>
@@ -160,7 +160,7 @@ const timelineEntries = [
     {
         title: "Computer Architecture",
         unit: "Systems",
-        date: "11/30/20",
+        date: "12/14/20",
         content: (
             <p>
                 <b>Structure of a CPU and virtual memory.</b>
@@ -173,7 +173,7 @@ const timelineEntries = [
     {
         title: "Operating Systems",
         unit: "Systems",
-        date: "11/30/20",
+        date: "1/4/21",
         content: (
             <p>
                 <b>Processes, threads, and the file system.</b>
@@ -186,7 +186,7 @@ const timelineEntries = [
     {
         title: "The Internet",
         unit: "Systems",
-        date: "11/30/20",
+        date: "1/11/21",
         content: (
             <p>
                 <b>IP addresses, DNS, and web protocols. </b>
@@ -199,7 +199,7 @@ const timelineEntries = [
     {
         title: "Distributed Systems",
         unit: "Systems",
-        date: "11/30/20",
+        date: "1/25/21",
         content: (
             <p>
                 <b>Virtualization and real-time synchronization.</b>
@@ -212,7 +212,7 @@ const timelineEntries = [
   {
     title: "Introduction to Cybersecurity",
     unit: "Cybersecurity",
-    date: "m/dd/yy",
+    date: "2/1/21",
     startOfUnit: true,
     content: (
         <p>
@@ -226,7 +226,7 @@ const timelineEntries = [
     {
         title: "Binary Exploit",
         unit: "Cybersecurity",
-        date: "m/dd/yy",
+        date: "2/8/21",
         content: (
             <p>
                 <b>Buffer overflows and shellcode.</b>
@@ -239,7 +239,7 @@ const timelineEntries = [
     {
         title: "Web Exploit",
         unit: "Cybersecurity",
-        date: "m/dd/yy",
+        date: "2/22/21",
         content: (
             <p>
                 <b>SQL injection, XSS, and other common exploits.</b>
@@ -252,7 +252,7 @@ const timelineEntries = [
     {
         title: "Cryptography",
         unit: "Cybersecurity",
-        date: "m/dd/yy",
+        date: "3/1/21",
         content: (
             <p>
                 <b>Ciphers and encryption algorithms.</b>
@@ -265,7 +265,7 @@ const timelineEntries = [
     {
         title: "Introduction to Machine Learning",
         unit: "Machine learning",
-        date: "m/dd/yy",
+        date: "3/22/21",
         startOfUnit: true,
         content: (
             <p>
@@ -279,7 +279,7 @@ const timelineEntries = [
     {
         title: "Linear Regression and Gradient Descent",
         unit: "Machine learning",
-        date: "m/dd/yy",
+        date: "3/29/21",
         content: (
             <p>
                 <b>The basic math behind machine learning algorithms.</b>
@@ -292,7 +292,7 @@ const timelineEntries = [
     {
         title: "Neural Networks",
         unit: "Machine learning",
-        date: "m/dd/yy",
+        date: "4/12/21",
         content: (
             <p>
                 <b>Types of neural networks and how they work.</b>
@@ -305,7 +305,7 @@ const timelineEntries = [
     {
         title: "Reinforcement Learning",
         unit: "Machine learning",
-        date: "m/dd/yy",
+        date: "4/19/21",
         content: (
             <p>
                 <b>Concepts behind AI.</b>
