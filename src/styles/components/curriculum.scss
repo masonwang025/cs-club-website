@@ -32,27 +32,21 @@
       }
 
       &.general {
-        background-color: $general-bg;
         border-color: $general-icon;
       }
       &.algorithms {
-        background-color: $algorithms-bg;
         border-color: $algorithms-icon;
       }
       &.web-development {
-        background-color: $web-development-bg;
         border-color: $web-development-icon;
       }
       &.systems {
-        background-color: $systems-bg;
         border-color: $systems-icon;
       }
       &.cybersecurity {
-        background-color: $cybersecurity-bg;
         border-color: $cybersecurity-icon;
       }
       &.machine-learning {
-        background-color: $machine-learning-bg;
         border-color: $machine-learning-icon;
       }
     }
@@ -93,13 +87,10 @@
     width: 50%;
   }
 
-  .t-container:not(:first-child) {
-    margin-top: -69px;
-  }
-
   /* Place the container to the left */
   .timeline {
     & > :nth-child(odd) {
+      margin-top: 10px;
       left: 0;
       /* Add arrows to the left container (pointing right) */
       &::before {
@@ -118,6 +109,7 @@
 
     /* Place the container to the right */
     & > :nth-child(even) {
+      margin-top: -170px;
       left: 50%;
 
       /* Add arrows to the right container (pointing left) */
@@ -125,7 +117,7 @@
         content: " ";
         height: 0;
         position: absolute;
-        top: 22px;
+        top: 80px;
         width: 0;
         z-index: 1;
         left: 30px;
@@ -134,12 +126,15 @@
         border-color: transparent white transparent transparent;
       }
     }
+    & > :nth-child(1) {
+      margin-top: 0;
+    }
 
     // COLORS
     // general unit color
     .general {
       .content {
-        background-color: $general-bg;
+        border-color: $general-bg;
         .unit {
           &::before {
             background-color: $general-icon;
@@ -154,7 +149,7 @@
     // algorithms unit color
     .algorithms {
       .content {
-        background-color: $algorithms-bg;
+        border-color: $algorithms-bg;
         .unit {
           &::before {
             background-color: $algorithms-icon;
@@ -169,7 +164,7 @@
     // systems unit colors
     .systems {
       .content {
-        background-color: $systems-bg;
+        border-color: $systems-bg;
         .unit {
           &::before {
             background-color: $systems-icon;
@@ -184,7 +179,7 @@
     // web-development unit colors
     .web-development {
       .content {
-        background-color: $web-development-bg;
+        border-color: $web-development-bg;
         .unit {
           &::before {
             background-color: $web-development-icon;
@@ -199,7 +194,7 @@
     // cybersecurity unit colors
     .cybersecurity {
       .content {
-        background-color: $cybersecurity-bg;
+        border-color: $cybersecurity-bg;
         .unit {
           &::before {
             background-color: $cybersecurity-icon;
@@ -213,7 +208,7 @@
     // cybersecurity unit colors
     .machine-learning {
       .content {
-        background-color: $machine-learning-bg;
+        border-color: $machine-learning-bg;
         .unit {
           &::before {
             background-color: $machine-learning-icon;
@@ -228,6 +223,7 @@
 
   /* The actual content */
   .content {
+    border-style: solid;
     padding: 10px 30px;
     background-color: white;
     position: relative;
