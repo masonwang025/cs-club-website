@@ -149,7 +149,7 @@
     // algorithms unit color
     .algorithms {
       .content {
-        border-color: $algorithms-bg;
+        border-color: $general-bg;
         .unit {
           &::before {
             background-color: $algorithms-icon;
@@ -164,7 +164,7 @@
     // systems unit colors
     .systems {
       .content {
-        border-color: $systems-bg;
+        border-color: $general-bg;
         .unit {
           &::before {
             background-color: $systems-icon;
@@ -179,7 +179,7 @@
     // web-development unit colors
     .web-development {
       .content {
-        border-color: $web-development-bg;
+        border-color: $general-bg;
         .unit {
           &::before {
             background-color: $web-development-icon;
@@ -194,7 +194,7 @@
     // cybersecurity unit colors
     .cybersecurity {
       .content {
-        border-color: $cybersecurity-bg;
+        border-color: $general-bg;
         .unit {
           &::before {
             background-color: $cybersecurity-icon;
@@ -208,7 +208,7 @@
     // cybersecurity unit colors
     .machine-learning {
       .content {
-        border-color: $machine-learning-bg;
+        border-color: $general-bg;
         .unit {
           &::before {
             background-color: $machine-learning-icon;
