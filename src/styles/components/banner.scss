@@ -121,6 +121,7 @@
         }
       }
       &:hover {
+        cursor: pointer;
         svg {
           background: $black;
           color: $white;
