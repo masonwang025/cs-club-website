@@ -42,7 +42,7 @@ export default function Competitions() {
                     >
                       Visit site{" "}
                       <i
-                        class="fa fa-external-link-square"
+                        className="fa fa-external-link-square"
                         aria-hidden="true"
                       ></i>
                     </a>
