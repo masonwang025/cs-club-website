@@ -40,13 +40,6 @@ export default function Banner() {
             </div>
           </h2>
           <div className="btn-row">
-            <a
-              href="https://www.facebook.com/groups/166826823766638"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join Our FB <RightArrow />
-            </a>
             <DelayLink
               delay={825}
               clickAction={() => {
