@@ -29,8 +29,9 @@
   .info {
     .unit-link {
       display: inline-block;
-      border: 2px black solid;
+      border: 2.5px black solid;
       color: black;
+      box-shadow: 0px 3px rgba(0, 0, 0, 0.1);
       padding: 0.3em 1.3em 0.35em 1.3em;
       margin: 0 0.2em 0.3em 0.2em;
       border-radius: 0.2em;
@@ -141,6 +142,10 @@
     }
     & > :nth-child(1) {
       margin-top: 0;
+    }
+
+    .content {
+      box-shadow: 0px 4.2px rgba(0, 0, 0, 0.1);
     }
 
     // COLORS

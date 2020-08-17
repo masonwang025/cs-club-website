@@ -28,18 +28,40 @@ export default function Competitions() {
             );
           }}
         ></input>
-        {contestList.map((contest) => (
-          <div key={contest.name} className="contest-card card">
-            <div className="card-title">{contest.name}</div>
-            <div className="card-body">
-              {contest.tags.map((tag) => (
-                <div key={contest.name + tag} className="tag">
-                  {tag}
+        <div className="flex-grid">
+          {contestList.length > 0 ? (
+            contestList.map((contest) => (
+              <div className="flex-col" key={contest.name}>
+                <div className="contest-card card">
+                  <div className="card-title">
+                    <h1>{contest.name}</h1>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={contest.link}
+                    >
+                      Visit site{" "}
+                      <i
+                        class="fa fa-external-link-square"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </div>
+                  <div className="card-body">
+                    {contest.description}
+                    {contest.tags.map((tag) => (
+                      <div key={contest.name + tag} className="tag">
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        ))}
+              </div>
+            ))
+          ) : (
+            <p>Sorry, we can't seem to find anything matching your search.</p>
+          )}
+        </div>
       </div>
       <BackToTop />
     </div>
