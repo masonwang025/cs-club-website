@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import allContests from "../data/competitionsList";
 import BackToTop from "../components/BackToTop";
 
 export default function Competitions() {
   const [contestList, updateContestList] = useState(allContests);
-
-  useEffect(() => {
-    window.setTimeout(() => {
-      document.getElementById("search-filter").focus();
-    }, 0); // why this works i don't know either
-  });
 
   return (
     <div className="competitions page" id="top">
