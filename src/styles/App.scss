@@ -7,6 +7,8 @@
 @import "./components/intro-overlay.scss";
 @import "./components/menu.scss";
 @import "./components/curriculum.scss";
+@import "./components/competitions.scss";
+
 body,
 html {
   visibility: hidden;
@@ -151,5 +153,19 @@ div[role="link"] {
       color: $white;
       background-color: $black;
     }
+  }
+}
+
+.info {
+  text-align: center;
+  padding: 1em 1em 0 1em;
+  h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-top: 2px;
+    margin-bottom: 0;
   }
 }
