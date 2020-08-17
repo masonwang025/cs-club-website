@@ -8,7 +8,7 @@ export default function Banner() {
   const { setDisabled } = useContext(HeaderContext);
   return (
     <section className="main">
-      <div className="container">
+      <div className="fcontainer">
         <div className="row">
           <h2>
             <div className="largeScreen">

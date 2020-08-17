@@ -31,7 +31,7 @@ export default function Sections() {
   const { setDisabled } = useContext(HeaderContext);
   return (
     <section className="sections">
-      <div className="container-fluid">
+      <div className="fcontainer-fluid">
         <div className="row">
           {sections.map((section) => (
             <DelayLink

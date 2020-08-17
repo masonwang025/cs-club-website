@@ -32,7 +32,7 @@ function Header({ history }) {
 
   return (
     <div className="header">
-      <div className="container">
+      <div className="fcontainer">
         <div className="row v-center space-between">
           <div className="logo">
             {/* if disabled, no animation and to=null (throws error but rare case anyways) */}

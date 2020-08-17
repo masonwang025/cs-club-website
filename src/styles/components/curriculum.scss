@@ -205,7 +205,7 @@
         border-color: transparent $cybersecurity-bg;
       }
     }
-    // cybersecurity unit colors
+    // ml unit colors
     .machine-learning {
       .content {
         border-color: $machine-learning-bg;
@@ -282,10 +282,25 @@
       }
 
       // COLORS
+      // general unit color
+      .general {
+        .content {
+          border-color: $general-bg;
+          .unit {
+            &::before {
+              background-color: $general-icon;
+            }
+          }
+        }
+        &::before {
+          border-color: transparent $general-bg;
+        }
+      }
+
       // algorithms unit color
       .algorithms {
         .content {
-          background-color: $algorithms-bg;
+          border-color: $algorithms-bg;
           .unit {
             &::before {
               background-color: $algorithms-icon;
@@ -300,7 +315,7 @@
       // systems unit colors
       .systems {
         .content {
-          background-color: $systems-bg;
+          border-color: $systems-bg;
           .unit {
             &::before {
               background-color: $systems-icon;
@@ -315,7 +330,7 @@
       // web-development unit colors
       .web-development {
         .content {
-          background-color: $web-development-bg;
+          border-color: $web-development-bg;
           .unit {
             &::before {
               background-color: $web-development-icon;
@@ -330,7 +345,7 @@
       // cybersecurity unit colors
       .cybersecurity {
         .content {
-          background-color: $cybersecurity-bg;
+          border-color: $cybersecurity-bg;
           .unit {
             &::before {
               background-color: $cybersecurity-icon;
@@ -341,11 +356,10 @@
           border-color: transparent $cybersecurity-bg;
         }
       }
-
-      // machine learning unit colors
+      // ml unit colors
       .machine-learning {
         .content {
-          background-color: $machine-learning-bg;
+          border-color: $machine-learning-bg;
           .unit {
             &::before {
               background-color: $machine-learning-icon;

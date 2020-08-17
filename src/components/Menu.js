@@ -46,7 +46,7 @@ export default function Menu({ clicked, currPath }) {
       {/* page transition layer for animating route changes when menu is not open */}
       <div className="page-transition-layer"></div>
       <div ref={(el) => (revealMenu = el)} className="menu-layer">
-        <div className="container">
+        <div className="fcontainer">
           <div className="wrapper row v-center">
             <div className="menu-links">
               <nav>
