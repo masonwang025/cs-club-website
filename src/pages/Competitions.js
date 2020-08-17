@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import allContests from "../components/competitionsList";
+import allContests from "../data/competitionsList";
+import BackToTop from "../components/BackToTop";
 
 export default function Competitions() {
   const [contestList, updateContestList] = useState(allContests);
@@ -46,6 +47,7 @@ export default function Competitions() {
           </div>
         ))}
       </div>
+      <BackToTop />
     </div>
   );
 }

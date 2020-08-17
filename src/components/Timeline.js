@@ -1,6 +1,6 @@
 import React from "react";
 import TimelineItem from "../components/TimelineItem";
-import timelineEntries from "./timelineEntries";
+import timelineEntries from "../data/timelineEntries";
 
 export default function Timeline() {
   return (

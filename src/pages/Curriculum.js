@@ -1,21 +1,9 @@
 import React from "react";
 import Timeline from "../components/Timeline";
 import UnitLink from "../components/UnitLink";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
-import { useEffect } from "react";
+import BackToTop from "../components/BackToTop";
 
 export default function Curriculum() {
-  useEffect(() => {
-    let backToTop = document.querySelector(".back-to-top");
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 250) {
-        backToTop.classList = "back-to-top show";
-      } else {
-        backToTop.classList = "back-to-top hide";
-      }
-    });
-  });
   return (
     <div className="curriculum page" id="top">
       <div className="info">
@@ -32,9 +20,7 @@ export default function Curriculum() {
         <UnitLink name="Machine learning" />
       </div>
       <Timeline />
-      <AnchorLink href="#top">
-        <RightArrow className="back-to-top" />
-      </AnchorLink>
+      <BackToTop />
     </div>
   );
 }
