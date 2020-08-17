@@ -22,7 +22,7 @@ const timelineEntries = [
     title: "Intro to Algorithms",
     unit: "Algorithms",
     date: "9/21/20",
-      startOfUnit: true,
+    startOfUnit: true,
     content: (
       <p>
         <b>Motivation behind the study of algorithms and big O analysis.</b>
@@ -82,7 +82,10 @@ const timelineEntries = [
     date: "10/26/20",
     content: (
       <p>
-        <b>Examples of greedy strategies and their application in Kruskal's MST algorithm.</b>
+        <b>
+          Examples of greedy strategies and their application in Kruskal's MST
+          algorithm.
+        </b>
         <br />
         <br />
         Demo: Kruskal's visualization.
@@ -116,20 +119,20 @@ const timelineEntries = [
       </p>
     ),
   },
-    {
-        title: "Coding an Animated Todo List",
-        unit: "Web Development",
-        date: "11/16/2020",
-        startOfUnit: true,
-        content: (
-            <p>
-                <b>Putting together a website with a frontend and backend.</b>
-                <br />
-                <br />
-                Demo: Using React.js with mongoDB.
-            </p>
-        ),
-    },
+  {
+    title: "Coding an Animated Todo List",
+    unit: "Web Development",
+    date: "11/16/2020",
+    startOfUnit: true,
+    content: (
+      <p>
+        <b>Putting together a website with a frontend and backend.</b>
+        <br />
+        <br />
+        Demo: Using React.js with mongoDB.
+      </p>
+    ),
+  },
   {
     title: "Introduction to Systems",
     unit: "Systems",
@@ -137,197 +140,206 @@ const timelineEntries = [
     startOfUnit: true,
     content: (
       <p>
-          <b> The fundamentals of computers and how they work. </b>
-          <br/>
-          <br/>
-         Activity: Terminal, BASH scripting and CRONTAB.
+        <b> The fundamentals of computers and how they work. </b>
+        <br />
+        <br />
+        Activity: Terminal, BASH scripting and CRONTAB.
       </p>
     ),
   },
-    {
-        title: "How Computers Run Code",
-        unit: "Systems",
-        date: "12/7/20",
-        content: (
-            <p>
-                <b>Memory, assembly, and CALL.</b>
-                <br/>
-                <br/>
-                Demo: GDB of a simple function call.
-            </p>
-        ),
-    },
-    {
-        title: "Computer Architecture",
-        unit: "Systems",
-        date: "12/14/20",
-        content: (
-            <p>
-                <b>Structure of a CPU and virtual memory.</b>
-                <br/>
-                <br/>
-                Demo: Logisim CPU.
-            </p>
-        ),
-    },
-    {
-        title: "Operating Systems",
-        unit: "Systems",
-        date: "1/4/21",
-        content: (
-            <p>
-                <b>Processes, threads, and the file system.</b>
-                <br/>
-                <br/>
-                Demo: Multiprocess speedup.
-            </p>
-        ),
-    },
-    {
-        title: "The Internet",
-        unit: "Systems",
-        date: "1/11/21",
-        content: (
-            <p>
-                <b>IP addresses, DNS, and web protocols. </b>
-                <br/>
-                <br/>
-                Demo: Traceroute, Dig, HTTP.
-            </p>
-        ),
-    },
-    {
-        title: "Distributed Systems",
-        unit: "Systems",
-        date: "1/25/21",
-        content: (
-            <p>
-                <b>Virtualization and real-time synchronization.</b>
-                <br/>
-                <br/>
-                Demo: Dockerizing a web app.
-            </p>
-        ),
-    },
+  {
+    title: "How Computers Run Code",
+    unit: "Systems",
+    date: "12/7/20",
+    content: (
+      <p>
+        <b>Memory, assembly, and CALL.</b>
+        <br />
+        <br />
+        Demo: GDB of a simple function call.
+      </p>
+    ),
+  },
+  {
+    title: "Computer Architecture",
+    unit: "Systems",
+    date: "12/14/20",
+    content: (
+      <p>
+        <b>Structure of a CPU and virtual memory.</b>
+        <br />
+        <br />
+        Demo: Logisim CPU.
+      </p>
+    ),
+  },
+  {
+    title: "Operating Systems",
+    unit: "Systems",
+    date: "1/4/21",
+    content: (
+      <p>
+        <b>Processes, threads, and the file system.</b>
+        <br />
+        <br />
+        Demo: Multiprocess speedup.
+      </p>
+    ),
+  },
+  {
+    title: "The Internet",
+    unit: "Systems",
+    date: "1/11/21",
+    content: (
+      <p>
+        <b>IP addresses, DNS, and web protocols. </b>
+        <br />
+        <br />
+        Demo: Traceroute, Dig, HTTP.
+      </p>
+    ),
+  },
+  {
+    title: "Distributed Systems",
+    unit: "Systems",
+    date: "1/25/21",
+    content: (
+      <p>
+        <b>Virtualization and real-time synchronization.</b>
+        <br />
+        <br />
+        Demo: Dockerizing a web app.
+      </p>
+    ),
+  },
   {
     title: "Introduction to Cybersecurity",
     unit: "Cybersecurity",
     date: "2/1/21",
     startOfUnit: true,
     content: (
-        <p>
-            <b>Principles of security and real-world examples.</b>
-            <br/>
-            <br/>
-            Activity: picoCTF General Skills problems.
-        </p>
+      <p>
+        <b>Principles of security and real-world examples.</b>
+        <br />
+        <br />
+        Activity: picoCTF General Skills problems.
+      </p>
     ),
   },
-    {
-        title: "Binary Exploit",
-        unit: "Cybersecurity",
-        date: "2/8/21",
-        content: (
-            <p>
-                <b>Buffer overflows and shellcode.</b>
-                <br/>
-                <br/>
-                Activity: picoCTF Binary Exploitation problems.
-            </p>
-        ),
-    },
-    {
-        title: "Web Exploit",
-        unit: "Cybersecurity",
-        date: "2/22/21",
-        content: (
-            <p>
-                <b>SQL injection, XSS, and other common exploits.</b>
-                <br/>
-                <br/>
-                Activity: picoCTF Web Exploitation problems.
-            </p>
-        ),
-    },
-    {
-        title: "Cryptography",
-        unit: "Cybersecurity",
-        date: "3/1/21",
-        content: (
-            <p>
-                <b>Ciphers and encryption algorithms.</b>
-                <br/>
-                <br/>
-                Activity: picoCTF Cryptography problems.
-            </p>
-        ),
-    },
-    {
-        title: "Introduction to Machine Learning",
-        unit: "Machine learning",
-        date: "3/22/21",
-        startOfUnit: true,
-        content: (
-            <p>
-                <b>Applications of AI/ML and important resources.</b>
-                <br/>
-                <br/>
-                Demo: CodeBullet projects.
-            </p>
-        ),
-    },
-    {
-        title: "Linear Regression and Gradient Descent",
-        unit: "Machine learning",
-        date: "3/29/21",
-        content: (
-            <p>
-                <b>The basic math behind machine learning algorithms.</b>
-                <br/>
-                <br/>
-                Demo: Gradient descent visualization with different hyperparameters.
-            </p>
-        ),
-    },
-    {
-        title: "Neural Networks",
-        unit: "Machine learning",
-        date: "4/12/21",
-        content: (
-            <p>
-                <b>Types of neural networks and how they work.</b>
-                <br/>
-                <br/>
-                Demo: Convolutional neural network for classifying dogs and cats.
-            </p>
-        ),
-    },
-    {
-        title: "Reinforcement Learning",
-        unit: "Machine learning",
-        date: "4/19/21",
-        content: (
-            <p>
-                <b>Concepts behind AI.</b>
-                <br/>
-                <br/>
-                Demo: CS188 Pacman example.
-            </p>
-        ),
-    },
-    {
-        title: "What's Next?",
-        unit: "General",
-        date: "m/dd/yy",
-        content: (
-            <p>
-                <b>Member suggested meetings and extra coverage.</b>
-                <br/>
-                <br/>
-                Feel free to let us know if you have any meeting ideas at <a href="mailto:clubshscs@gmail.com">clubshscs@gmail.com</a>!
-            </p>
-        ),
-    },
+  {
+    title: "Binary Exploit",
+    unit: "Cybersecurity",
+    date: "2/8/21",
+    content: (
+      <p>
+        <b>Buffer overflows and shellcode.</b>
+        <br />
+        <br />
+        Activity: picoCTF Binary Exploitation problems.
+      </p>
+    ),
+  },
+  {
+    title: "Web Exploit",
+    unit: "Cybersecurity",
+    date: "2/22/21",
+    content: (
+      <p>
+        <b>SQL injection, XSS, and other common exploits.</b>
+        <br />
+        <br />
+        Activity: picoCTF Web Exploitation problems.
+      </p>
+    ),
+  },
+  {
+    title: "Cryptography",
+    unit: "Cybersecurity",
+    date: "3/1/21",
+    content: (
+      <p>
+        <b>Ciphers and encryption algorithms.</b>
+        <br />
+        <br />
+        Activity: picoCTF Cryptography problems.
+      </p>
+    ),
+  },
+  {
+    title: "Introduction to Machine Learning",
+    unit: "Machine learning",
+    date: "3/22/21",
+    startOfUnit: true,
+    content: (
+      <p>
+        <b>Applications of AI/ML and important resources.</b>
+        <br />
+        <br />
+        Demo: CodeBullet projects.
+      </p>
+    ),
+  },
+  {
+    title: "Linear Regression and Gradient Descent",
+    unit: "Machine learning",
+    date: "3/29/21",
+    content: (
+      <p>
+        <b>The basic math behind machine learning algorithms.</b>
+        <br />
+        <br />
+        Demo: Gradient descent visualization with different hyperparameters.
+      </p>
+    ),
+  },
+  {
+    title: "Neural Networks",
+    unit: "Machine learning",
+    date: "4/12/21",
+    content: (
+      <p>
+        <b>Types of neural networks and how they work.</b>
+        <br />
+        <br />
+        Demo: Convolutional neural network for classifying dogs and cats.
+      </p>
+    ),
+  },
+  {
+    title: "Reinforcement Learning",
+    unit: "Machine learning",
+    date: "4/19/21",
+    content: (
+      <p>
+        <b>Concepts behind AI.</b>
+        <br />
+        <br />
+        Demo: CS188 Pacman example.
+      </p>
+    ),
+  },
+  {
+    title: "What's Next?",
+    unit: "General",
+    date: "m/dd/yy",
+    content: (
+      <p>
+        <b>Member suggested meetings and extra coverage.</b>
+        <br />
+        <br />
+        Feel free to let us know if you have any meeting ideas at{" "}
+        <a
+          rel="noopener noreferrer"
+          href="mailto:clubshscs@gmail.com"
+          target="_blank"
+          id="email"
+        >
+          clubshscs@gmail.com
+        </a>
+        !
+      </p>
+    ),
+  },
 ];
 
 export default timelineEntries;
