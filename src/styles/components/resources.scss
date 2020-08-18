@@ -47,7 +47,7 @@
         width: 1em;
         height: 1em;
         text-align: center;
-        transition: all 0.35s;
+        transition: all 1s;
       }
     }
     &-content {
@@ -55,7 +55,7 @@
       padding: 0 1em;
       color: $black;
       background: white;
-      transition: all 0.35s;
+      transition: all 1s;
     }
     &-close {
       display: flex;
