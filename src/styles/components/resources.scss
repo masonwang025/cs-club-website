@@ -28,7 +28,9 @@
     width: 100%;
     color: white;
     overflow: hidden;
+    border-bottom: 2px darken($theme, 15%) solid;
     &-label {
+      font-size: 1.15em;
       display: flex;
       justify-content: space-between;
       padding: 1em;
@@ -73,12 +75,22 @@
     + .tab-label {
       background: darken($theme, 10%);
       &::after {
-        transform: rotate(90deg);
+        transform: rotate(90deg) translateX(5.25px);
       }
     }
     ~ .tab-content {
       max-height: 100vh;
       padding: 1em;
+    }
+  }
+  .source {
+    .source-title {
+      font-size: 1.25em;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0.42em 0;
     }
   }
 }

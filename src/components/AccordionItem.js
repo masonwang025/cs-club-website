@@ -10,7 +10,15 @@ export default function AccordionItem({ resource, id }) {
       <div className="tab-content">
         {resource.sources.map((source) => (
           <div key={source.title} className="source">
-            {source.title}
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href={source.link}
+              className="source-title underline"
+            >
+              {source.title} <i className="fa fa-external-link-square"></i>
+            </a>
+            {source.description}
           </div>
         ))}
       </div>

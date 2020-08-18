@@ -1,10 +1,11 @@
 import React from "react";
 import resources from "../data/resources";
 import AccordionItem from "../components/AccordionItem";
+import BackToTop from "../components/BackToTop";
 
 export default function Resources() {
   return (
-    <div className="resources page">
+    <div className="resources page" id="top">
       <div className="info">
         <h1>Curated Resources</h1>
         <h2>The best CS courses and projects for all skill levels.</h2>
@@ -19,6 +20,7 @@ export default function Resources() {
           </div>
         </div>
       </div>
+      <BackToTop />
     </div>
   );
 }
