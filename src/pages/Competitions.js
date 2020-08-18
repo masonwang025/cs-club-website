@@ -3,6 +3,8 @@ import { useState } from "react";
 import allContests from "../data/competitionsList";
 import BackToTop from "../components/BackToTop";
 
+import Fade from "react-reveal/Fade";
+
 export default function Competitions() {
   const [contestList, updateContestList] = useState(allContests);
 
@@ -32,30 +34,32 @@ export default function Competitions() {
           {contestList.length > 0 ? (
             contestList.map((contest) => (
               <div className="flex-col" key={contest.name}>
-                <div className="contest-card card">
-                  <div className="card-title">
-                    <h1>{contest.name}</h1>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={contest.link}
-                    >
-                      Visit site{" "}
-                      <i
-                        className="fa fa-external-link-square"
-                        aria-hidden="true"
-                      ></i>
-                    </a>
+                <Fade duration={1550}>
+                  <div className="contest-card card">
+                    <div className="card-title">
+                      <h1>{contest.name}</h1>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={contest.link}
+                      >
+                        Visit site{" "}
+                        <i
+                          className="fa fa-external-link-square"
+                          aria-hidden="true"
+                        ></i>
+                      </a>
+                    </div>
+                    <div className="card-body">
+                      {contest.description}
+                      {contest.tags.map((tag) => (
+                        <div key={contest.name + tag} className="tag">
+                          {tag}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="card-body">
-                    {contest.description}
-                    {contest.tags.map((tag) => (
-                      <div key={contest.name + tag} className="tag">
-                        {tag}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                </Fade>
               </div>
             ))
           ) : (
