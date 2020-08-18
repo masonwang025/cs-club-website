@@ -17,9 +17,12 @@
   }
 
   .flex-grid {
-    margin: 0 2.4em;
+    padding: 0 10vw;
+    @include media("<=desktop") {
+      padding: 0 5vw;
+    }
     @include media("<=tablet") {
-      margin: 0;
+      padding: 0;
     }
 
     * {
@@ -87,6 +90,7 @@
             border-radius: 4.2em;
             padding: 0.2em 1em;
             margin: 0 2px;
+            margin-bottom: 4.2px;
           }
         }
       }
