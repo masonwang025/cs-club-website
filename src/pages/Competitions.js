@@ -10,7 +10,7 @@ export default function Competitions() {
     <div className="competitions page" id="top">
       <div className="info">
         <h1>Recommended Competitions</h1>
-        <h2>The greatest events to test your skills.</h2>
+        <h2>The best events to test your skills.</h2>
         <input
           type="text"
           placeholder="Search by name or topic"
