@@ -28,7 +28,6 @@
     width: 100%;
     color: white;
     overflow: hidden;
-    border-bottom: 2px darken($theme, 15%) solid;
     &-label {
       font-size: 1.15em;
       display: flex;
@@ -38,6 +37,7 @@
       font-weight: bold;
       cursor: pointer;
       transition: 0.25s ease-in-out;
+      border-bottom: 2px darken($theme, 15%) solid;
       /* Icon */
       &:hover {
         background: darken($theme, 10%);
