@@ -3,7 +3,7 @@ import AboutInfoSection from "../components/AboutInfoSection";
 
 export default function About() {
   return (
-    <div className="about page">
+    <div className="about">
       <AboutInfoSection />
       <div className="mission-section fcontainer">
         <div className="row">
