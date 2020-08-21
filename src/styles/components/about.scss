@@ -1,0 +1,40 @@
+.about {
+  .about-info {
+    h1 {
+      margin: 1em 0 0 0;
+      @include media("<=tablet") {
+        font-size: 2.5em;
+      }
+    }
+    h2 {
+      margin: 0.3em 0 0.2em 0;
+    }
+    .buttons {
+      flex-wrap: wrap;
+      a,
+      div[role="link"] {
+        box-sizing: border-box;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 0.2em;
+        box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+        padding: 0.5em 1.3em;
+        margin: 0.55em 0.2em 0.3em 0.2em;
+        background-color: rgb(245, 245, 245);
+        color: $black;
+        transition: 0.25s ease;
+        &:hover {
+          cursor: pointer;
+          transform: translateY(-2.5px);
+          box-shadow: 0 6.5px rgba(0, 0, 0, 0.15);
+        }
+      }
+      .facebook-link {
+        background: #3b5998;
+        color: white;
+        font-weight: bold;
+        font-size: 1.13em;
+      }
+    }
+  }
+}

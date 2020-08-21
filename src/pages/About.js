@@ -1,13 +1,14 @@
 import React from "react";
+import AboutInfoSection from "../components/AboutInfoSection";
 
 export default function About() {
   return (
     <div className="about page">
-      <div className="info">
-        <h1>SHS CS Club</h1>
-        <h2>
-          We investigate the wide diversity of concepts in computer science.
-        </h2>
+      <AboutInfoSection />
+      <div className="mission-section fcontainer">
+        <div className="row">
+          <h1>Our Mission</h1>
+        </div>
       </div>
     </div>
   );
