@@ -16,22 +16,22 @@ function App() {
         { path: "/register", Component: Register }
     ]
   return (
-      <Router>
-      <ThemeProvider theme={theme}>
-        <div className="App">
-          <header className="App-header">
-              <Switch>
-                  {routes.map(({ path, Component, props }) => (
-                      <Route key={path} exact path={path}>
-                          <Component {...props} />
-                      </Route>
-                  ))}
-                  <Redirect to="/signin" />
-              </Switch>
-          </header>
-        </div>
-      </ThemeProvider>
-      </Router>
+          <ThemeProvider theme={theme}>
+            <div className="App">
+              <header className="App-header">
+                  <Router>
+                      <Switch>
+                          {routes.map(({ path, Component, props }) => (
+                              <Route key={path} exact path={path}>
+                                  <Component {...props} />
+                              </Route>
+                          ))}
+                          <Redirect to="/signin" />
+                      </Switch>
+                  </Router>
+              </header>
+            </div>
+          </ThemeProvider>
   );
 }
 
