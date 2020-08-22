@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'fontsource-roboto';
+import { ThemeProvider } from '@material-ui/core/styles'
+
+import theme from './theme';
+import SignIn from "./pages/SignIn";
+import Register from "./pages/Register"
+import Dashboard from "./pages/Dashboard";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 function App() {
+    const routes = [
+        { path: "/dashboard", Component: Dashboard },
+        { path: "/signin", Component: SignIn },
+        { path: "/register", Component: Register }
+    ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <header className="App-header">
+              <Switch>
+                  {routes.map(({ path, Component, props }) => (
+                      <Route key={path} exact path={path}>
+                          <Component {...props} />
+                      </Route>
+                  ))}
+                  <Redirect to="/signin" />
+              </Switch>
+          </header>
+        </div>
+      </ThemeProvider>
+      </Router>
   );
 }
 
