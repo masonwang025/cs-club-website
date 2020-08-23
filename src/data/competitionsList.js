@@ -12,7 +12,7 @@ const competitionsList = [
           and students that perform well in Platinum are invited to the summer training camp.
       </p>
     ),
-    tags: ["competitive programming", "algorithms", "data structures"],
+    tags: ["competitive programming", "algorithms", "data structures", "online"],
   },
   {
     name: "Codeforces",
@@ -24,91 +24,19 @@ const competitionsList = [
           as possible. Problems are focused on algorithms and datastructures.
       </p>
     ),
-    tags: ["competitive programming", "algorithms", "data structures"],
+    tags: ["competitive programming", "algorithms", "data structures", "ICPC", "online"],
   },
     {
-        name: "ProCo",
-        link: "https://sumo.stanford.edu/proco/info.html",
+        name: "Kaggle",
+        link: "https://www.kaggle.com/competitions",
         description: (
             <p>
-                A website that hosts weekly coding competitions of varying format and difficulty.
-                Tens of thousands of competitors attempt to gain rating by solving as many problems in as little time
-                as possible. Problems are focused on algorithms and datastructures.
+                A website that hosts machine learning competitions involving data analysis,
+                natural language processing, and more. Competitors have the chance to earn cash
+                rewards in addition to new skills for winning certain challenges.
             </p>
         ),
-        tags: ["competitive programming", "algorithms", "data structures"],
-    },
-    {
-        name: "Virginia Tech",
-        link: "https://icpc.cs.vt.edu/#/hscontest2019",
-        description: (
-            <p>
-                A website that hosts weekly coding competitions of varying format and difficulty.
-                Tens of thousands of competitors attempt to gain rating by solving as many problems in as little time
-                as possible. Problems are focused on algorithms and datastructures.
-            </p>
-        ),
-        tags: ["competitive programming", "algorithms", "data structures"],
-    },
-    {
-        name: "Harker Invitational",
-        link: "https://harkeraquila.com/52206/onlineexclusive/upper-school-hosts-annual-harker-programming-invitational-with-extra-precautions-due-to-coronavirus-concerns/",
-        description: (
-            <p>
-                A website that hosts weekly coding competitions of varying format and difficulty.
-                Tens of thousands of competitors attempt to gain rating by solving as many problems in as little time
-                as possible. Problems are focused on algorithms and datastructures.
-            </p>
-        ),
-        tags: ["competitive programming", "algorithms", "data structures"],
-    },
-    {
-        name: "Facebook Hacker Cup",
-        link: "https://www.facebook.com/codingcompetitions/hacker-cup",
-        description: (
-            <p>
-                A website that hosts weekly coding competitions of varying format and difficulty.
-                Tens of thousands of competitors attempt to gain rating by solving as many problems in as little time
-                as possible. Problems are focused on algorithms and datastructures.
-            </p>
-        ),
-        tags: ["competitive programming", "algorithms", "data structures"],
-    },
-    {
-        name: "Google Code Jam",
-        link: "https://codingcompetitions.withgoogle.com/codejam/about/",
-        description: (
-            <p>
-                A website that hosts weekly coding competitions of varying format and difficulty.
-                Tens of thousands of competitors attempt to gain rating by solving as many problems in as little time
-                as possible. Problems are focused on algorithms and datastructures.
-            </p>
-        ),
-        tags: ["competitive programming", "algorithms", "data structures"],
-    },
-    {
-        name: "Google Kick Start",
-        link: "https://codingcompetitions.withgoogle.com/kickstart/about",
-        description: (
-            <p>
-                A website that hosts weekly coding competitions of varying format and difficulty.
-                Tens of thousands of competitors attempt to gain rating by solving as many problems in as little time
-                as possible. Problems are focused on algorithms and datastructures.
-            </p>
-        ),
-        tags: ["competitive programming", "algorithms", "data structures"],
-    },
-    {
-        name: "Google Hash Code",
-        link: "https://codingcompetitions.withgoogle.com/hashcode/about",
-        description: (
-            <p>
-                A website that hosts weekly coding competitions of varying format and difficulty.
-                Tens of thousands of competitors attempt to gain rating by solving as many problems in as little time
-                as possible. Problems are focused on algorithms and datastructures.
-            </p>
-        ),
-        tags: ["competitive programming", "algorithms", "data structures"],
+        tags: ["machine learning", "data analysis", "online"],
     },
     {
         name: "picoCTF",
@@ -120,43 +48,82 @@ const competitionsList = [
                 to obtain flags and gain points.
             </p>
         ),
-        tags: ["CTF", "cybersecurity", "hacking", "systems"],
+        tags: ["CTF", "cybersecurity", "hacking", "systems", "CMU", "online"],
     },
     {
-        name: "Google CTF",
-        link: "https://capturetheflag.withgoogle.com/#home/",
+        name: "ProCo",
+        link: "https://sumo.stanford.edu/proco/info.html",
         description: (
             <p>
-                A cybersecurity competition hosted by Carnegie Mellon where teams of high schoolers
-                solve problems involving cryptography, binary exploitation, forensics, and more
-                to obtain flags and gain points.
+                A two-round, full-day competition hosted by Stanford where teams of 1-3 high schooolers
+                compete to solve algorithmic problems. Prizes such as Raspberry Pis and iPad Minis are awarded to the
+                highest-scoring teams.
             </p>
         ),
-        tags: ["CTF", "cybersecurity", "hacking", "systems"],
+        tags: ["competitive programming", "algorithms", "data structures", "Stanford", "in-person"],
+    },
+    {
+        name: "Virginia Tech",
+        link: "https://icpc.cs.vt.edu/#/hscontest2019",
+        description: (
+            <p>
+                A 13-problem, 5-hour contest organized by Virginia Tech following ICPC (Intercollegiate
+                Programming Competition) rules. Teams of 1-3 students compete to solve problems as quickly
+                as possible. Topics range from basic implementation problems to
+                advanced algorithms.
+            </p>
+        ),
+        tags: ["competitive programming", "algorithms", "data structures", "ICPC", "online"],
+    },
+    {
+        name: "Facebook Hacker Cup",
+        link: "https://www.facebook.com/codingcompetitions/hacker-cup",
+        description: (
+            <p>
+                More information coming soon!
+            </p>
+        ),
+        tags: ["competitive programming", "algorithms", "data structures"],
+    },
+    {
+        name: "Google Code Jam",
+        link: "https://codingcompetitions.withgoogle.com/codejam/about/",
+        description: (
+            <p>
+                More information coming soon!
+            </p>
+        ),
+        tags: ["competitive programming", "algorithms", "data structures"],
+    },
+    {
+        name: "Google Kick Start",
+        link: "https://codingcompetitions.withgoogle.com/kickstart/about",
+        description: (
+            <p>
+                More information coming soon!
+            </p>
+        ),
+        tags: ["competitive programming", "algorithms", "data structures"],
+    },
+    {
+        name: "Google Hash Code",
+        link: "https://codingcompetitions.withgoogle.com/hashcode/about",
+        description: (
+            <p>
+                More information coming soon!
+            </p>
+        ),
+        tags: ["competitive programming", "algorithms", "data structures"],
     },
     {
         name: "redpwnCTF",
         link: "https://ctf.redpwn.net/",
         description: (
             <p>
-                A cybersecurity competition hosted by Carnegie Mellon where teams of high schoolers
-                solve problems involving cryptography, binary exploitation, forensics, and more
-                to obtain flags and gain points.
+                More information coming soon!
             </p>
         ),
         tags: ["CTF", "cybersecurity", "hacking", "systems"],
-    },
-    {
-        name: "Kaggle",
-        link: "https://www.kaggle.com/competitions",
-        description: (
-            <p>
-                A website that hosts machine learning competitions involving data analysis,
-                natural language processing, and more. Competitors have the chance to earn cash
-                rewards in addition to new skills for winning certain challenges.
-            </p>
-        ),
-        tags: ["machine learning", "data analysis"],
     },
 ];
 

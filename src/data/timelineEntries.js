@@ -4,7 +4,7 @@ const timelineEntries = [
   {
     title: "The Power of Computer Science",
     unit: "General",
-    date: "9/21/20",
+    date: "8/24/20",
     startOfUnit: true,
     content: (
       <p>
@@ -18,10 +18,23 @@ const timelineEntries = [
       </p>
     ),
   },
+    {
+        title: "Cybersecurity Team Planning",
+        unit: "Cybersecurity",
+        date: "8/31/20",
+        content: (
+            <p>
+                <b>Exploring Capture The Flags (CTFs) and setting up a study plan for the year.</b>
+                <br />
+                <br />
+                Activity: picoCTF General Skills problems.
+            </p>
+        ),
+    },
   {
     title: "Intro to Algorithms",
     unit: "Algorithms",
-    date: "9/21/20",
+    date: "9/14/20",
     startOfUnit: true,
     content: (
       <p>
@@ -35,7 +48,7 @@ const timelineEntries = [
   {
     title: "Arrays and Sorting",
     unit: "Algorithms",
-    date: "9/28/20",
+    date: "9/21/20",
     content: (
       <p>
         <b>Clever manipulations of arrays and basic data structures.</b>
@@ -48,7 +61,7 @@ const timelineEntries = [
   {
     title: "Intro to Graph Theory",
     unit: "Algorithms",
-    date: "10/12/20",
+    date: "9/28/20",
     content: (
       <p>
         <b>
@@ -63,7 +76,7 @@ const timelineEntries = [
   {
     title: "Stacks, Queues, BFS and DFS",
     unit: "Algorithms",
-    date: "10/19/20",
+    date: "10/12/20",
     content: (
       <p>
         <b>
@@ -79,7 +92,7 @@ const timelineEntries = [
   {
     title: "Greedy Algorithms",
     unit: "Algorithms",
-    date: "10/26/20",
+    date: "10/19/20",
     content: (
       <p>
         <b>
@@ -95,7 +108,7 @@ const timelineEntries = [
   {
     title: "Dynamic Programming",
     unit: "Algorithms",
-    date: "11/2/20",
+    date: "10/26/20",
     content: (
       <p>
         <b>Using memoization to speed up code.</b>
@@ -108,7 +121,7 @@ const timelineEntries = [
   {
     title: "Introduction to Web Development",
     unit: "Web Development",
-    date: "11/9/2020",
+    date: "11/2/2020",
     startOfUnit: true,
     content: (
       <p>
@@ -122,7 +135,7 @@ const timelineEntries = [
   {
     title: "Coding an Animated Todo List",
     unit: "Web Development",
-    date: "11/16/2020",
+    date: "11/9/2020",
     startOfUnit: true,
     content: (
       <p>
@@ -133,6 +146,20 @@ const timelineEntries = [
       </p>
     ),
   },
+    {
+        title: "Coding an Animated Todo List (Pt. 2)",
+        unit: "Web Development",
+        date: "11/16/2020",
+        startOfUnit: true,
+        content: (
+            <p>
+                <b>Putting together a website with a frontend and backend.</b>
+                <br />
+                <br />
+                Demo: Using React.js with mongoDB.
+            </p>
+        ),
+    },
   {
     title: "Introduction to Systems",
     unit: "Systems",

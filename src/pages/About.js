@@ -9,6 +9,9 @@ export default function About() {
         <div className="row">
           <h1>Our Mission</h1>
         </div>
+          <div className="row">
+              <p> More information coming soon!</p>
+          </div>
       </div>
     </div>
   );
