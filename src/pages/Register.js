@@ -5,26 +5,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
+import Copyright from "../components/Copyright";
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -46,6 +34,25 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const grades = [
+    {
+        value: 9,
+        label: '9',
+    },
+    {
+        value: 10,
+        label: '10',
+    },
+    {
+        value: 11,
+        label: '11',
+    },
+    {
+        value: 12,
+        label: '12',
+    },
+];
+
 export default function Register() {
     const classes = useStyles();
 
@@ -61,30 +68,7 @@ export default function Register() {
                 </Typography>
                 <form className={classes.form} noValidate>
                     <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                autoComplete="fname"
-                                name="firstName"
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="firstName"
-                                label="First Name"
-                                autoFocus
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="lastName"
-                                label="Last Name"
-                                name="lastName"
-                                autoComplete="lname"
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={9}>
                             <TextField
                                 variant="outlined"
                                 required
@@ -95,7 +79,22 @@ export default function Register() {
                                 autoComplete="username"
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={3}>
+                            <TextField
+                                id="grade"
+                                variant="outlined"
+                                select
+                                label="Grade"
+                                style={{width: "100%"}}
+                            >
+                                {grades.map((option) => (
+                                    <MenuItem key={option.value} value={option.value}>
+                                        {option.label}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
+                        </Grid>
+                            <Grid item xs={12}>
                             <FormControlLabel
                                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                                 label="I want to receive inspiration, resources and updates via email."

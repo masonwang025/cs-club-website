@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Deposits() {
+export default function Score() {
     const classes = useStyles();
     return (
         <React.Fragment>

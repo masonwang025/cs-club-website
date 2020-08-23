@@ -6,12 +6,14 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import theme from './theme';
 import SignIn from "./pages/SignIn";
 import Register from "./pages/Register"
-import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 function App() {
     const routes = [
-        { path: "/dashboard", Component: Dashboard },
+        { path: "/dashboard", Component: Home },
+        { path: "/challenges", Component: Home },
+        { path: "/leaderboard", Component: Home },
         { path: "/signin", Component: SignIn },
         { path: "/register", Component: Register }
     ]
