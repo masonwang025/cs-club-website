@@ -9,6 +9,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from "../components/Copyright";
 
+import {signInWithGoogle} from "../services/firebase";
+
 const useStyles = makeStyles((theme) => ({
     paper: {
         marginTop: theme.spacing(0),
@@ -51,6 +53,7 @@ export default function SignIn() {
                     variant="contained"
                     color="primary"
                     className={classes.submit}
+                    onClick={signInWithGoogle}
                 >
                     Sign In With Google
                 </Button>

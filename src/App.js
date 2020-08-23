@@ -8,6 +8,7 @@ import SignIn from "./pages/SignIn";
 import Register from "./pages/Register"
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import UserProvider from "./providers/UserProvider";
 
 function App() {
     const routes = [
@@ -18,10 +19,11 @@ function App() {
         { path: "/register", Component: Register }
     ]
   return (
+      <Router>
+          <UserProvider>
           <ThemeProvider theme={theme}>
             <div className="App">
               <header className="App-header">
-                  <Router>
                       <Switch>
                           {routes.map(({ path, Component, props }) => (
                               <Route key={path} exact path={path}>
@@ -30,10 +32,11 @@ function App() {
                           ))}
                           <Redirect to="/signin" />
                       </Switch>
-                  </Router>
               </header>
             </div>
           </ThemeProvider>
+      </UserProvider>
+      </Router>
   );
 }
 

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from "../providers/UserProvider";
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import {Route, Link, useLocation} from "react-router-dom";
@@ -17,6 +18,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { homeItems } from '../data/homeItems';
+import { signOut } from "../services/firebase";
 
 
 const drawerWidth = 240;
@@ -60,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
     title: {
         textAlign: "left",
         flexGrow: 1
+    },
+    name: {
+        textAlign: "right",
     },
     drawerPaper: {
         position: 'relative',
@@ -113,6 +118,14 @@ export default function Home() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
+    const user = useContext(UserContext);
+    console.log(user);
+    let photoURL ="https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png";
+    let displayName = "";
+    if (user) {
+      photoURL = user.photoURL;
+      displayName = user.displayName;
+    }
 
     return (
         <div className={classes.root}>
@@ -131,7 +144,19 @@ export default function Home() {
                     <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
                         SHS CS Club Competition
                     </Typography>
-                    <IconButton color="inherit">
+                    <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.name}>
+                        {displayName}
+                    </Typography>
+                    <div
+                        style={{
+                            background: `url(${photoURL || 'https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png'})  no-repeat center center`,
+                            backgroundSize: "cover",
+                            height: "50px",
+                            width: "50px",
+                            margin: "5px"
+                        }}
+                    ></div>
+                    <IconButton color="inherit" onClick={signOut}>
                             <ExitToAppIcon />
                     </IconButton>
                 </Toolbar>
