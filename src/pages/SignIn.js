@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import Copyright from "../components/Copyright";
 
 import {signInWithGoogle} from "../services/firebase";
+import Loading from "../components/Loading";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -35,6 +36,7 @@ export default function SignIn() {
     const classes = useStyles();
 
     return (
+        <Loading>
         <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
@@ -62,5 +64,6 @@ export default function SignIn() {
                 <Copyright />
             </Box>
         </Container>
+        </Loading>
     );
 }
