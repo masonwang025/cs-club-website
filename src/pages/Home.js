@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { UserContext } from "../providers/UserProvider";
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,7 +18,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { homeItems } from '../data/homeItems';
-import { signOut } from "../services/firebase";
+import {signOut} from "../services/firebase";
 
 
 const drawerWidth = 240;
@@ -118,13 +118,15 @@ export default function Home() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-    const user = useContext(UserContext);
-    console.log(user);
+    const userState = useContext(UserContext);
+    let user = userState.user;
     let photoURL ="https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png";
     let displayName = "";
+    useEffect(() => {
+    });
     if (user) {
-      photoURL = user.photoURL;
-      displayName = user.displayName;
+        photoURL = user.photoURL;
+        displayName = user.displayName;
     }
 
     return (
@@ -155,7 +157,7 @@ export default function Home() {
                             width: "50px",
                             margin: "5px"
                         }}
-                    ></div>
+                    />
                     <IconButton color="inherit" onClick={signOut}>
                             <ExitToAppIcon />
                     </IconButton>

@@ -20,10 +20,10 @@ function App() {
     ]
   return (
       <Router>
-          <UserProvider>
           <ThemeProvider theme={theme}>
             <div className="App">
               <header className="App-header">
+                  <UserProvider>
                       <Switch>
                           {routes.map(({ path, Component, props }) => (
                               <Route key={path} exact path={path}>
@@ -32,10 +32,10 @@ function App() {
                           ))}
                           <Redirect to="/signin" />
                       </Switch>
+                  </UserProvider>
               </header>
             </div>
           </ThemeProvider>
-      </UserProvider>
       </Router>
   );
 }

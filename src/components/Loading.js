@@ -36,7 +36,7 @@ export default function Loading({ children }) {
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(() => false);
-        }, 2500);
+        }, 3000);
         return () => clearTimeout(timer);
     }, []);
 

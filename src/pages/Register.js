@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
+import { Redirect } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,6 +14,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from "../components/Copyright";
 import MenuItem from '@material-ui/core/MenuItem';
+import {addUser} from "../services/firebase";
+import {UserContext} from "../providers/UserProvider";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -55,6 +58,13 @@ const grades = [
 
 export default function Register() {
     const classes = useStyles();
+    const [username, setUsername] = useState("");
+    const [grade, setGrade] = useState(9);
+    const userState = useContext(UserContext);
+
+    if (userState.doc && userState.doc.exists) {
+        return <Redirect to="/dashboard"></Redirect>
+    }
 
     return (
         <Container component="main" maxWidth="xs">
@@ -76,6 +86,8 @@ export default function Register() {
                                 id="username"
                                 label="Username"
                                 name="username"
+                                onChange={(event) => setUsername(event.target.value)}
+                                value={username}
                                 autoComplete="username"
                             />
                         </Grid>
@@ -85,6 +97,8 @@ export default function Register() {
                                 variant="outlined"
                                 select
                                 label="Grade"
+                                onChange={(event) => setGrade(event.target.value)}
+                                value={grade}
                                 style={{width: "100%"}}
                             >
                                 {grades.map((option) => (
@@ -98,15 +112,16 @@ export default function Register() {
                             <FormControlLabel
                                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                                 label="I want to receive inspiration, resources and updates via email."
+                                style={{textAlign: "left"}}
                             />
                         </Grid>
                     </Grid>
                     <Button
-                        type="submit"
                         fullWidth
                         variant="contained"
                         color="primary"
                         className={classes.submit}
+                        onClick={()=>{ addUser(userState.user, username, grade); }}
                     >
                         Register
                     </Button>

@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
+export const db = firebase.firestore();
 export const firestore = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -32,3 +33,12 @@ export const signOut = () => {
     });
 }
 
+export const addUser = (user, username, grade) => {
+    db.collection("users").doc(user.uid).set({
+        username: username,
+        fullName: user.displayName,
+        grade: grade,
+        score: 0,
+        solvedProblems: []
+    });
+};
