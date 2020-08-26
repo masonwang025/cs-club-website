@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -8,24 +8,12 @@ import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
+import {LeaderboardContext} from "../providers/LeaderboardProvider";
 
 // Generate Order Data
 function createData(id, rank, name, grade, score) {
     return { id, rank, name, grade, score};
 }
-
-const rows = [
-    createData(0, '1', 'rohankk', '12', 50),
-    createData(1, '2', 'cararra', '12', 50),
-    createData(2, '3', 'andulu', '12', 40),
-    createData(3, '4', 'laze', '9', 30),
-    createData(4, '5', 'deathbringer', '12', 30),
-    createData(5, '6', 'rohankk', '12', 0),
-    createData(6, '7', 'cararra', '12', 0),
-    createData(7, '8', 'andulu', '12', 0),
-    createData(8, '9', 'laze', '9', 0),
-    createData(9, '10', 'deathbringer', '12', 0),
-];
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -45,6 +33,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Leaderboard() {
+    const users = Object.values(useContext(LeaderboardContext).users);
+    users.sort(function(x, y) {
+        return y.score - x.score;
+    });
+    let rows = [];
+    users.forEach((user, index) => {
+        rows.push(createData(index, index + 1, user.username, user.grade, user.score));
+    });
+    rows = rows.slice(0, 15);
     const classes = useStyles();
     return (
         <Container maxWidth="lg" className={classes.container}>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Link from "@material-ui/core/Link";
 import Title from './Title';
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -8,6 +9,8 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import CheckCircleIcon from '@material-ui/icons/CheckCircleOutline';
+import {UserContext} from "../providers/UserProvider";
+import {submitFlag} from "../services/firebase";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         padding: '2px 4px',
+        marginTop: theme.spacing(1),
         display: 'flex',
         alignItems: 'center',
         width: "100%",
@@ -31,14 +35,32 @@ const useStyles = makeStyles((theme) => ({
     iconButton: {
         padding: 10,
     },
-    divider: {
-        height: 28,
-        margin: 4,
-    },
 }));
 
-export default function Challenge({name, statement, points, solved}) {
+function RelevantLinks({links}) {
+    if (links) {
+        return <Typography variant="body1">Relevant links: {links.map((link) =>
+                <Link component="a" href={link.url}>{link.link}</Link>
+                )
+            }
+        </Typography>
+    }
+    return <div/>
+}
+
+
+export default function Challenge({name, statement, links, points, solved}) {
     const classes = useStyles();
+    const user = useContext(UserContext).user;
+    const [value, setValue] = useState("");
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    }
+    const handleSubmit = (event, user, problem, flag) => {
+        event.preventDefault();
+        submitFlag(user, problem, flag);
+        setValue("");
+    }
     if (solved) {
         return (
             <Grid item xs={12}>
@@ -47,6 +69,7 @@ export default function Challenge({name, statement, points, solved}) {
                         <Grid item xs={12} lg={11}>
                             <Title>{name} ({points} Points)</Title>
                             <Typography variant="body1">{statement}</Typography>
+                            <RelevantLinks links={links}/>
                         </Grid>
                         <Grid item xs={12} lg={1}>
                                     <CheckCircleIcon color="primary" style={{fontSize: "60px"}}/>
@@ -61,14 +84,17 @@ export default function Challenge({name, statement, points, solved}) {
                 <Paper className={classes.paper} style={{textAlign: 'left'}}>
                     <Title>{name} ({points} Points)</Title>
                     <Typography variant="body1">{statement}</Typography>
+                    <RelevantLinks links={links}/>
 
-                    <Paper component="form" className={classes.root}>
+                    <Paper component="form" onSubmit={(event) => handleSubmit(event, user, name, value)} className={classes.root}>
                         <InputBase
                             className={classes.input}
-                            placeholder="Enter flag"
+                            placeholder="Enter flag: shscs{...}"
                             inputProps={{'aria-label': 'flag'}}
+                            onChange={handleChange}
+                            value={value}
                         />
-                        <IconButton color="primary" className={classes.iconButton} aria-label="directions">
+                        <IconButton color="primary" type="submit" className={classes.iconButton} aria-label="directions">
                             <DirectionsIcon/>
                         </IconButton>
                     </Paper>

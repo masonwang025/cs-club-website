@@ -30,13 +30,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Loading({ children }) {
+export default function Loading({ timeout, children }) {
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
-    useEffect(() => {
+    useEffect(({timeout}) => {
         const timer = setTimeout(() => {
-            setLoading(() => false);
-        }, 3000);
+            setLoading(false);
+        }, timeout);
         return () => clearTimeout(timer);
     }, []);
 

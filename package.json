@@ -13,9 +13,11 @@
     "netlify-cli": "^2.59.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-jsx-parser": "^1.25.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "recharts": "^1.8.5"
+    "recharts": "^1.8.5",
+    "uuid": "^8.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

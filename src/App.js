@@ -9,6 +9,7 @@ import Register from "./pages/Register"
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import UserProvider from "./providers/UserProvider";
+import GlobalProvider from "./providers/GlobalProvider";
 
 function App() {
     const routes = [
@@ -23,6 +24,7 @@ function App() {
           <ThemeProvider theme={theme}>
             <div className="App">
               <header className="App-header">
+                  <GlobalProvider>
                   <UserProvider>
                       <Switch>
                           {routes.map(({ path, Component, props }) => (
@@ -33,6 +35,7 @@ function App() {
                           <Redirect to="/signin" />
                       </Switch>
                   </UserProvider>
+                      </GlobalProvider>
               </header>
             </div>
           </ThemeProvider>

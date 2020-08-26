@@ -1,12 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {Link as RouterLink} from "react-router-dom";
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './Title';
-
-function preventDefault(event) {
-    event.preventDefault();
-}
+import {UserContext} from "../providers/UserProvider";
+import {GlobalContext} from "../providers/GlobalProvider";
 
 const useStyles = makeStyles({
     score: {
@@ -19,17 +18,20 @@ const useStyles = makeStyles({
 
 export default function Score() {
     const classes = useStyles();
+    const userState = useContext(UserContext);
+    const data = useContext(GlobalContext).data;
+    const score = userState.doc.data().score;
     return (
         <React.Fragment>
             <Title>Your Score</Title>
             <Typography component="p" variant="h1" className={classes.score}>
-                200
+                {score}
             </Typography>
             <Typography color="textSecondary" className={classes.depositContext}>
-                of 1500 possible points
+                of {data.maxScore} possible points
             </Typography>
             <div>
-                <Link color="primary" variant="body2" href="#" onClick={preventDefault}>
+                <Link color="primary" variant="body2" component={RouterLink} to="/leaderboard">
                     View leaderboard
                 </Link>
             </div>

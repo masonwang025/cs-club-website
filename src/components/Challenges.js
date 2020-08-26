@@ -1,21 +1,16 @@
-import React from 'react';
-import Link from '@material-ui/core/Link';
+import React, {useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Challenge from "./Challenge";
+import {UserContext} from "../providers/UserProvider";
+import {GlobalContext} from "../providers/GlobalProvider";
+import {CircularProgress} from "@material-ui/core";
 
 // Generate Order Data
-function createData(name, statement, points, solved) {
-    return { name, statement, points, solved};
+function createData(name, statement, links, points, solved) {
+    return { name, statement, links, points, solved};
 }
-
-const rows = [
-    createData('hackerrank-solve',
-        <p>Solve <Link href="https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem?h_r=next-challenge&h_v=zen">Climbing the Leaderboard</Link> on Hackerrank</p>, '50', true),
-    createData('grep-away', <p>Can you find the flag in this mess of folders?</p>, '50', false),
-    createData('coffer-overflow-0', <p>Pwn this C program.</p>, '20', false),
-];
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -28,14 +23,33 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'auto',
         flexDirection: 'column',
     },
+    loader: {
+        marginTop: theme.spacing(4),
+    }
 }));
 
 export default function Challenges() {
     const classes = useStyles();
+    const challenges = useContext(GlobalContext).challenges;
+    const solved = useContext(UserContext).solved;
+    const challengesLoaded = useContext(UserContext).challengesLoaded;
+    if (!challengesLoaded) {
+        return <Container maxWidth="lg" className={classes.container}>
+            <Grid container spacing={3} justify={"center"}>
+                <CircularProgress/>
+            </Grid>
+        </Container>
+    }
+
+    const rows = [];
+    for (let name in challenges) {
+        let c = challenges[name];
+        rows.push(createData(name, c.statement, c.links, c.points, solved.has(name)));
+    }
     return <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={3} justify={"center"}>
             {rows.map((row)=>(
-                <Challenge name={row.name} statement={row.statement}
+                <Challenge key={row.name} name={row.name} statement={row.statement} links={row.links}
                 points={row.points} solved={row.solved}/>
             ))}
         </Grid>

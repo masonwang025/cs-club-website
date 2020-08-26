@@ -61,9 +61,8 @@ export default function Register() {
     const [username, setUsername] = useState("");
     const [grade, setGrade] = useState(9);
     const userState = useContext(UserContext);
-
     if (userState.doc && userState.doc.exists) {
-        return <Redirect to="/dashboard"></Redirect>
+        return <Redirect to="/dashboard"/>
     }
 
     return (

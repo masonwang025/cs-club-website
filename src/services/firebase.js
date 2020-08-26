@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import { v4 as uuidv4 } from 'uuid';
 
 const firebaseConfig = {
     apiKey: "AIzaSyArKLgVWkpNio6gJRCGOw2fy4rrewPEM5g",
@@ -16,7 +17,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 export const db = firebase.firestore();
-export const firestore = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 
 export const signInWithGoogle = () => {
@@ -39,6 +39,24 @@ export const addUser = (user, username, grade) => {
         fullName: user.displayName,
         grade: grade,
         score: 0,
-        solvedProblems: []
+        solvedChallenges: [],
+        createdTimestamp: firebase.firestore.FieldValue.serverTimestamp()
     });
+    db.collection("leaderboard").doc(user.uid).set({
+        username: username,
+        grade: grade,
+        score: 0
+    })
+    db.collection("submissions").doc(user.uid).set({});
 };
+
+export const submitFlag = (user, problem, flag) => {
+    let updateMap = {};
+    updateMap[uuidv4()] = {
+        problem: problem,
+        flag: flag
+    }
+    db.collection("submissions").doc(user.uid).update(
+        updateMap
+    )
+}

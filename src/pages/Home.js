@@ -19,6 +19,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { homeItems } from '../data/homeItems';
 import {signOut} from "../services/firebase";
+import LeaderboardProvider from "../providers/LeaderboardProvider";
 
 
 const drawerWidth = 240;
@@ -193,7 +194,9 @@ export default function Home() {
                 <div className={classes.appBarSpacer} />
                 {homeItems.map(({name, path, icon, Component, props}) => (
                     <Route key={path} exact path={path}>
+                        <LeaderboardProvider>
                         <Component {...props} />
+                        </LeaderboardProvider>
                     </Route>
                 ))}
             </main>

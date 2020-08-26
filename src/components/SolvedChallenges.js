@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -7,23 +7,18 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
+import {UserContext} from "../providers/UserProvider";
+import {Link as RouterLink} from "react-router-dom";
 
-// Generate Order Data
-function createData(id, date, name, topic, points) {
-    return { id, date, name, topic, points};
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+function formatTimestamp (timestamp) {
+    let date = new Date(timestamp.seconds * 1000);
+    console.log(date);
+    console.log(timestamp);
+    return `${date.getDate()} ${monthNames[date.getMonth()]}, ${date.getFullYear()}`;
 }
 
-const rows = [
-    createData(0, '16 Mar, 2019', 'hackerrank-solve', 'Algorithms', 50),
-    createData(1, '16 Mar, 2019', 'grep-away', 'Systems', 50),
-    createData(2, '16 Mar, 2019', 'coffer-overflow-0', 'Cybersecurity', 40),
-    createData(3, '15 Mar, 2019', 'fast-and-furious-1', 'Algorithms', 30),
-    createData(4, '15 Mar, 2019', 'fast-and-furious-0', 'Algorithms', 30),
-];
-
-function preventDefault(event) {
-    event.preventDefault();
-}
 
 const useStyles = makeStyles((theme) => ({
     seeMore: {
@@ -33,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SolvedChallenges() {
     const classes = useStyles();
+    const userState = useContext(UserContext);
+    let rows = userState.solvedChallenges.reverse().slice(0, 10);
+
     return (
         <React.Fragment>
             <Title>Solved Challenges</Title>
@@ -47,8 +45,8 @@ export default function SolvedChallenges() {
                 </TableHead>
                 <TableBody>
                     {rows.map((row) => (
-                        <TableRow key={row.id}>
-                            <TableCell>{row.date}</TableCell>
+                        <TableRow key={row.name}>
+                            <TableCell>{formatTimestamp(row.timestamp)}</TableCell>
                             <TableCell>{row.name}</TableCell>
                             <TableCell>{row.topic}</TableCell>
                             <TableCell align="right">{row.points}</TableCell>
@@ -57,7 +55,7 @@ export default function SolvedChallenges() {
                 </TableBody>
             </Table>
             <div className={classes.seeMore}>
-                <Link color="primary" variant="body2" href="#" onClick={preventDefault}>
+                <Link color="primary" variant="body2" component={RouterLink} to="/challenges">
                     See more
                 </Link>
             </div>

@@ -6,9 +6,11 @@ import Deposits from "./Score";
 import SolvedChallenges from "./SolvedChallenges";
 import Box from "@material-ui/core/Box";
 import Copyright from "./Copyright";
-import React from "react";
+import React, {useContext} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import clsx from "clsx";
+import {CircularProgress} from "@material-ui/core";
+import {UserContext} from "../providers/UserProvider";
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -24,11 +26,23 @@ const useStyles = makeStyles((theme) => ({
     fixedHeight: {
         height: 240,
     },
+    loader: {
+        marginTop: theme.spacing(4),
+    }
 }));
 
 export default function Dashboard() {
     const classes = useStyles();
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+    const userState = useContext(UserContext);
+    const challengesLoaded = userState.challengesLoaded;
+    if (!challengesLoaded) {
+        return <Container maxWidth="lg" className={classes.container}>
+            <Grid container spacing={3} justify={"center"}>
+                <CircularProgress/>
+            </Grid>
+        </Container>
+    }
     return <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={3}>
             {/* Chart */}
@@ -53,5 +67,5 @@ export default function Dashboard() {
         <Box pt={4}>
             <Copyright/>
         </Box>
-    </Container>;
+    </Container>
 }
