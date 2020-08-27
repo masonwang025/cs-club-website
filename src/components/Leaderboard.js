@@ -36,9 +36,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Leaderboard() {
     const users = Object.values(useContext(LeaderboardContext).users);
-    users.sort(function(x, y) {
-        return y.score - x.score;
-    });
     let rows = [];
     users.forEach((user, index) => {
         rows.push(createData(index, index + 1, user.username, user.grade, user.score));
