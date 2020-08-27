@@ -10,7 +10,7 @@ import React, {useContext} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import clsx from "clsx";
 import {CircularProgress} from "@material-ui/core";
-import {UserContext} from "../providers/UserProvider";
+import {LeaderboardContext} from "../providers/LeaderboardProvider";
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -34,8 +34,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
     const classes = useStyles();
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-    const userState = useContext(UserContext);
-    const challengesLoaded = userState.challengesLoaded;
+    const leaderboardState = useContext(LeaderboardContext);
+    const challengesLoaded = leaderboardState.leaderboardLoaded;
     if (!challengesLoaded) {
         return <Container maxWidth="lg" className={classes.container}>
             <Grid container spacing={3} justify={"center"}>

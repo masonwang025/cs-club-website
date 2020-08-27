@@ -10,22 +10,22 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import UserProvider from "./providers/UserProvider";
 import GlobalProvider from "./providers/GlobalProvider";
+import LeaderboardProvider from "./providers/LeaderboardProvider";
 
 function App() {
     const routes = [
-        { path: "/dashboard", Component: Home },
-        { path: "/challenges", Component: Home },
-        { path: "/leaderboard", Component: Home },
+        { path: ["/dashboard", "/challenges", "/leaderboard"], Component: Home },
         { path: "/signin", Component: SignIn },
         { path: "/register", Component: Register }
     ]
   return (
-      <Router>
           <ThemeProvider theme={theme}>
             <div className="App">
               <header className="App-header">
-                  <GlobalProvider>
+                  <Router>
+                      <GlobalProvider>
                   <UserProvider>
+                          <LeaderboardProvider>
                       <Switch>
                           {routes.map(({ path, Component, props }) => (
                               <Route key={path} exact path={path}>
@@ -34,12 +34,13 @@ function App() {
                           ))}
                           <Redirect to="/signin" />
                       </Switch>
+                      </LeaderboardProvider>
                   </UserProvider>
                       </GlobalProvider>
-              </header>
+              </Router>
+            </header>
             </div>
           </ThemeProvider>
-      </Router>
   );
 }
 

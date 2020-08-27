@@ -9,14 +9,19 @@ import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 import {UserContext} from "../providers/UserProvider";
 import {Link as RouterLink} from "react-router-dom";
+import {LeaderboardContext} from "../providers/LeaderboardProvider";
+import {GlobalContext} from "../providers/GlobalProvider";
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 function formatTimestamp (timestamp) {
     let date = new Date(timestamp.seconds * 1000);
-    console.log(date);
-    console.log(timestamp);
     return `${date.getDate()} ${monthNames[date.getMonth()]}, ${date.getFullYear()}`;
+}
+
+// Generate Order Data
+function createData( name, timestamp, topic, points) {
+    return { name,  timestamp, topic, points};
 }
 
 
@@ -28,8 +33,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SolvedChallenges() {
     const classes = useStyles();
+    const globalState = useContext(GlobalContext);
     const userState = useContext(UserContext);
-    let rows = userState.solvedChallenges.reverse().slice(0, 10);
+    const userChallenges = useContext(LeaderboardContext).users[userState.user.uid].solvedChallenges;
+    let data = [];
+    userChallenges.forEach((challenge) => {
+        if (challenge.name in globalState.challenges) {
+            let c = globalState.challenges[challenge.name];
+            data.push(createData(challenge.name, challenge.timestamp, c.topic, c.points));
+        }
+    })
+    let rows = data.reverse().slice(0, 10);
 
     return (
         <React.Fragment>

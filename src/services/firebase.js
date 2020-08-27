@@ -26,10 +26,8 @@ export const signInWithGoogle = () => {
 export const signOut = () => {
     auth.signOut().then(function () {
         // Sign-out successful.
-        console.log("signed out");
     }).catch(function (error) {
         // An error happened.
-        console.log("signed out");
     });
 }
 
@@ -38,25 +36,20 @@ export const addUser = (user, username, grade) => {
         username: username,
         fullName: user.displayName,
         grade: grade,
-        score: 0,
-        solvedChallenges: [],
         createdTimestamp: firebase.firestore.FieldValue.serverTimestamp()
     });
-    db.collection("leaderboard").doc(user.uid).set({
-        username: username,
-        grade: grade,
-        score: 0
-    })
     db.collection("submissions").doc(user.uid).set({});
 };
 
 export const submitFlag = (user, problem, flag) => {
     let updateMap = {};
-    updateMap[uuidv4()] = {
+    let uuid = uuidv4();
+    updateMap[uuid] = {
         problem: problem,
         flag: flag
     }
     db.collection("submissions").doc(user.uid).update(
         updateMap
     )
+    return uuid;
 }

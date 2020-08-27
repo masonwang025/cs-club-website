@@ -9,6 +9,8 @@ import Title from './Title';
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import {LeaderboardContext} from "../providers/LeaderboardProvider";
+import Grid from "@material-ui/core/Grid";
+import {CircularProgress} from "@material-ui/core";
 
 // Generate Order Data
 function createData(id, rank, name, grade, score) {
@@ -43,6 +45,15 @@ export default function Leaderboard() {
     });
     rows = rows.slice(0, 15);
     const classes = useStyles();
+    const leaderboardState = useContext(LeaderboardContext);
+    const challengesLoaded = leaderboardState.leaderboardLoaded;
+    if (!challengesLoaded) {
+        return <Container maxWidth="lg" className={classes.container}>
+            <Grid container spacing={3} justify={"center"}>
+                <CircularProgress/>
+            </Grid>
+        </Container>
+    }
     return (
         <Container maxWidth="lg" className={classes.container}>
                 <Paper className={classes.paper}>

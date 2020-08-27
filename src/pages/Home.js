@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { UserContext } from "../providers/UserProvider";
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,7 +19,6 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { homeItems } from '../data/homeItems';
 import {signOut} from "../services/firebase";
-import LeaderboardProvider from "../providers/LeaderboardProvider";
 
 
 const drawerWidth = 240;
@@ -120,18 +119,11 @@ export default function Home() {
         setOpen(false);
     };
     const userState = useContext(UserContext);
-    let user = userState.user;
-    let photoURL ="https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png";
-    let displayName = "";
-    useEffect(() => {
-    });
-    if (user) {
-        photoURL = user.photoURL;
-        displayName = user.displayName;
-    }
+    let data = userState.doc.data();
+    const displayName = data.username;
 
     return (
-        <div className={classes.root}>
+            <div className={classes.root}>
             <CssBaseline />
             <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
                 <Toolbar className={classes.toolbar}>
@@ -150,15 +142,6 @@ export default function Home() {
                     <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.name}>
                         {displayName}
                     </Typography>
-                    <div
-                        style={{
-                            background: `url(${photoURL || 'https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png'})  no-repeat center center`,
-                            backgroundSize: "cover",
-                            height: "50px",
-                            width: "50px",
-                            margin: "5px"
-                        }}
-                    />
                     <IconButton color="inherit" onClick={signOut}>
                             <ExitToAppIcon />
                     </IconButton>
@@ -190,16 +173,14 @@ export default function Home() {
                     </div>
                 </List>
             </Drawer>
-            <main className={clsx(classes.content, open && classes.contentShift)}>
+                <main className={clsx(classes.content, open && classes.contentShift)}>
                 <div className={classes.appBarSpacer} />
-                {homeItems.map(({name, path, icon, Component, props}) => (
+                    {homeItems.map(({name, path, icon, Component, props}) => (
                     <Route key={path} exact path={path}>
-                        <LeaderboardProvider>
                         <Component {...props} />
-                        </LeaderboardProvider>
                     </Route>
                 ))}
             </main>
         </div>
-    );
+);
 }

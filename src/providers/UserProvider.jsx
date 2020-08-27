@@ -6,11 +6,6 @@ import {GlobalContext} from "./GlobalProvider";
 
 export const UserContext = createContext({ user: null, doc: null});
 
-// Generate Order Data
-function createData( name, timestamp, topic, points) {
-    return { name,  timestamp, topic, points};
-}
-
 class UserProvider extends Component {
     static contextType = GlobalContext;
 
@@ -19,9 +14,6 @@ class UserProvider extends Component {
         this.state = {
             user: null,
             doc: null,
-            solvedChallenges: [],
-            solved: new Set(),
-            challengesLoaded: false
         };
 
 
@@ -33,33 +25,6 @@ class UserProvider extends Component {
                 db.collection("users").doc(userAuth.uid)
                     .onSnapshot((doc) => {
                         this.setState({doc: doc})
-                        if (!doc.exists) {
-                            return;
-                        }
-                        if (this.state.doc.data().solvedChallenges.length === 0) {
-                            this.setState({challengesLoaded: true});
-                        }
-                        this.state.doc.data().solvedChallenges.forEach((challenge, index) => {
-                            db.collection("globals/data/challenges")
-                        .doc(challenge.name).get().then((challengeDoc) => {
-                                this.setState((state) => {
-                                        state.solvedChallenges[index] = createData(
-                                            challenge.name,
-                                            challenge.timestamp,
-                                            challengeDoc.data().topic,
-                                            challengeDoc.data().points
-                                        );
-                                        state.solved.add(challenge.name);
-                                    console.log(state.solvedChallenges);
-                                    console.log(doc.data().solvedChallenges);
-                                    if (state.solvedChallenges.length === doc.data().solvedChallenges.length) {
-                                            state.challengesLoaded = true;
-                                        }
-                                        return state;
-                                    }
-                                );
-                            });
-                        });
                     });
             }
         });
@@ -87,7 +52,6 @@ class UserProvider extends Component {
                         }
 
             }
-            console.log("here");
             return (
                 <UserContext.Provider value={this.state}>
                     <Loading timeout={3500}>

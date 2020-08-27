@@ -3,9 +3,16 @@ import { useTheme } from '@material-ui/core/styles';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from './Title';
 import {UserContext} from "../providers/UserProvider";
+import {LeaderboardContext} from "../providers/LeaderboardProvider";
+import {GlobalContext} from "../providers/GlobalProvider";
 // Generate Sales Data
 function createData(time, amount) {
     return { time, amount };
+}
+
+// Generate Order Data
+function createRowData( name, timestamp, topic, points) {
+    return { name,  timestamp, topic, points};
 }
 
 function formatTimestamp (timestamp) {
@@ -17,8 +24,16 @@ function formatTimestamp (timestamp) {
 export default function Chart() {
     const theme = useTheme();
 
+    const globalState = useContext(GlobalContext);
     const userState = useContext(UserContext);
-    let rows = userState.solvedChallenges;
+    const userChallenges = useContext(LeaderboardContext).users[userState.user.uid].solvedChallenges;
+    let rows = [];
+    userChallenges.forEach((challenge) => {
+        if (challenge.name in globalState.challenges) {
+            let c = globalState.challenges[challenge.name];
+            rows.push(createRowData(challenge.name, challenge.timestamp, c.topic, c.points));
+        }
+    })
     let score = 0;
     let data = rows.map((row) => {
         score += row.points;

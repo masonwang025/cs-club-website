@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Title from './Title';
 import {UserContext} from "../providers/UserProvider";
 import {GlobalContext} from "../providers/GlobalProvider";
+import {LeaderboardContext} from "../providers/LeaderboardProvider";
 
 const useStyles = makeStyles({
     score: {
@@ -20,7 +21,8 @@ export default function Score() {
     const classes = useStyles();
     const userState = useContext(UserContext);
     const data = useContext(GlobalContext).data;
-    const score = userState.doc.data().score;
+    const leaderboardState = useContext(LeaderboardContext);
+    const score = leaderboardState.users[userState.user.uid].score;
     return (
         <React.Fragment>
             <Title>Your Score</Title>

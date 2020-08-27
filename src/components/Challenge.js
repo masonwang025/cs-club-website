@@ -9,8 +9,9 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import CheckCircleIcon from '@material-ui/icons/CheckCircleOutline';
+import { CircularProgress } from "@material-ui/core";
 import {UserContext} from "../providers/UserProvider";
-import {submitFlag} from "../services/firebase";
+import {db, submitFlag} from "../services/firebase";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
+    },
+    loader: {
+        margin: theme.spacing(1),
     },
     root: {
         padding: '2px 4px',
@@ -39,8 +43,8 @@ const useStyles = makeStyles((theme) => ({
 
 function RelevantLinks({links}) {
     if (links) {
-        return <Typography variant="body1">Relevant links: {links.map((link) =>
-                <Link component="a" href={link.url}>{link.link}</Link>
+        return <Typography variant="body1">Relevant links: {links.map((link, index) =>
+                <Link component="a" key={index} href={link.url}>{link.link}</Link>
                 )
             }
         </Typography>
@@ -49,17 +53,35 @@ function RelevantLinks({links}) {
 }
 
 
-export default function Challenge({name, statement, links, points, solved}) {
+export default function Challenge({name, statement, links, points, solved, onSuccess, onFail}) {
     const classes = useStyles();
     const user = useContext(UserContext).user;
     const [value, setValue] = useState("");
+    const [waiting, setWaiting] = useState(false);
     const handleChange = (event) => {
         setValue(event.target.value);
     }
     const handleSubmit = (event, user, problem, flag) => {
         event.preventDefault();
-        submitFlag(user, problem, flag);
+        let uuid = submitFlag(user, problem, flag);
         setValue("");
+        setWaiting(true);
+        let path = `users/${user.uid}/submissions`;
+        db.collection(path)
+            .doc(uuid).onSnapshot((doc)=> {
+            if (doc && doc.exists) {
+                setTimeout(() => {
+                    setWaiting(false);
+                }, 50);
+                if (doc.data().success) {
+                    onSuccess(name);
+                } else {
+                    onFail(name);
+                }
+                db.collection(path).doc(uuid).delete();
+                db.collection(path).doc(uuid).onSnapshot(() => {});
+            }
+        })
     }
     if (solved) {
         return (
@@ -85,19 +107,22 @@ export default function Challenge({name, statement, links, points, solved}) {
                     <Title>{name} ({points} Points)</Title>
                     <Typography variant="body1">{statement}</Typography>
                     <RelevantLinks links={links}/>
-
-                    <Paper component="form" onSubmit={(event) => handleSubmit(event, user, name, value)} className={classes.root}>
-                        <InputBase
-                            className={classes.input}
-                            placeholder="Enter flag: shscs{...}"
-                            inputProps={{'aria-label': 'flag'}}
-                            onChange={handleChange}
-                            value={value}
-                        />
-                        <IconButton color="primary" type="submit" className={classes.iconButton} aria-label="directions">
-                            <DirectionsIcon/>
-                        </IconButton>
-                    </Paper>
+                    {waiting ? <CircularProgress className={classes.loader}/> :
+                        <Paper component="form" onSubmit={(event) => handleSubmit(event, user, name, value)}
+                               className={classes.root}>
+                            <InputBase
+                                className={classes.input}
+                                placeholder="Enter flag: shscs{...}"
+                                inputProps={{'aria-label': 'flag'}}
+                                onChange={handleChange}
+                                value={value}
+                            />
+                            <IconButton color="primary" type="submit" className={classes.iconButton}
+                                        aria-label="directions">
+                                <DirectionsIcon/>
+                            </IconButton>
+                        </Paper>
+                    }
                 </Paper>
             </Grid>
         );

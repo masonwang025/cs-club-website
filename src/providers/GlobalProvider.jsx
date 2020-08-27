@@ -17,7 +17,6 @@ class GlobalProvider extends Component {
         db.collection("globals").doc("data")
             .get().then((doc) => {
                 this.setState({data: doc.data()})
-                console.log(doc.data());
             });
         db.collection("globals/data/challenges").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
