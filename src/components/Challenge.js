@@ -72,7 +72,7 @@ export default function Challenge({name, statement, links, points, solved, onSuc
             if (doc && doc.exists) {
                 setTimeout(() => {
                     setWaiting(false);
-                }, 50);
+                }, 100);
                 if (doc.data().success) {
                     onSuccess(name);
                 } else {
