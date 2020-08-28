@@ -34,11 +34,12 @@ export const signOut = () => {
     });
 };
 
-export const addUser = (user, username, grade) => {
+export const addUser = (user, username, grade, emailList) => {
   db.collection("users").doc(user.uid).set({
     username: username,
     fullName: user.displayName,
     grade: grade,
+    emailList: emailList,
     createdTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
   });
   db.collection("submissions").doc(user.uid).set({});

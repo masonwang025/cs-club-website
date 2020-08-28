@@ -60,6 +60,7 @@ export default function Register() {
   const classes = useStyles();
   const [username, setUsername] = useState("");
   const [grade, setGrade] = useState(9);
+  const [emailList, setEmailList] = useState(false);
   const userState = useContext(UserContext);
   if (userState.doc && userState.doc.exists) {
     return <Redirect to="/dashboard" />;
@@ -109,7 +110,13 @@ export default function Register() {
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                control={
+                  <Checkbox
+                    checked={emailList}
+                    onChange={(event) => setEmailList(event.target.checked)}
+                    color="primary"
+                  />
+                }
                 label="I want to receive inspiration, resources and updates via email."
                 style={{ textAlign: "left" }}
               />
@@ -121,7 +128,7 @@ export default function Register() {
             color="primary"
             className={classes.submit}
             onClick={() => {
-              addUser(userState.user, username, grade);
+              addUser(userState.user, username, grade, emailList);
             }}
           >
             Register

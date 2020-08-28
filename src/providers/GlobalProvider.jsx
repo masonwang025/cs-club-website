@@ -19,6 +19,7 @@ class GlobalProvider extends Component {
         this.setState({ data: doc.data() });
       });
     db.collection("globals/data/challenges")
+      .orderBy("order", "desc")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
