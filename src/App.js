@@ -16,6 +16,7 @@ import {
 import UserProvider from "./providers/UserProvider";
 import GlobalProvider from "./providers/GlobalProvider";
 import LeaderboardProvider from "./providers/LeaderboardProvider";
+import {getBot} from "./services/firebase";
 
 function App() {
   const routes = [
@@ -23,6 +24,7 @@ function App() {
     { path: "/signin", Component: SignIn },
     { path: "/register", Component: Register },
   ];
+  getBot();
   return (
     <ThemeProvider theme={theme}>
       <div className="App">

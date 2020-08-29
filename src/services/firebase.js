@@ -19,7 +19,15 @@ export const auth = firebase.auth();
 export const db = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 
+export const getBot = () => {
+  let xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "POST", "https://tranquil-atoll-39338.herokuapp.com/", true );
+  xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*")
+  xmlHttp.send(null);
+}
+
 export const signInWithGoogle = () => {
+  getBot();
   auth.signInWithRedirect(provider);
 };
 
@@ -35,6 +43,7 @@ export const signOut = () => {
 };
 
 export const addUser = (user, username, grade, emailList) => {
+  getBot();
   db.collection("users").doc(user.uid).set({
     username: username,
     fullName: user.displayName,
@@ -46,6 +55,7 @@ export const addUser = (user, username, grade, emailList) => {
 };
 
 export const submitFlag = (user, problem, flag) => {
+  getBot();
   let updateMap = {};
   let uuid = uuidv4();
   updateMap[uuid] = {
