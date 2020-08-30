@@ -4,8 +4,6 @@ import Paper from "@material-ui/core/Paper";
 import Chart from "./Chart";
 import Deposits from "./Score";
 import SolvedChallenges from "./SolvedChallenges";
-import Box from "@material-ui/core/Box";
-import Copyright from "./Copyright";
 import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
@@ -68,9 +66,6 @@ export default function Dashboard() {
             </Paper>
           </Grid>
         </Grid>
-        <Box pt={4}>
-          <Copyright />
-        </Box>
       </Container>
     );
   }

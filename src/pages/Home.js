@@ -19,6 +19,8 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { homeItems } from "../data/homeItems";
 import { signOut } from "../services/firebase";
+import Box from "@material-ui/core/Box";
+import Copyright from "../components/Copyright";
 
 const drawerWidth = 240;
 
@@ -243,6 +245,9 @@ export default function Home() {
         {homeItems.map(({ name, path, icon, Component, props }) => (
           <Route key={path} exact path={path}>
             <Component {...props} />
+            <Box pt={4}>
+              <Copyright />
+            </Box>
           </Route>
         ))}
       </main>
