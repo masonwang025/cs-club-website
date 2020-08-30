@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
   },
+  mobileToolbar: {
+    paddingRight: 24, // keep right padding when drawer closed
+    backgroundColor: "#000",
+  },
   toolbarIcon: {
     display: "flex",
     alignItems: "center",
@@ -52,6 +56,20 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
+  mobileAppBar: {
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  mobileAppBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
   menuButton: {
     marginRight: 36,
   },
@@ -64,6 +82,18 @@ const useStyles = makeStyles((theme) => ({
   },
   name: {
     textAlign: "right",
+    flexGrow: 1,
+  },
+  desktopOnly: {
+    display: "none",
+    [theme.breakpoints.up('sm')]: {
+      display: "block"
+    },
+  },
+  mobileOnly: {
+    [theme.breakpoints.up('sm')]: {
+      display: "none"
+    },
   },
   drawerPaper: {
     position: "relative",
@@ -148,24 +178,24 @@ export default function Home() {
             noWrap
             className={classes.title}
           >
-            SHS CS Club Competition
+            SHS Capture The Flag
           </Typography>
           <Typography
             component="h1"
             variant="h6"
             color="inherit"
             noWrap
-            className={classes.name}
+            className={clsx(classes.name, classes.desktopOnly)}
           >
             {displayName}
           </Typography>
-          <IconButton color="inherit" onClick={signOut}>
+          <IconButton color="inherit" onClick={signOut} className={classes.desktopOnly}>
             <ExitToAppIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
-        variant="permanent"
+          variant="permanent"
         classes={{
           paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
         }}
@@ -196,6 +226,20 @@ export default function Home() {
       </Drawer>
       <main className={clsx(classes.content, open && classes.contentShift)}>
         <div className={classes.appBarSpacer} />
+        <Toolbar className={clsx(classes.mobileToolbar, classes.mobileOnly)}>
+          <Typography
+              component="h1"
+              variant="h6"
+              color="inherit"
+              noWrap
+              className={classes.name}
+          >
+            {displayName}
+          </Typography>
+          <IconButton color="inherit" onClick={signOut}>
+            <ExitToAppIcon />
+          </IconButton>
+        </Toolbar>
         {homeItems.map(({ name, path, icon, Component, props }) => (
           <Route key={path} exact path={path}>
             <Component {...props} />

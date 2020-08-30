@@ -8,7 +8,6 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -16,6 +15,7 @@ import Copyright from "../components/Copyright";
 import MenuItem from "@material-ui/core/MenuItem";
 import { addUser } from "../services/firebase";
 import { UserContext } from "../providers/UserProvider";
+import FlagIcon from "@material-ui/icons/Flag";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -71,10 +71,13 @@ export default function Register() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOpenIcon />
+          <FlagIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Register New User
+          SHS Capture The Flag
+        </Typography>
+        <Typography color="textSecondary">
+          Register with your username and grade.
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Box from "@material-ui/core/Box";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/Copyright";
 import { CircularProgress } from "@material-ui/core";
+import FlagIcon from "@material-ui/icons/Flag";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -45,10 +45,10 @@ export default function Loading({ timeout, children }) {
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+            <FlagIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            SHS CS Club Competition Site
+            SHS Capture The Flag
           </Typography>
           <CircularProgress className={classes.submit} />
         </div>
