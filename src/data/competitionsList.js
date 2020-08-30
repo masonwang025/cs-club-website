@@ -80,7 +80,9 @@ const competitionsList = [
         link: "https://www.facebook.com/codingcompetitions/hacker-cup",
         description: (
             <p>
-                More information coming soon!
+                An international algorithmic coding competition with a qualification round followed by three competitive rounds.
+                Individual competitors compete to solve problems as fast as possible, and cash prizes
+                are available to the top contestants.
             </p>
         ),
         tags: ["competitive programming", "algorithms", "data structures"],
@@ -90,7 +92,8 @@ const competitionsList = [
         link: "https://codingcompetitions.withgoogle.com/codejam/about/",
         description: (
             <p>
-                More information coming soon!
+                Google's longest running global coding competition where contestants advance through four online rounds
+                to qualify for the World Finals. Problems are based on algorithms and data structures.
             </p>
         ),
         tags: ["competitive programming", "algorithms", "data structures"],
@@ -100,7 +103,8 @@ const competitionsList = [
         link: "https://codingcompetitions.withgoogle.com/kickstart/about",
         description: (
             <p>
-                More information coming soon!
+                A three hour coding competition held regularly throughout the year, similar to USACO.
+                Participants have to solve algorithmic problems as fast as possible.
             </p>
         ),
         tags: ["competitive programming", "algorithms", "data structures"],
@@ -110,7 +114,9 @@ const competitionsList = [
         link: "https://codingcompetitions.withgoogle.com/hashcode/about",
         description: (
             <p>
-                More information coming soon!
+                A team-based coding competition where teams of two to four coders compete in the Qualification Round
+                to advance to the Final Round at a Google office. During each round, competitors have four hours to solve
+                an optimization problem.
             </p>
         ),
         tags: ["competitive programming", "algorithms", "data structures"],
@@ -120,7 +126,8 @@ const competitionsList = [
         link: "https://ctf.redpwn.net/",
         description: (
             <p>
-                More information coming soon!
+                A two-day cybersecurity competition hosted by redpwn high school CTF team. Problems are jeopardy-style,
+                falling into categories such as pwn, reversing, and cryptography.
             </p>
         ),
         tags: ["CTF", "cybersecurity", "hacking", "systems"],
