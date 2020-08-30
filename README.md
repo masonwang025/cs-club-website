@@ -1,6 +1,6 @@
 # cs-club-website
 
-The <a href="https://cs-club.netlify.app">SHS computer science club website</a>, built with React and GSAP.
+The <a href="https://shscsclub.com">SHS computer science club website</a>, built with React.
 
 <i>We reveal the power of coding, one line at a time.</i>
 
