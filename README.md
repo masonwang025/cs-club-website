@@ -1,6 +1,6 @@
 # cs-club-website
 
-The <a href="https://shscsclub.com">SHS computer science club website</a>, built with React.
+The <a href="https://shscsclub.com">Ssartoga High School computer science club website</a>, built with React.
 
 <i>We reveal the power of coding, one line at a time.</i>
 
