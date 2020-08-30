@@ -53,17 +53,17 @@ export default function About() {
           </div>
         </div>
       </Fade>
-      <Fade duration={1738}>
-        <div
-          className="officers section fcontainer"
-          style={{ textAlign: "center" }}
-        >
-          <div className="row vertical">
-            <h1>Meet the Officers</h1>
-            <p>Meet the officers that run the Saratoga High School CS Club.</p>
-          </div>
-        </div>
-      </Fade>
+      {/*<Fade duration={1738}>*/}
+      {/*  <div*/}
+      {/*    className="officers section fcontainer"*/}
+      {/*    style={{ textAlign: "center" }}*/}
+      {/*  >*/}
+      {/*    <div className="row vertical">*/}
+      {/*      <h1>Meet the Officers</h1>*/}
+      {/*      <p>Meet the officers that run the Saratoga High School CS Club.</p>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</Fade>*/}
     </div>
   );
 }
