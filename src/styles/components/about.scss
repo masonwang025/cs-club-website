@@ -1,6 +1,10 @@
 .about {
+  margin-bottom: 3.42em;
+  .vertical {
+    flex-direction: column;
+  }
   .about-info {
-    background: url("../../assets/img/about-bg.jpg");
+    background: #d2d8d8 url("../../assets/img/about-bg.jpg");
     background-attachment: fixed;
     background-size: cover;
     padding-top: 5em;
@@ -31,8 +35,8 @@
         transition: 0.25s ease;
         &:hover {
           cursor: pointer;
-          transform: translateY(-2.5px);
-          box-shadow: 0 6.5px rgba(0, 0, 0, 0.15);
+          transform: translateY(-1.2px);
+          box-shadow: 0 5.2px rgba(0, 0, 0, 0.15);
         }
       }
       .facebook-link {
@@ -42,5 +46,26 @@
         font-size: 1.13em;
       }
     }
+  }
+
+  .section {
+    h1 {
+      margin-bottom: 0;
+    }
+    p {
+      margin-top: 0.42em;
+      font-size: 1.25em;
+      margin-bottom: 0.2em;
+    }
+  }
+
+  .mission {
+    h1 {
+      margin-top: 2em;
+    }
+  }
+
+  .officers {
+    margin-top: 1.69em;
   }
 }
