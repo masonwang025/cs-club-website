@@ -6,7 +6,7 @@ The <a href="https://shscsclub.com">SHS computer science club website</a>, built
 
 To run the code:
 ```
-git clone https://github.com/MasonWang025/CS-Club-Website.git
+git clone https://github.com/MasonWang025/cs-club-website.git
 npm install
 npm start
 ```
