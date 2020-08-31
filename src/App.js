@@ -16,7 +16,7 @@ import {
 import UserProvider from "./providers/UserProvider";
 import GlobalProvider from "./providers/GlobalProvider";
 import LeaderboardProvider from "./providers/LeaderboardProvider";
-import {getBot} from "./services/firebase";
+import { getBot } from "./services/firebase";
 
 function App() {
   const routes = [

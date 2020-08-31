@@ -45,11 +45,20 @@ function RelevantLinks({ links }) {
     return (
       <Typography variant="body1">
         Relevant links:{" "}
-        {links.map((link, index) => (
-          <Link component="a" key={index} href={link.url}>
-            {link.link}
-          </Link>
-        ))}
+        {links.map((link, index) => {
+          let comma = ", ";
+          if (index === links.length - 1) {
+            comma = "";
+          }
+          return (
+            <React.Fragment>
+              <Link component="a" key={index} href={link.url}>
+                {link.link}
+              </Link>
+              {comma}
+            </React.Fragment>
+          );
+        })}
       </Typography>
     );
   }

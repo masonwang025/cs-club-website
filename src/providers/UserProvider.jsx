@@ -55,26 +55,26 @@ class UserProvider extends Component {
       return (
         <UserContext.Provider value={this.state}>
           <Loading timeout={3500}>
-          <Route key="/register" exact path="/register">
-            {this.props.children}
-          </Route>
-          <Route key="/" path="/">
-            <Redirect to="/register" />
-          </Route>
+            <Route key="/register" exact path="/register">
+              {this.props.children}
+            </Route>
+            <Route key="/" path="/">
+              <Redirect to="/register" />
+            </Route>
           </Loading>
         </UserContext.Provider>
       );
     } else {
       return (
         <UserContext.Provider value={this.state}>
-            <Loading timeout={3500}>
-          <Route key="/signin" exact path="/signin">
-            {this.props.children}
-          </Route>
-          <Route key="/" path="/">
-            <Redirect to="/signin" />
-          </Route>
-        </Loading>
+          <Loading timeout={3500}>
+            <Route key="/signin" exact path="/signin">
+              {this.props.children}
+            </Route>
+            <Route key="/" path="/">
+              <Redirect to="/signin" />
+            </Route>
+          </Loading>
         </UserContext.Provider>
       );
     }

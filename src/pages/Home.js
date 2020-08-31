@@ -88,13 +88,13 @@ const useStyles = makeStyles((theme) => ({
   },
   desktopOnly: {
     display: "none",
-    [theme.breakpoints.up('sm')]: {
-      display: "block"
+    [theme.breakpoints.up("sm")]: {
+      display: "block",
     },
   },
   mobileOnly: {
-    [theme.breakpoints.up('sm')]: {
-      display: "none"
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
     },
   },
   drawerPaper: {
@@ -191,13 +191,17 @@ export default function Home() {
           >
             {displayName}
           </Typography>
-          <IconButton color="inherit" onClick={signOut} className={classes.desktopOnly}>
+          <IconButton
+            color="inherit"
+            onClick={signOut}
+            className={classes.desktopOnly}
+          >
             <ExitToAppIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
-          variant="permanent"
+        variant="permanent"
         classes={{
           paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
         }}
@@ -230,11 +234,11 @@ export default function Home() {
         <div className={classes.appBarSpacer} />
         <Toolbar className={clsx(classes.mobileToolbar, classes.mobileOnly)}>
           <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              className={classes.name}
+            component="h1"
+            variant="h6"
+            color="inherit"
+            noWrap
+            className={classes.name}
           >
             {displayName}
           </Typography>

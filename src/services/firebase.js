@@ -21,10 +21,10 @@ const provider = new firebase.auth.GoogleAuthProvider();
 
 export const getBot = () => {
   let xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "POST", "https://tranquil-atoll-39338.herokuapp.com/", true );
-  xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*")
+  xmlHttp.open("POST", "https://tranquil-atoll-39338.herokuapp.com/", true);
+  xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*");
   xmlHttp.send(null);
-}
+};
 
 export const signInWithGoogle = () => {
   getBot();
