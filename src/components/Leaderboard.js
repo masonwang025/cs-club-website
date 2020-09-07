@@ -40,9 +40,15 @@ export default function Leaderboard() {
     return y.score - x.score;
   });
   let rows = [];
+  let currScore = 1000000000;
+  let currRank = 0;
   users.forEach((user, index) => {
+    if (user.score < currScore) {
+      currRank += 1;
+      currScore = user.score;
+    }
     rows.push(
-      createData(index, index + 1, user.username, user.grade, user.score)
+      createData(index, currRank, user.username, user.grade, user.score)
     );
   });
   rows = rows.slice(0, 15);
