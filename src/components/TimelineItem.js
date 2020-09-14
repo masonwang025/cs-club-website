@@ -11,7 +11,8 @@ export default function TimelineItem(props) {
         <div className="content">
           <h2>{props.title}</h2>
           {props.unit && <span className="unit">{props.unit}</span>}
-          <span> {props.date && <small>~ {props.date}</small>}</span>
+          <span> {props.date && <span>~ {props.date}</span>}</span>
+          <span>{props.lecture && <span> || <a href={props.lecture}>Recorded Lecture </a></span>}</span>
           {props.children}
         </div>
       </div>

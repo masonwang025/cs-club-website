@@ -17,24 +17,12 @@ const timelineEntries = [
         Activity: AI, Processing, Capture The Flag (CTF) and web dev demos.
       </p>
     ),
+      lecture: "https://www.youtube.com/watch?v=UzNXavkBRg8",
   },
-    {
-        title: "Cybersecurity Team Planning",
-        unit: "Cybersecurity",
-        date: "8/31/20",
-        content: (
-            <p>
-                <b>Exploring Capture The Flags (CTFs) and setting up a study plan for the year.</b>
-                <br />
-                <br />
-                Activity: picoCTF General Skills problems.
-            </p>
-        ),
-    },
   {
     title: "Intro to Algorithms",
     unit: "Algorithms",
-    date: "9/14/20",
+    date: "8/31/20",
     startOfUnit: true,
     content: (
       <p>
@@ -44,11 +32,12 @@ const timelineEntries = [
         Activity: Fibonacci recursion analysis and knapsack example.
       </p>
     ),
+      lecture: "https://www.youtube.com/watch?v=yWXdQkgKHXg",
   },
   {
     title: "Arrays and Sorting",
     unit: "Algorithms",
-    date: "9/21/20",
+    date: "9/14/20",
     content: (
       <p>
         <b>Clever manipulations of arrays and basic data structures.</b>
@@ -61,7 +50,7 @@ const timelineEntries = [
   {
     title: "Intro to Graph Theory",
     unit: "Algorithms",
-    date: "9/28/20",
+    date: "9/21/20",
     content: (
       <p>
         <b>
@@ -76,7 +65,7 @@ const timelineEntries = [
   {
     title: "Stacks, Queues, BFS and DFS",
     unit: "Algorithms",
-    date: "10/12/20",
+    date: "9/28/20",
     content: (
       <p>
         <b>
@@ -92,7 +81,7 @@ const timelineEntries = [
   {
     title: "Greedy Algorithms",
     unit: "Algorithms",
-    date: "10/19/20",
+    date: "10/12/20",
     content: (
       <p>
         <b>
@@ -108,7 +97,7 @@ const timelineEntries = [
   {
     title: "Dynamic Programming",
     unit: "Algorithms",
-    date: "10/26/20",
+    date: "10/19/20",
     content: (
       <p>
         <b>Using memoization to speed up code.</b>

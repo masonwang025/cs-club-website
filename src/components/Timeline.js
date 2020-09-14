@@ -13,6 +13,7 @@ export default function Timeline() {
             unit={entry.unit}
             date={entry.date}
             startOfUnit={entry.startOfUnit}
+            lecture={entry.lecture}
           >
             {entry.content}
           </TimelineItem>

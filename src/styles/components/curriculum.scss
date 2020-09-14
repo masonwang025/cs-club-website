@@ -151,6 +151,9 @@
     // COLORS
     // general unit color
     .general {
+      a {
+        color: $general-icon;
+      }
       .content {
         border-color: $general-bg;
         .unit {
@@ -166,6 +169,9 @@
 
     // algorithms unit color
     .algorithms {
+      a {
+        color: $algorithms-icon;
+      }
       .content {
         border-color: $algorithms-bg;
         .unit {
@@ -181,6 +187,9 @@
 
     // systems unit colors
     .systems {
+      a {
+        color: $systems-icon;
+      }
       .content {
         border-color: $systems-bg;
         .unit {
@@ -196,6 +205,9 @@
 
     // web-development unit colors
     .web-development {
+      a {
+        color: $web-development-icon;
+      }
       .content {
         border-color: $web-development-bg;
         .unit {
@@ -211,6 +223,9 @@
 
     // cybersecurity unit colors
     .cybersecurity {
+      a {
+        color: $cybersecurity-icon;
+      }
       .content {
         border-color: $cybersecurity-bg;
         .unit {
@@ -225,6 +240,9 @@
     }
     // ml unit colors
     .machine-learning {
+      a {
+        color: $machine-learning-icon;
+      }
       .content {
         border-color: $machine-learning-bg;
         .unit {
