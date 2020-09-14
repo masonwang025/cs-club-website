@@ -46,6 +46,7 @@ const timelineEntries = [
         Demo: Visualization of different sorting methods.
       </p>
     ),
+      lecture: "https://youtu.be/XHgFX0xCL3s",
   },
   {
     title: "Intro to Graph Theory",
