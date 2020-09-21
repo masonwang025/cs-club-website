@@ -29,7 +29,7 @@ const timelineEntries = [
         <b>Motivation behind the study of algorithms and big O analysis.</b>
         <br />
         <br />
-        Activity: Fibonacci recursion analysis and knapsack example.
+        Activity: Fibonacci recursion analysis and binary digit sum example.
       </p>
     ),
       lecture: "https://www.youtube.com/watch?v=yWXdQkgKHXg",
@@ -49,24 +49,9 @@ const timelineEntries = [
       lecture: "https://youtu.be/XHgFX0xCL3s",
   },
   {
-    title: "Intro to Graph Theory",
-    unit: "Algorithms",
-    date: "9/21/20",
-    content: (
-      <p>
-        <b>
-          Real-world applications of graph theory and important terminology.
-        </b>
-        <br />
-        <br />
-        Activity: Seven bridges of Konigsburg.
-      </p>
-    ),
-  },
-  {
     title: "Stacks, Queues, BFS and DFS",
     unit: "Algorithms",
-    date: "9/28/20",
+    date: "9/21/20",
     content: (
       <p>
         <b>
@@ -75,9 +60,10 @@ const timelineEntries = [
         </b>
         <br />
         <br />
-        Demo: Generating all permutations, Processing floodfill demo.
+        Demo: Generating passwords of length k live coding.
       </p>
     ),
+      lecture: "https://youtu.be/XHgFX0xCL3s",
   },
   {
     title: "Greedy Algorithms",
