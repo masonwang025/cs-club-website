@@ -68,7 +68,7 @@ const timelineEntries = [
   {
     title: "Greedy Algorithms",
     unit: "Algorithms",
-    date: "10/12/20",
+    date: "9/28/20",
     content: (
       <p>
         <b>
@@ -80,6 +80,7 @@ const timelineEntries = [
         Demo: Kruskal's visualization.
       </p>
     ),
+      lecture: "https://youtu.be/rJ8tMtgEL1M",
   },
   {
     title: "Dynamic Programming",
