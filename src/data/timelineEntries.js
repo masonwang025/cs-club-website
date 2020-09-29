@@ -60,7 +60,7 @@ const timelineEntries = [
         </b>
         <br />
         <br />
-        Demo: Live code of iterative and recursive DFS: generating passwords of length k.
+        Demo: Python live coding of iterative and recursive DFS: generating passwords of length k.
       </p>
     ),
       lecture: "https://youtu.be/XHgFX0xCL3s",
