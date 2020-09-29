@@ -60,7 +60,7 @@ const timelineEntries = [
         </b>
         <br />
         <br />
-        Demo: Generating passwords of length k live coding.
+        Demo: Live code of iterative and recursive DFS: generating passwords of length k.
       </p>
     ),
       lecture: "https://youtu.be/XHgFX0xCL3s",
@@ -77,7 +77,7 @@ const timelineEntries = [
         </b>
         <br />
         <br />
-        Demo: Kruskal's visualization.
+        Demo: Python live coding of greedy scheduling algorithm.
       </p>
     ),
       lecture: "https://youtu.be/rJ8tMtgEL1M",
