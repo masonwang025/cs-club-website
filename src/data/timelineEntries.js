@@ -94,6 +94,7 @@ const timelineEntries = [
         Activity: Revisiting knapsack.
       </p>
     ),
+      lecture: "https://youtu.be/ta-ZY-C4pow",
   },
   {
     title: "Introduction to Web Development",
