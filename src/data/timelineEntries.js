@@ -106,9 +106,10 @@ const timelineEntries = [
         <b>Tools and libraries needed to make stylish interactive websites.</b>
         <br />
         <br />
-        Activity: React.js animations.
+        Activity: HTML, CSS, and JS live demo.
       </p>
     ),
+      lecture: "https://youtu.be/hoZE7Ipy05Q",
   },
   {
     title: "Coding an Animated Todo List",
