@@ -112,18 +112,19 @@ const timelineEntries = [
       lecture: "https://youtu.be/hoZE7Ipy05Q",
   },
   {
-    title: "Coding an Animated Todo List",
+    title: "HTML, CSS, and JavaScript",
     unit: "Web Development",
     date: "11/9/2020",
     startOfUnit: true,
     content: (
       <p>
-        <b>Putting together a website with a frontend and backend.</b>
+        <b>Basic syntax and terminology and important tags, selectors, and attributes.</b>
         <br />
         <br />
-        Demo: Using React.js with mongoDB.
+        Demo: Basic vanilla JavaScript todo list.
       </p>
     ),
+      lecture: "https://youtu.be/hnZQJBOwL0E"
   },
     {
         title: "Coding an Animated Todo List (Pt. 2)",
