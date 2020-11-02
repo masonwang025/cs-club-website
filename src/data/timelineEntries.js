@@ -103,6 +103,9 @@ const timelineEntries = [
     startOfUnit: true,
     content: (
       <p>
+        Unit Repository: <a href="https://github.com/MasonWang025/cs-club-web-dev-unit">https://github.com/MasonWang025/cs-club-web-dev-unit</a>
+          <br/>
+          <br/>
         <b>Tools and libraries needed to make stylish interactive websites.</b>
         <br />
         <br />
