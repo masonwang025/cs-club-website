@@ -127,18 +127,19 @@ const timelineEntries = [
       lecture: "https://youtu.be/hnZQJBOwL0E"
   },
     {
-        title: "Coding an Animated Todo List (Pt. 2)",
+        title: "Bootstrap and React Essentials",
         unit: "Web Development",
         date: "11/16/2020",
         startOfUnit: true,
         content: (
             <p>
-                <b>Putting together a website with a frontend and backend.</b>
+                <b>Basic Bootstrap classes and React components, props, and state.</b>
                 <br />
                 <br />
-                Demo: Using React.js with mongoDB.
+                Demo: Creating a simple counter app using React.
             </p>
         ),
+        lecture: "https://youtu.be/dbYLFDcCM1s"
     },
   {
     title: "Introduction to Systems",
