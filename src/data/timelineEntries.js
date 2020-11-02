@@ -99,7 +99,7 @@ const timelineEntries = [
   {
     title: "Introduction to Web Development",
     unit: "Web Development",
-    date: "11/2/2020",
+    date: "10/19/2020",
     startOfUnit: true,
     content: (
       <p>
@@ -114,7 +114,7 @@ const timelineEntries = [
   {
     title: "HTML, CSS, and JavaScript",
     unit: "Web Development",
-    date: "11/9/2020",
+    date: "10/26/2020",
     startOfUnit: true,
     content: (
       <p>
@@ -129,7 +129,7 @@ const timelineEntries = [
     {
         title: "Bootstrap and React Essentials",
         unit: "Web Development",
-        date: "11/16/2020",
+        date: "11/2/2020",
         startOfUnit: true,
         content: (
             <p>
