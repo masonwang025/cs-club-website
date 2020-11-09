@@ -144,6 +144,35 @@ const timelineEntries = [
         ),
         lecture: "https://youtu.be/dbYLFDcCM1s"
     },
+    {
+        title: "Creating a React Todo List (Part 1)",
+        unit: "Web Development",
+        date: "11/8/2020",
+        startOfUnit: true,
+        content: (
+            <p>
+                <b>Using Bootstrap and React to implement basic functionalities of a todo list.</b>
+                <br />
+                <br />
+                Demo: Creating an interactive todo list.
+            </p>
+        ),
+        lecture: "https://youtu.be/Nl8SNI9g630"
+    },
+    {
+        title: "Creating a React Todo List (Part 2)",
+        unit: "Web Development",
+        date: "11/8/2020",
+        startOfUnit: true,
+        content: (
+            <p>
+                <b>Implementing the backend for our todo list using Google Cloud Firestore and deploying with Netlify.</b>
+                <br />
+                <br />
+                Demo: Finishing our todo list app.
+            </p>
+        ),
+    },
   {
     title: "Introduction to Systems",
     unit: "Systems",
