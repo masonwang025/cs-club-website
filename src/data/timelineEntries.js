@@ -172,6 +172,7 @@ const timelineEntries = [
                 Demo: Finishing our todo list app.
             </p>
         ),
+        lecture: "https://youtu.be/DqJ04DoBdgk",
     },
   {
     title: "Introduction to Systems",
