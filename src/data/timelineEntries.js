@@ -174,6 +174,21 @@ const timelineEntries = [
         ),
         lecture: "https://youtu.be/DqJ04DoBdgk",
     },
+    {
+        title: "USACO Review",
+        unit: "Algorithms",
+        date: "11/8/2020",
+        startOfUnit: true,
+        content: (
+            <p>
+                <b>We went over a couple of USACO problems.</b>
+                <br />
+                <br />
+                Demo: Explaining binary search, Floyd-Warshall, and dynamic programming.
+            </p>
+        ),
+        lecture: "https://youtu.be/sdCGep5XYMk",
+    },
   {
     title: "Introduction to Systems",
     unit: "Systems",
