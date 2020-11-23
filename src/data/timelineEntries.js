@@ -118,7 +118,7 @@ const timelineEntries = [
     title: "HTML, CSS, and JavaScript",
     unit: "Web Development",
     date: "10/26/2020",
-    startOfUnit: true,
+    startOfUnit: false,
     content: (
       <p>
         <b>Basic syntax and terminology and important tags, selectors, and attributes.</b>
@@ -133,7 +133,7 @@ const timelineEntries = [
         title: "Bootstrap and React Essentials",
         unit: "Web Development",
         date: "11/2/2020",
-        startOfUnit: true,
+        startOfUnit: false,
         content: (
             <p>
                 <b>Basic Bootstrap classes and React components, props, and state.</b>
@@ -147,8 +147,8 @@ const timelineEntries = [
     {
         title: "Creating a React Todo List (Part 1)",
         unit: "Web Development",
-        date: "11/8/2020",
-        startOfUnit: true,
+        date: "11/9/2020",
+        startOfUnit: false,
         content: (
             <p>
                 <b>Using Bootstrap and React to implement basic functionalities of a todo list.</b>
@@ -162,8 +162,8 @@ const timelineEntries = [
     {
         title: "Creating a React Todo List (Part 2)",
         unit: "Web Development",
-        date: "11/8/2020",
-        startOfUnit: true,
+        date: "11/16/2020",
+        startOfUnit: false,
         content: (
             <p>
                 <b>Implementing the backend for our todo list using Google Cloud Firestore and deploying with Netlify.</b>
@@ -177,8 +177,8 @@ const timelineEntries = [
     {
         title: "USACO Review",
         unit: "Algorithms",
-        date: "11/8/2020",
-        startOfUnit: true,
+        date: "11/23/2020",
+        startOfUnit: false,
         content: (
             <p>
                 <b>We went over a couple of USACO problems.</b>
