@@ -170,6 +170,9 @@ const timelineEntries = [
                 <br />
                 <br />
                 Demo: Finishing our todo list app.
+                <br />
+                <br />
+                Deployed app: <a href="https://todo-list-cs-club.netlify.app/"> https://todo-list-cs-club.netlify.app/</a>
             </p>
         ),
         lecture: "https://youtu.be/DqJ04DoBdgk",
