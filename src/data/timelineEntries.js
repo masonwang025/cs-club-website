@@ -199,9 +199,10 @@ const timelineEntries = [
         <b> The fundamentals of computers and how they work. </b>
         <br />
         <br />
-        Activity: Terminal, BASH scripting and CRONTAB.
+        Activity: Terminal.
       </p>
     ),
+      lecture: "https://youtu.be/DqJ04DoBdgk"
   },
   {
     title: "How Computers Run Code",
