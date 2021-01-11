@@ -219,6 +219,7 @@ const timelineEntries = [
         Demo: GDB of a simple function call.
       </p>
     ),
+      lecture: "https://youtu.be/FM8Y53qosLw"
   },
   {
     title: "Computer Architecture",
