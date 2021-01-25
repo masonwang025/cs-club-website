@@ -222,15 +222,20 @@ const timelineEntries = [
       lecture: "https://youtu.be/FM8Y53qosLw"
   },
   {
-    title: "Computer Architecture",
-    unit: "Systems",
-    date: "1/25/20",
+    title: "CS Club Competition",
+    unit: "General",
+    date: "1/25/21",
     content: (
       <p>
-        <b>Structure of a CPU and virtual memory.</b>
+        <b>Competition on miscellaneous computer science subjects.</b>
         <br />
         <br />
-        Demo: Logisim CPU.
+        Activity: Live leaderboard, 25-minute team competition.
+        <br />
+        <br />
+      <a href="https://docs.google.com/document/d/1K1u1-9QdC07kMjLDqI_U98QSRbre7jq9R5fRzst-wqY/edit"> Problems </a>
+        <br />
+      <a href="https://docs.google.com/document/d/1EchiWKKb0kngJOY9ie3nNcZRKez8NCwQh8oLwv4iX8k/edit"> Answers </a>
       </p>
     ),
   },
