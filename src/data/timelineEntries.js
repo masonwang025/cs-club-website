@@ -240,17 +240,18 @@ const timelineEntries = [
     ),
   },
   {
-    title: "Operating Systems",
-    unit: "Systems",
+    title: "USACO Silver Review",
+    unit: "Algorithms",
     date: "2/1/21",
     content: (
       <p>
-        <b>Processes, threads, and the file system.</b>
+        <b>The solutions to the USACO January 2021 Silver contest problems.</b>
         <br />
         <br />
-        Demo: Multiprocess speedup.
+        Demo: Live-code of Problem 1, Dance Mooves.
       </p>
     ),
+      lecture: "https://youtu.be/ZEcTFCaBH30"
   },
   {
     title: "The Internet",
