@@ -17,7 +17,7 @@ const timelineEntries = [
         Activity: AI, Processing, Capture The Flag (CTF) and web dev demos.
       </p>
     ),
-      lecture: "https://www.youtube.com/watch?v=UzNXavkBRg8",
+    lecture: "https://www.youtube.com/watch?v=UzNXavkBRg8",
   },
   {
     title: "Intro to Algorithms",
@@ -32,7 +32,7 @@ const timelineEntries = [
         Activity: Fibonacci recursion analysis and binary digit sum example.
       </p>
     ),
-      lecture: "https://www.youtube.com/watch?v=yWXdQkgKHXg",
+    lecture: "https://www.youtube.com/watch?v=yWXdQkgKHXg",
   },
   {
     title: "Arrays and Sorting",
@@ -46,7 +46,7 @@ const timelineEntries = [
         Demo: Visualization of different sorting methods.
       </p>
     ),
-      lecture: "https://youtu.be/XHgFX0xCL3s",
+    lecture: "https://youtu.be/XHgFX0xCL3s",
   },
   {
     title: "Stacks, Queues, BFS and DFS",
@@ -60,10 +60,11 @@ const timelineEntries = [
         </b>
         <br />
         <br />
-        Demo: Python live coding of iterative and recursive DFS: generating passwords of length k.
+        Demo: Python live coding of iterative and recursive DFS: generating
+        passwords of length k.
       </p>
     ),
-      lecture: "https://youtu.be/XHgFX0xCL3s",
+    lecture: "https://youtu.be/XHgFX0xCL3s",
   },
   {
     title: "Greedy Algorithms",
@@ -80,7 +81,7 @@ const timelineEntries = [
         Demo: Python live coding of greedy scheduling algorithm.
       </p>
     ),
-      lecture: "https://youtu.be/rJ8tMtgEL1M",
+    lecture: "https://youtu.be/rJ8tMtgEL1M",
   },
   {
     title: "Dynamic Programming",
@@ -94,7 +95,7 @@ const timelineEntries = [
         Activity: Revisiting knapsack.
       </p>
     ),
-      lecture: "https://youtu.be/ta-ZY-C4pow",
+    lecture: "https://youtu.be/ta-ZY-C4pow",
   },
   {
     title: "Introduction to Web Development",
@@ -103,16 +104,19 @@ const timelineEntries = [
     startOfUnit: true,
     content: (
       <p>
-        Unit Repository: <a href="https://github.com/MasonWang025/cs-club-web-dev-unit">https://github.com/MasonWang025/cs-club-web-dev-unit</a>
-          <br/>
-          <br/>
+        Unit Repository:{" "}
+        <a href="https://github.com/MasonWang025/cs-club-web-dev-unit">
+          https://github.com/MasonWang025/cs-club-web-dev-unit
+        </a>
+        <br />
+        <br />
         <b>Tools and libraries needed to make stylish interactive websites.</b>
         <br />
         <br />
         Activity: HTML, CSS, and JS live demo.
       </p>
     ),
-      lecture: "https://youtu.be/hoZE7Ipy05Q",
+    lecture: "https://youtu.be/hoZE7Ipy05Q",
   },
   {
     title: "HTML, CSS, and JavaScript",
@@ -121,77 +125,90 @@ const timelineEntries = [
     startOfUnit: false,
     content: (
       <p>
-        <b>Basic syntax and terminology and important tags, selectors, and attributes.</b>
+        <b>
+          Basic syntax and terminology and important tags, selectors, and
+          attributes.
+        </b>
         <br />
         <br />
         Demo: Basic vanilla JavaScript todo list.
       </p>
     ),
-      lecture: "https://youtu.be/hnZQJBOwL0E"
+    lecture: "https://youtu.be/hnZQJBOwL0E",
   },
-    {
-        title: "Bootstrap and React Essentials",
-        unit: "Web Development",
-        date: "11/2/2020",
-        startOfUnit: false,
-        content: (
-            <p>
-                <b>Basic Bootstrap classes and React components, props, and state.</b>
-                <br />
-                <br />
-                Demo: Creating a simple counter app using React.
-            </p>
-        ),
-        lecture: "https://youtu.be/dbYLFDcCM1s"
-    },
-    {
-        title: "Creating a React Todo List (Part 1)",
-        unit: "Web Development",
-        date: "11/9/2020",
-        startOfUnit: false,
-        content: (
-            <p>
-                <b>Using Bootstrap and React to implement basic functionalities of a todo list.</b>
-                <br />
-                <br />
-                Demo: Creating an interactive todo list.
-            </p>
-        ),
-        lecture: "https://youtu.be/Nl8SNI9g630"
-    },
-    {
-        title: "Creating a React Todo List (Part 2)",
-        unit: "Web Development",
-        date: "11/16/2020",
-        startOfUnit: false,
-        content: (
-            <p>
-                <b>Implementing the backend for our todo list using Google Cloud Firestore and deploying with Netlify.</b>
-                <br />
-                <br />
-                Demo: Finishing our todo list app.
-                <br />
-                <br />
-                Deployed app: <a href="https://todo-list-cs-club.netlify.app/"> https://todo-list-cs-club.netlify.app/</a>
-            </p>
-        ),
-        lecture: "https://youtu.be/DqJ04DoBdgk",
-    },
-    {
-        title: "USACO Review",
-        unit: "Algorithms",
-        date: "11/23/2020",
-        startOfUnit: false,
-        content: (
-            <p>
-                <b>We went over a couple of USACO problems.</b>
-                <br />
-                <br />
-                Demo: Explaining binary search, Floyd-Warshall, and dynamic programming.
-            </p>
-        ),
-        lecture: "https://youtu.be/sdCGep5XYMk",
-    },
+  {
+    title: "Bootstrap and React Essentials",
+    unit: "Web Development",
+    date: "11/2/2020",
+    startOfUnit: false,
+    content: (
+      <p>
+        <b>Basic Bootstrap classes and React components, props, and state.</b>
+        <br />
+        <br />
+        Demo: Creating a simple counter app using React.
+      </p>
+    ),
+    lecture: "https://youtu.be/dbYLFDcCM1s",
+  },
+  {
+    title: "Creating a React Todo List (Part 1)",
+    unit: "Web Development",
+    date: "11/9/2020",
+    startOfUnit: false,
+    content: (
+      <p>
+        <b>
+          Using Bootstrap and React to implement basic functionalities of a todo
+          list.
+        </b>
+        <br />
+        <br />
+        Demo: Creating an interactive todo list.
+      </p>
+    ),
+    lecture: "https://youtu.be/Nl8SNI9g630",
+  },
+  {
+    title: "Creating a React Todo List (Part 2)",
+    unit: "Web Development",
+    date: "11/16/2020",
+    startOfUnit: false,
+    content: (
+      <p>
+        <b>
+          Implementing the backend for our todo list using Google Cloud
+          Firestore and deploying with Netlify.
+        </b>
+        <br />
+        <br />
+        Demo: Finishing our todo list app.
+        <br />
+        <br />
+        Deployed app:{" "}
+        <a href="https://todo-list-cs-club.netlify.app/">
+          {" "}
+          https://todo-list-cs-club.netlify.app/
+        </a>
+      </p>
+    ),
+    lecture: "https://youtu.be/DqJ04DoBdgk",
+  },
+  {
+    title: "USACO Review",
+    unit: "Algorithms",
+    date: "11/23/2020",
+    startOfUnit: false,
+    content: (
+      <p>
+        <b>We went over a couple of USACO problems.</b>
+        <br />
+        <br />
+        Demo: Explaining binary search, Floyd-Warshall, and dynamic programming.
+      </p>
+    ),
+    lecture: "https://youtu.be/sdCGep5XYMk",
+  },
   {
     title: "Introduction to Systems",
     unit: "Systems",
@@ -205,7 +222,7 @@ const timelineEntries = [
         Activity: Terminal.
       </p>
     ),
-      lecture: "https://youtu.be/1jBaX-41dCA"
+    lecture: "https://youtu.be/1jBaX-41dCA",
   },
   {
     title: "How Computers Run Code",
@@ -219,7 +236,7 @@ const timelineEntries = [
         Demo: GDB of a simple function call.
       </p>
     ),
-      lecture: "https://youtu.be/FM8Y53qosLw"
+    lecture: "https://youtu.be/FM8Y53qosLw",
   },
   {
     title: "CS Club Competition",
@@ -233,9 +250,15 @@ const timelineEntries = [
         Activity: Live leaderboard, 25-minute team competition.
         <br />
         <br />
-      <a href="https://docs.google.com/document/d/1K1u1-9QdC07kMjLDqI_U98QSRbre7jq9R5fRzst-wqY/edit"> Problems </a>
+        <a href="https://docs.google.com/document/d/1K1u1-9QdC07kMjLDqI_U98QSRbre7jq9R5fRzst-wqY/edit">
+          {" "}
+          Problems{" "}
+        </a>
         <br />
-      <a href="https://docs.google.com/document/d/1EchiWKKb0kngJOY9ie3nNcZRKez8NCwQh8oLwv4iX8k/edit"> Answers </a>
+        <a href="https://docs.google.com/document/d/1EchiWKKb0kngJOY9ie3nNcZRKez8NCwQh8oLwv4iX8k/edit">
+          {" "}
+          Answers{" "}
+        </a>
       </p>
     ),
   },
@@ -251,20 +274,21 @@ const timelineEntries = [
         Demo: Live-code of Problem 1, Dance Mooves.
       </p>
     ),
-      lecture: "https://youtu.be/ZEcTFCaBH30"
+    lecture: "https://youtu.be/ZEcTFCaBH30",
   },
   {
-    title: "The Internet",
+    title: "Git Essentials and Best Practices",
     unit: "Systems",
     date: "2/8/21",
     content: (
       <p>
-        <b>IP addresses, DNS, and web protocols. </b>
+        <b>Repositories, commits, branches, pull requests, and more.</b>
         <br />
         <br />
-        Demo: Traceroute, Dig, HTTP.
+        Demo: Live repository creation and merge conflict resolution.
       </p>
     ),
+    lecture: "https://youtu.be/QUm7e3DKu5o",
   },
   {
     title: "Distributed Systems",
