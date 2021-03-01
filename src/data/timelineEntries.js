@@ -291,15 +291,29 @@ const timelineEntries = [
     lecture: "https://youtu.be/QUm7e3DKu5o",
   },
   {
+  {
+    title: "How the Internet Works",
+    unit: "Systems",
+    date: "2/22/21",
+    content: (
+      <p>
+        <b>The OSI model, TCP/IP, packet routing, DNS, and TLS.</b>
+        <br />
+        <br />
+        Demo: DNS lookup and Wireshark packet sniffing.
+      </p>
+    ),
+    lecture: "https://youtu.be/5VuFq2qK01w",
+  },
     title: "Distributed Systems",
     unit: "Systems",
     date: "2/22/21",
     content: (
       <p>
-        <b>Virtualization and real-time synchronization.</b>
+        <b>Concurrency and MapReduce with Scala and Spark.</b>
         <br />
         <br />
-        Demo: Dockerizing a web app.
+        Demo: BASH background processes, Go concurrent summation, word count MapReduce.
       </p>
     ),
     lecture: "https://youtu.be/rsT54IyTJ1Q"
