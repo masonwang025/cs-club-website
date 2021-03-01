@@ -302,6 +302,7 @@ const timelineEntries = [
         Demo: Dockerizing a web app.
       </p>
     ),
+    lecture: "https://youtu.be/rsT54IyTJ1Q"
   },
   {
     title: "Introduction to Cybersecurity",
