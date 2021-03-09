@@ -307,7 +307,7 @@ const timelineEntries = [
   },
     title: "Distributed Systems",
     unit: "Systems",
-    date: "2/22/21",
+    date: "3/1/21",
     content: (
       <p>
         <b>Concurrency and MapReduce with Scala and Spark.</b>
@@ -321,16 +321,17 @@ const timelineEntries = [
   {
     title: "Introduction to Cybersecurity",
     unit: "Cybersecurity",
-    date: "3/1/21",
+    date: "3/8/21",
     startOfUnit: true,
     content: (
       <p>
         <b>Principles of security and real-world examples.</b>
         <br />
         <br />
-        Activity: picoCTF General Skills problems.
+        Activity: picoCTF hacking challenges.
       </p>
     ),
+    lecture: "https://youtu.be/d4-MuM7SZYM"
   },
   {
     title: "Binary Exploit",
