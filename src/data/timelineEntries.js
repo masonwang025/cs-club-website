@@ -291,7 +291,6 @@ const timelineEntries = [
     lecture: "https://youtu.be/QUm7e3DKu5o",
   },
   {
-  {
     title: "How the Internet Works",
     unit: "Systems",
     date: "2/22/21",
@@ -305,6 +304,7 @@ const timelineEntries = [
     ),
     lecture: "https://youtu.be/5VuFq2qK01w",
   },
+  {
     title: "Distributed Systems",
     unit: "Systems",
     date: "3/1/21",
