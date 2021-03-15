@@ -336,15 +336,16 @@ const timelineEntries = [
   {
     title: "Binary Exploit",
     unit: "Cybersecurity",
-    date: "3/8/21",
+    date: "3/15/21",
     content: (
       <p>
-        <b>Buffer overflows and shellcode.</b>
+        <b>C memory layout and buffer overflow.</b>
         <br />
         <br />
         Activity: picoCTF Binary Exploitation problems.
       </p>
     ),
+    lecture: "https://youtu.be/3Kxx6MU1QJs"
   },
   {
     title: "Web Exploit",
