@@ -353,12 +353,13 @@ const timelineEntries = [
     date: "3/22/21",
     content: (
       <p>
-        <b>SQL injection, XSS, and other common exploits.</b>
+        <b>Client-side validation, cookies, and SQL injection.</b>
         <br />
         <br />
         Activity: picoCTF Web Exploitation problems.
       </p>
     ),
+    lecture: "https://youtu.be/cE1BamCUv9s"
   },
   {
     title: "Cryptography",
