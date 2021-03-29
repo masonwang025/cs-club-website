@@ -367,12 +367,13 @@ const timelineEntries = [
     date: "3/29/21",
     content: (
       <p>
-        <b>Ciphers and encryption algorithms.</b>
+        <b>Traditional ciphers and RSA encryption.</b>
         <br />
         <br />
         Activity: picoCTF Cryptography problems.
       </p>
     ),
+    lecture: "https://youtu.be/cKYrYdr0b5w"
   },
   {
     title: "Introduction to Machine Learning",
