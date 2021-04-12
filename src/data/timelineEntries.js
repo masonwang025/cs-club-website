@@ -385,9 +385,10 @@ const timelineEntries = [
         <b>Applications of AI/ML and important resources.</b>
         <br />
         <br />
-        Demo: CodeBullet projects.
+        Demo: AI-generated faces.
       </p>
     ),
+    lecture: "https://youtu.be/TgtH7QuqLcM",
   },
   {
     title: "Linear Regression and Gradient Descent",
