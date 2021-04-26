@@ -391,7 +391,7 @@ const timelineEntries = [
     lecture: "https://youtu.be/TgtH7QuqLcM",
   },
   {
-    title: "Linear Regression and Gradient Descent",
+    title: "Deep Learning and Neural Networks",
     unit: "Machine learning",
     date: "4/19/21",
     content: (
@@ -399,9 +399,10 @@ const timelineEntries = [
         <b>The basic math behind machine learning algorithms.</b>
         <br />
         <br />
-        Demo: Gradient descent visualization with different hyperparameters.
+        Demo: Gradient descent visualization.
       </p>
     ),
+    lecture: "https://youtu.be/Pw7XjS4I3g4",
   },
   {
     title: "Neural Networks",
