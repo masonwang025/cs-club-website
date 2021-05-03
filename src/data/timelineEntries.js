@@ -418,17 +418,18 @@ const timelineEntries = [
     ),
   },
   {
-    title: "Reinforcement Learning",
+    title: "PyTorch Basics",
     unit: "Machine learning",
     date: "5/3/21",
     content: (
       <p>
-        <b>Concepts behind AI.</b>
+        <b>Using PyTorch to create machine learning models.</b>
         <br />
         <br />
-        Demo: CS188 Pacman example.
+        Demo: Live coding a handwritten digit classifier.
       </p>
     ),
+    lecture: "https://youtu.be/PUPoji6ibzE"
   },
   {
     title: "What's Next?",
