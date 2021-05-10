@@ -432,24 +432,26 @@ const timelineEntries = [
     lecture: "https://youtu.be/PUPoji6ibzE"
   },
   {
-    title: "What's Next?",
+    title: "CS Club End of Year Competition",
     unit: "General",
-    date: "m/dd/yy",
+    date: "5/10/21",
     content: (
       <p>
-        <b>Member suggested meetings and extra coverage.</b>
+        <b>Competition on miscellaneous computer science subjects.</b>
         <br />
         <br />
-        Feel free to let us know if you have any meeting ideas at{" "}
-        <a
-          rel="noopener noreferrer"
-          href="mailto:clubshscs@gmail.com"
-          target="_blank"
-          id="email"
-        >
-          clubshscs@gmail.com
+        Activity: Live leaderboard, 45-minute team competition.
+        <br />
+        <br />
+        <a href="https://docs.google.com/document/d/1vqNvaW_0uowdm7AlIfwRIk7cJfL8ZCO7SEj3fssZPMY/edit?usp=sharing">
+          {" "}
+          Problems{" "}
         </a>
-        !
+        <br />
+        <a href="https://docs.google.com/document/d/1-_ZAoFR4azsJP6MceZublYEMghVE0ngk8_1_QiSwB30/edit?usp=sharing">
+          {" "}
+          Answers{" "}
+        </a>
       </p>
     ),
   },
